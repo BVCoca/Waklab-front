@@ -1,0 +1,56 @@
+[
+    {
+      "name": "Boufton BLanc",
+      "levelMin": 4,
+      "levelMax": 8,
+      "famille": "Bouftous",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/100200039.w133h.png",
+      "typeImage": "",
+      "id": 1
+    },
+    {
+      "name": "Chacha",
+      "levelMin": 4,
+      "levelMax": 6,
+      "famille": "Chachas",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/108900833.w133h.png",
+      "typeImage": "",
+      "id": 2
+    },
+    {
+      "name": "Arakne",
+      "levelMin": 19,
+      "levelMax": 23,
+      "famille": "Abraknes",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/182804079.w133h.png",
+      "typeImage": "",
+      "id": 3
+    },
+    {
+      "name": "Piou Bleu",
+      "levelMin": 22,
+      "levelMax": 30,
+      "famille": "Pious",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101500088.w133h.png",
+      "typeImage": "",
+      "id": 4
+    },
+    {
+      "name": "Rose Ténébreuse",
+      "levelMin": 40,
+      "levelMax": 44,
+      "famille": "Plantes des champs",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101600144.w133h.png",
+      "typeImage": "",
+      "id": 5
+    },
+    {
+      "name": "Moogrron",
+      "levelMin": 40,
+      "levelMax": 44,
+      "famille": "Moogrr",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/121801220.w133h.png",
+      "typeImage": "",
+      "id": 6
+    }
+  ]

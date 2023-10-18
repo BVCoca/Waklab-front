@@ -1,5 +1,7 @@
+import Link from "next/link"
 import "./styles/globals.css"
 import "./styles/menu.css"
+import Image from "next/image"
 
 export default function Menu({
     children
@@ -7,29 +9,25 @@ export default function Menu({
     children: React.ReactNode
   }) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning={true}>
-        <div id="pageContent">
-          <div id="menuContainer">
-              <a id="logo" className="logosvg" href="#">
-                <img src={"/logo_menu.png"} alt="Logo Menu" style={{width: "30px"}}/>
-              </a>
-              <a id="logoRessources" className="logosvg" href="#">
-                <img src="/logoResources.svg" alt="Logo Ressources" />
-              </a>
-              <a id="logoStuffs" className="logosvg" href="#">
-                <img src="/logoStuffs.svg" alt="Logo Stuffs" />
-              </a>
-              <a id="logoMobs" className="logosvg" href="#">
-                <img src="/logoMobs.svg" alt="Logo Mobs" />
-              </a>
-              <a id="logoCac" className="logosvg" href="#">
-                <img src="/logoCaC.svg" alt="Logo CaC" />
-              </a>
-            </div>
-            {children}
-          </div>
-      </body>
-    </html>
+    <main>
+      <div id="menuContainer">
+        <Link id="logo" className="logosvg" href="/">
+          <Image  src={"/logo_menu.png"} alt="Logo Menu" width={50} height={60}/>
+        </Link>
+          <Link id="ressources" className="logosvg" href="/resources">
+            <Image src="/logoResources.svg" alt="Logo Ressources" width={50} height={60} />
+          </Link>
+          <Link id="stuffs" className="logosvg" href="/stuffs">
+          <Image src="/logoStuffs.svg" alt="Logo Stuffs" width={50} height={60}/>
+          </Link>
+          <Link href="/mobs" id="mobs" className="logosvg">
+            <Image src="/logoMobs.svg" alt="Logo Mobs" width={50} height={60}/>
+          </Link>
+          <Link id="cac" className="logosvg" href="/cac">
+            <Image src="/logoCaC.svg" alt="Logo CaC" width={50} height={60}/>
+          </Link>
+        </div>
+      {children}
+    </main>
   )
 }

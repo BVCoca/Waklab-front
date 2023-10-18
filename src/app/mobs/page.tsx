@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <div>
       <Logo />
-      <Search placeholder="Rechercher un monstre" />
+      <Search />
     </div>
   )
 }

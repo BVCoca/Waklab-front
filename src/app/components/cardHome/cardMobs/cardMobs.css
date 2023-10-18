@@ -1,6 +1,7 @@
 #cardContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 22%;
     height: 230px;
     border-radius: 18px;
@@ -17,25 +18,25 @@
 }
 
 #level {
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
+    left: 9rem;
     font-size: 20px;
     margin: 10px 20px;
 }
 
 #cardImage {
     position: relative;
-    bottom: 2rem;
-    left: 6rem;
+    bottom: 2.6rem;
 }
 
 #nameAndType {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    bottom: 2rem;
 }
 
-#name {
-
+#type {
+    display: flex;
+    flex-direction: row;
 }
 
 #typeName {
@@ -44,5 +45,6 @@
 }
 
 #typeImage {
-    
+    position: relative;
+    bottom: 0.5rem;
 }

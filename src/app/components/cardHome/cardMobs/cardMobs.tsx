@@ -24,9 +24,9 @@ const CardMobs: React.FC<CardMobsProps> = ({ levelMin, levelMax, image, name, ty
           <div id="name">
             {name}
           <div id="type">
-          </div>
             <Image id="typeImage" src={typeImage} alt="Type Image" width={27} height={27}/>
             <div id="typeName">{typeName}</div>
+          </div>
         </div>
       </div>
     </div> 

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import "./styles/globals.css"
 import "./styles/menu.css"
+import Image from "next/image"
 
 export default function Menu({
     children
@@ -11,19 +12,19 @@ export default function Menu({
     <main>
       <div id="menuContainer">
         <Link id="logo" className="logosvg" href="/">
-          <img src={"/logo_menu.png"} alt="Logo Menu" style={{width: "30px"}}/>
+          <Image  src={"/logo_menu.png"} alt="Logo Menu" width={40} height={50}/>
         </Link>
           <a id="ressources" className="logosvg" href="#">
-            <img src="/logoResources.svg" alt="Logo Ressources" />
+            <Image src="/logoResources.svg" alt="Logo Ressources" width={40} height={50} />
           </a>
           <a id="stuffs" className="logosvg" href="#">
-            <img src="/logoStuffs.svg" alt="Logo Stuffs" />
+          <Image src="/logoStuffs.svg" alt="Logo Stuffs" width={40} height={50}/>
           </a>
           <Link href="/mobs" id="mobs" className="logosvg">
-            <img src="/logoMobs.svg" alt="Logo Mobs" />
+            <Image src="/logoMobs.svg" alt="Logo Mobs" width={40} height={50}/>
           </Link>
           <a id="cac" className="logosvg" href="#">
-            <img src="/logoCaC.svg" alt="Logo CaC" />
+            <Image src="/logoCaC.svg" alt="Logo CaC" width={40} height={50}/>
           </a>
         </div>
       {children}

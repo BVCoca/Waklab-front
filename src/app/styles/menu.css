@@ -13,12 +13,6 @@
     padding: 0rem 1rem;
 }
 
-#logo
-{
-    margin: 15px 0px 50px 2px;
-}
-
-.logosvg
-{
-    margin: 25px 25px 25px 55px;
+.logoSvg {
+    margin: 25px 0px ;
 }

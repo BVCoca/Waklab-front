@@ -1,11 +1,14 @@
 import "../../styles/globals.css"
-import datas from "../../datas/datas.json"
-import CardMobs from "./cardMobs/cardMobs"
+import "./home.css"
+import datas from "@/app/datas/datas.json"
+import CardMobs from "@/app/components/cardHome/cardMobs/cardMobs"
 
 export default function Home() {
+console.log(datas);
+
     return (
-        <>
-            {datas && datas.map((data, index) => {
+        <div id="cardList">
+            {datas && datas.map((data, index) => (
                 <CardMobs
                     key={index}
                     levelMin={data.levelMin}
@@ -13,8 +16,9 @@ export default function Home() {
                     image={data.imageUrl}
                     name={data.name}
                     typeName={data.famille}
+                    typeImage={data.typeImage}
                 />
-            })}
-        </> 
+            ))}
+        </div> 
     )
 }

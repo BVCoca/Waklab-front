@@ -23,7 +23,9 @@ export default function Search() {
     return (
         <div id="searchbarContainer">
             <input type="text" placeholder={`Rechercher ${pathname}`} id="searchBar" name="searchBar"/>
-            <label htmlFor="searchBar"><Image src={searchIcon} alt="search icon" id="searchIcon"/></label>
+            <label htmlFor="searchBar">
+                <Image src={searchIcon} alt="search icon" id="searchIcon"/>
+            </label>
         </div> 
     )
 }

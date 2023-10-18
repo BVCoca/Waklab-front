@@ -1,12 +1,11 @@
-import Logo from "../components/logo/logo";
+import Header from "../components/header/header";
 import MobDetails from "../components/mobDetails/mobDetails";
-import Search from "../components/search/search";
+
 
 export default function Page() {
   return (
-    <div>
-      <Logo />
-      <Search />
+    <div id="content">
+      <Header />
       <MobDetails />
     </div>
   )

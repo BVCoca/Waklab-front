@@ -1,8 +1,11 @@
+#pageContent {
+    display: flex;
+}
+
 #menuContainer 
 {
     display: flex;
     flex-direction: column;
-    position: fixed;
     align-items: center;
     background:  rgb(27, 134, 132, 1);
     height: 100vh;
@@ -10,5 +13,5 @@
 }
 
 .logoSvg {
-    margin: 25px 0px ;
+    margin: 25px 0px;
 }

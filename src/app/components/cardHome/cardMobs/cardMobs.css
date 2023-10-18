@@ -1,0 +1,48 @@
+#cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    height: 230px;
+    border-radius: 18px;
+    background: #212121;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 25px 0px;
+   }
+
+#level {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    margin: 10px 20px;
+}
+
+#cardImage {
+    position: relative;
+    bottom: 2rem;
+    left: 6rem;
+}
+
+#nameAndType {
+    display: flex;
+    flex-direction: column;
+}
+
+#name {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 2.2rem;
+}
+
+#typeName {
+
+    font-size: 12px;
+    color: grey;
+}
+
+#typeImage {
+    position: relative;
+    bottom: 0.4rem;
+    right: 0.2rem;
+}

@@ -10,9 +10,9 @@ export default function Menu({
   return (
     <main>
       <div id="menuContainer">
-          <a id="logo" className="logosvg" href="#">
-            <img src={"/logo_menu.png"} alt="Logo Menu" style={{width: "30px"}}/>
-          </a>
+        <Link id="logo" className="logosvg" href="/">
+          <img src={"/logo_menu.png"} alt="Logo Menu" style={{width: "30px"}}/>
+        </Link>
           <a id="ressources" className="logosvg" href="#">
             <img src="/logoResources.svg" alt="Logo Ressources" />
           </a>

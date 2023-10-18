@@ -1,11 +1,11 @@
 [
     {
-      "name": "Boufton BLanc",
+      "name": "Boufton Blanc",
       "levelMin": 4,
       "levelMax": 8,
       "famille": "Bouftous",
-      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/100200039.w133h.png",
-      "typeImage": "",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/100200039.w250h250.png",
+      "typeImage": "/type_image.svg",
       "id": 1
     },
     {
@@ -13,8 +13,8 @@
       "levelMin": 4,
       "levelMax": 6,
       "famille": "Chachas",
-      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/108900833.w133h.png",
-      "typeImage": "",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/108900833.w250h250.png",
+      "typeImage": "/type_image.svg",
       "id": 2
     },
     {
@@ -22,8 +22,8 @@
       "levelMin": 19,
       "levelMax": 23,
       "famille": "Abraknes",
-      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/182804079.w133h.png",
-      "typeImage": "",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/182804079.w250h250.png",
+      "typeImage": "/type_image.svg",
       "id": 3
     },
     {
@@ -31,8 +31,8 @@
       "levelMin": 22,
       "levelMax": 30,
       "famille": "Pious",
-      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101500088.w133h.png",
-      "typeImage": "",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101500088.w250h250.png",
+      "typeImage": "/type_image.svg",
       "id": 4
     },
     {
@@ -40,8 +40,8 @@
       "levelMin": 40,
       "levelMax": 44,
       "famille": "Plantes des champs",
-      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101600144.w133h.png",
-      "typeImage": "",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101600144.w250h250.png",
+      "typeImage": "/type_image.svg",
       "id": 5
     },
     {
@@ -49,8 +49,8 @@
       "levelMin": 40,
       "levelMax": 44,
       "famille": "Moogrr",
-      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/121801220.w133h.png",
-      "typeImage": "",
+      "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/121801220.w250h250.png",
+      "typeImage": "/type_image.svg",
       "id": 6
     }
-  ]
+]

@@ -1,10 +1,14 @@
-body {
+html {
   min-height: 100vh;
-  margin: 0;
   background: rgba(51, 51, 51, 1);
   display: flex;
 }
 
-main {
+body {
+  margin: 0;
+  width: 100%;
+}
+
+#content {
   width: 100%;
 }

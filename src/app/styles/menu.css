@@ -1,12 +1,15 @@
+#pageContent {
+    display: flex;
+}
+
 #menuContainer 
 {
     display: flex;
     flex-direction: column;
-    position: fixed;
     align-items: center;
     background:  rgb(27, 134, 132, 1);
     height: 100vh;
-    max-width: 1.5%;
+    width: 35px;
     padding: 0rem 1rem;
 }
 

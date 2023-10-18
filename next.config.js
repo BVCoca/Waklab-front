@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-    images: {
-      domains: ['static.ankama.com'], // Ajoutez tous les domaines qui hébergent vos images
-    },
-  }
+  images: {
+    domains: ["static.ankama.com"], // Ajoutez tous les domaines qui hébergent vos images
+  },
+};

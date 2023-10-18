@@ -6,16 +6,9 @@
     align-items: center;
     background:  rgb(27, 134, 132, 1);
     height: 100vh;
-    max-width: 1.5%;
-    padding: 0rem 1rem;
+    padding: 0 10px;
 }
 
-#logo
-{
-    margin: 15px 0px 50px 2px;
-}
-
-.logosvg
-{
-    margin: 25px 25px 25px 55px;
+.logoSvg {
+    margin: 25px 0px ;
 }

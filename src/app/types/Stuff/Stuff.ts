@@ -1,4 +1,4 @@
-import Rarity from "./Rarity";
+import Rarity from "../Rarity";
 import TypeStuff from "./TypeStuff";
 
 export default interface Stuff {

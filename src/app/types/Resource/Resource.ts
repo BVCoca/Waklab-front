@@ -1,4 +1,4 @@
-import Rarity from "./Rarity";
+import Rarity from "../Rarity";
 
 export default interface Resource {
     name : string,

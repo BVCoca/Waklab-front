@@ -1,13 +1,13 @@
-import Recipe from "./Recipe";
-import RecipeIngredient from "./RecipeIngredient";
+import MobDrop from "../Mob/MobDrop";
+import Recipe from "../Recipe/Recipe";
+import RecipeIngredient from "../Recipe/RecipeIngredient";
 import Resource from "./Resource";
-import ResourceDrop from "./ResourceDrop";
 
 /**
  * Utiliser uniquement sur la page de l'item
  */
 export default interface ResourceSingle extends Resource {
-    resourceDrops : ResourceDrop[],
+    resourceDrops : MobDrop[]
     recipes : Recipe[],
     recipeIngredients : RecipeIngredient[]
 }

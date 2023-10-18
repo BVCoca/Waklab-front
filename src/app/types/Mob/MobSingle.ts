@@ -1,6 +1,6 @@
 import Mob from "./Mob";
-import ResourceDrop from "./ResourceDrop";
-import StuffDrop from "./StuffDrop";
+import ResourceDrop from "../Resource/ResourceDrop";
+import StuffDrop from "../Stuff/StuffDrop";
 
 /**
  * Utiliser uniquement sur la page de l'item
@@ -9,8 +9,6 @@ export default interface MobSingle extends Mob {
     resourceDrops : ResourceDrop[],
     stuffDrops : StuffDrop[],
     isCapturable: boolean,
-    name: string,
-    slug: string,
     actionPoints: number,
     movementPoints: number,
     initiative: number,
@@ -26,7 +24,5 @@ export default interface MobSingle extends Mob {
     resEarth: number,
     resWind: number,
     resFire: number,
-    levelMin: number,
-    levelMax: number,
     hp : number
 }

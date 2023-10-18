@@ -1,4 +1,4 @@
-import Caracteristic from "./Caracteristic";
+import Caracteristic from "../Caracteristic";
 
 export default interface stuffCaracteristic {
     caracteristic : Caracteristic,

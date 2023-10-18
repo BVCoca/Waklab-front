@@ -1,3 +1,4 @@
+import Link from "next/link"
 import "./styles/globals.css"
 import "./styles/menu.css"
 
@@ -18,9 +19,9 @@ export default function Menu({
           <a id="stuffs" className="logosvg" href="#">
             <img src="/logoStuffs.svg" alt="Logo Stuffs" />
           </a>
-          <a id="mobs" className="logosvg" href="#">
+          <Link href="/mobs" id="mobs" className="logosvg">
             <img src="/logoMobs.svg" alt="Logo Mobs" />
-          </a>
+          </Link>
           <a id="cac" className="logosvg" href="#">
             <img src="/logoCaC.svg" alt="Logo CaC" />
           </a>

@@ -10,10 +10,11 @@ export default function Menu({
   }) {
   return (
     <main>
-      <div id="menuContainer">
-        <Link id="logo" className="logosvg" href="/">
-          <Image  src={"/logo_menu.png"} alt="Logo Menu" width={50} height={60}/>
-        </Link>
+      <div id="pageContent">
+        <div id="menuContainer">
+          <Link id="logo" className="logosvg" href="/">
+            <Image  src={"/logo_menu.png"} alt="Logo Menu" width={50} height={60}/>
+          </Link>
           <Link id="ressources" className="logosvg" href="/resources">
             <Image src="/logoResources.svg" alt="Logo Ressources" width={50} height={60} />
           </Link>
@@ -26,8 +27,9 @@ export default function Menu({
           <Link id="cac" className="logosvg" href="/cac">
             <Image src="/logoCaC.svg" alt="Logo CaC" width={50} height={60}/>
           </Link>
-        </div>
-      {children}
+        </div>    
+        {children}
+      </div>
     </main>
   )
 }

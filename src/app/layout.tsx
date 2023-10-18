@@ -12,20 +12,20 @@ export default function Menu({
     <main>
       <div id="menuContainer">
         <Link id="logo" className="logosvg" href="/">
-          <Image  src={"/logo_menu.png"} alt="Logo Menu" width={40} height={50}/>
+          <Image  src={"/logo_menu.png"} alt="Logo Menu" width={50} height={60}/>
         </Link>
-          <a id="ressources" className="logosvg" href="#">
-            <Image src="/logoResources.svg" alt="Logo Ressources" width={40} height={50} />
-          </a>
-          <a id="stuffs" className="logosvg" href="#">
-          <Image src="/logoStuffs.svg" alt="Logo Stuffs" width={40} height={50}/>
-          </a>
-          <Link href="/mobs" id="mobs" className="logosvg">
-            <Image src="/logoMobs.svg" alt="Logo Mobs" width={40} height={50}/>
+          <Link id="ressources" className="logosvg" href="/resources">
+            <Image src="/logoResources.svg" alt="Logo Ressources" width={50} height={60} />
           </Link>
-          <a id="cac" className="logosvg" href="#">
-            <Image src="/logoCaC.svg" alt="Logo CaC" width={40} height={50}/>
-          </a>
+          <Link id="stuffs" className="logosvg" href="/stuffs">
+          <Image src="/logoStuffs.svg" alt="Logo Stuffs" width={50} height={60}/>
+          </Link>
+          <Link href="/mobs" id="mobs" className="logosvg">
+            <Image src="/logoMobs.svg" alt="Logo Mobs" width={50} height={60}/>
+          </Link>
+          <Link id="cac" className="logosvg" href="/cac">
+            <Image src="/logoCaC.svg" alt="Logo CaC" width={50} height={60}/>
+          </Link>
         </div>
       {children}
     </main>

@@ -12,12 +12,28 @@
     background-color: #1E1E1E;
     border-radius: 11px;
     margin: 0 25px;
-    padding: 20px;
+    padding: 35px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.primaryStatsMobContainer {
+    margin-left: 25px;
 }
 
 .healthMobContainer {
     display: flex;
+    margin-top: 25px;
+}
 
+.imageContainer {
+    position: relative;
+}
+  
+.imageContainer:hover .tooltip {
+    display: block;
 }
 
 .actionMovementContainer {
@@ -31,10 +47,34 @@
 
 #valueHealth {
     position: absolute;
-    top: 20px;
-    left: 28px;
+    top: 23px;
+    left: 4px;
     font-size: 32px;
+    font-size: 28px;
     font-weight:600;
+    width: 95px;
+    text-align: center;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left: 0px;
+    opacity: 0; 
+    transition: opacity .5s;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 .actionMovementContainer {
@@ -43,16 +83,46 @@
 
 #valueAction {
     position: absolute;
-    top: 18px;
-    left: 22px;
-    font-size: 22px;
-    font-weight:600;
+    top: 21px;
+    left: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 35px;
+    text-align: center;
 }
 
 #valueMovement {
     position: absolute;
-    top: 16px;
-    left: 21px;
-    font-size: 22px;
+    top: 17px;
+    left: 11px;
+    font-size: 20px;
     font-weight:600;
+    width: 35px;
+    text-align: center;
+}
+
+.helpStatsMobContainer {
+    background-color: #333333;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 11px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+.lineValue {
+    display: flex;
+    align-items: center;
+}
+
+.valueHelpStats {
+    font-style: italic;
+    margin-left: 5px;
 }

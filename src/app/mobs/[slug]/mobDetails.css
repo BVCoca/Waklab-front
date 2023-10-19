@@ -2,10 +2,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 100%;
+    width: 100%;
 }
 
 .mobStatsContainer {
+    display: flex;
     font-family: 'Inter', sans-serif;
     color: #FFFF;
+    background-color: #1E1E1E;
+    border-radius: 11px;
+    margin: 0 25px;
+    padding: 20px;
+}
+
+.healthMobContainer {
+    display: flex;
+
+}
+
+.actionMovementContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.valueContainer {
+    position: relative;
+}
+
+#valueHealth {
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    font-size: 32px;
+    font-weight:600;
+}
+
+.actionMovementContainer {
+    margin-left: 10px;
+}
+
+#valueAction {
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    font-size: 22px;
+    font-weight:600;
+}
+
+#valueMovement {
+    position: absolute;
+    top: 16px;
+    left: 21px;
+    font-size: 22px;
+    font-weight:600;
 }

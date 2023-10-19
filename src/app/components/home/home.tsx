@@ -17,6 +17,9 @@ console.log(datas);
                     name={data.name}
                     typeName={data.famille}
                     typeImage={data.typeImage}
+                    slug={data.slug}
+                    rarityImage={data.rarityImage}
+                    rarityName={data.rarityName}
                 />
             ))}
         </div> 

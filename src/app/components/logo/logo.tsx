@@ -8,7 +8,7 @@ export default function Logo() {
     return (
         <div id="logoContainer">
             <Link href="/">
-                <Image src={logo} alt="Logo WakLab" width={350} height={190}/>
+                <Image src={logo} alt="Logo WakLab" width={350} height={100}/>
             </Link>
         </div> 
     )

@@ -2,36 +2,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 22%;
+    width: 400px;
     height: 230px;
     border-radius: 18px;
     background: #212121;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 25px 0px;
-    transition: all 0.5s;
+    margin: 25px 10px;
+    transition: all 0.4s;
    }
 
 #cardContainer:hover {
-    border: 1px solid black;
+    box-shadow: inset 1em 1em 0em 100em rgb(27, 134, 132, 1);
     transform: scale(1.05);
 }
 
-#level {
+#rarityAndLevel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     position: relative;
-    left: 9rem;
-    font-size: 20px;
-    margin: 10px 20px;
+    top: 0.5rem;
+    width: 100%;
+}
+
+#name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#rarity {
+    margin-left: 15px;
+}
+
+#level { 
+    margin-right: 15px;
 }
 
 #cardImage {
+    display: flex;
+    align-items: center;
     position: relative;
-    bottom: 2.6rem;
+    bottom: 1.4rem;
 }
 
 #nameAndType {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     position: relative;
-    bottom: 2rem;
+    bottom: 1.4rem;
 }
 
 #type {

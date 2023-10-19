@@ -15,7 +15,7 @@ export default function HeaderDetails() {
                 </div>
                 </Link>
             </div>
-            <Logo width={200} height={100}/>
+            <Logo width={200} height={70}/>
         </header> 
     )
 }

@@ -126,3 +126,32 @@ li {
     font-style: italic;
     margin-left: 5px;
 }
+
+.secondaryStatsMobContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.tableStatsMobContainer table {
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+    margin-left: 25px;
+    border-collapse: separate;
+    border-spacing: 25px 0;
+}
+
+.tableStatsMobContainer th {
+    margin-left: 15px;
+}
+
+.typeTitleTable {
+    display: flex;
+    align-items: center;
+}
+
+.typeTitleTable img {
+    margin-right: 15px;
+}

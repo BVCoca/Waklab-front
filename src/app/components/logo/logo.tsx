@@ -4,12 +4,19 @@ import logo from "../../../../public/logo_home.svg"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Logo() {
+interface LogoProps {
+   width: number;
+   height: number
+  }
+
+const Logo: React.FC<LogoProps> = ({width, height}) => {
     return (
         <div id="logoContainer">
             <Link href="/">
-                <Image src={logo} alt="Logo WakLab" width={350} height={100}/>
+                <Image src={logo} alt="Logo WakLab" width={width} height={height}/>
             </Link>
-        </div> 
+        </div>
     )
 }
+
+export default Logo;

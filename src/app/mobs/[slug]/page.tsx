@@ -4,11 +4,6 @@ import { getMob } from "@/app/services/mob";
 import { GetServerSidePropsContext } from "next";
 import MobSingle from "@/app/types/Mob/MobSingle";
 
-/* interface Props {
-    params : {
-        slug : string
-    }
-} */
 interface Props {
     mobSingle: MobSingle; 
     params : {

@@ -5,7 +5,7 @@ import Logo from "../logo/logo"
 export default function Header() {
     return (
         <header>
-            <Logo/>
+            <Logo width={350} height={190}/>
             <Search />
         </header> 
     )

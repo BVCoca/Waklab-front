@@ -1,0 +1,20 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.redirectBack {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 100px;
+    top: 30px;
+    font-family: 'Inter', sans-serif;
+    color: #1B8684;
+}
+
+.redirectBack p {
+    margin-left: 15px;
+}

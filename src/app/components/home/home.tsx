@@ -4,7 +4,6 @@ import datas from "@/app/datas/datas.json"
 import CardMobs from "@/app/components/cardHome/cardMobs/cardMobs"
 
 export default function Home() {
-console.log(datas);
 
     return (
         <div id="cardList">

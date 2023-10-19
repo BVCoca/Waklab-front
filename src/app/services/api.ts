@@ -6,6 +6,7 @@ const call = async (method : string, path : string) => {
             headers: {
                 'Accept': 'application/json',
             },
+            cache : process.env.NODE_ENV === "development" ? 'no-store' : 'default'
         }
     );
 
@@ -15,7 +16,7 @@ const call = async (method : string, path : string) => {
     {
         return data;
     } else {
-        return Promise.reject("Erreur dans la ")
+        return Promise.reject("Erreur dans la requete")
     }
 }
 

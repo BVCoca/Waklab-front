@@ -1,8 +1,7 @@
 import Image from "next/image";
-import datas from "@/app/datas/datas.json";
 import { getMob } from "@/app/services/mob";
-import { GetServerSidePropsContext } from "next";
 import MobSingle from "@/app/types/Mob/MobSingle";
+import "./mobDetails.css"
 
 interface Props {
     mobSingle: MobSingle; 
@@ -14,6 +13,7 @@ interface Props {
 export default async function MobDetails({ params }: Props) {
 
     const mob = await getMob(params.slug);
+    console.log(mob);
 
     if (!mob) {
         return <p>Monstre non trouvé</p>;

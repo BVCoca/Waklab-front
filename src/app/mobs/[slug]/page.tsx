@@ -3,6 +3,8 @@ import { getMob } from "@/app/services/mob";
 import MobSingle from "@/app/types/Mob/MobSingle";
 import "./mobDetails.css";
 import HeaderDetails from "@/app/components/headerDetails/headerDetails";
+import Family from "@/app/components/global/family";
+import InfoLevel from "@/app/components/global/infoLevel";
 
 interface Props {
   mobSingle: MobSingle;
@@ -58,9 +60,7 @@ export default async function MobDetails({ params }: Props) {
             alt={`Image du monstre ${mob.name}`}
           />
           <h3>{mob.name}</h3>
-          <p className="family">
-            Famille : {mob.family ? mob.family.name : "Inconnu"}
-          </p>
+          <Family mob={mob} pathImage={"/iconGlobal/iconTypeMob.svg"} />
         </div>
 
         <div className="primaryStatsMobContainer">
@@ -235,7 +235,9 @@ export default async function MobDetails({ params }: Props) {
         </div>
 
         <div className="infoMobContainer">
-          <div className="levelMobContainer"></div>
+          <div className="levelMobContainer">
+            <InfoLevel firstLevel={mob.levelMin} secondLevel={mob.levelMax} />
+          </div>
           <div className="isCapturable MobContainer"></div>
         </div>
       </div>

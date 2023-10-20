@@ -17,6 +17,7 @@
 
 h3 {
     text-align: center;
+    margin-bottom: 0;
 }
 
 .primaryStatsMobContainer {
@@ -141,10 +142,12 @@ li {
     margin-left: 25px;
     border-collapse: separate;
     border-spacing: 25px 0;
+    background-color: #333333;
+    border-radius: 11px;
 }
 
 .tableStatsMobContainer th {
-    margin-left: 15px;
+    font-style: italic;
 }
 
 .typeTitleTable {

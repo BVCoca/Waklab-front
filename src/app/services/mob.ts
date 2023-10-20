@@ -1,4 +1,5 @@
 
+import Mob from "../types/Mob/Mob"
 import MobSingle from "../types/Mob/MobSingle"
 import get from "./api"
 
@@ -6,4 +7,8 @@ const getMob = async (slug : string) : Promise<MobSingle> => {
     return await get(`/mobs/${slug}`)
 }
 
-export { getMob }
+const searchMobs = async (query : string) : Promise<Mob[]> => {
+    return await get(`/mobs?q=${query}`)
+}
+
+export { getMob, searchMobs }

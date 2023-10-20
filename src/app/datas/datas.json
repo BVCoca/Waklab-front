@@ -5,7 +5,7 @@
       "levelMax": 8,
       "famille": "Bouftous",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/100200039.w250h250.png",
-      "typeImage": "/type_image.svg",
+      "typeImage": "/homepageIcon/type_image.svg",
       "id": 1,
       "slug": "boufton-blanc"
     },
@@ -15,7 +15,7 @@
       "levelMax": 6,
       "famille": "Chachas",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/108900833.w250h250.png",
-      "typeImage": "/type_image.svg",
+      "typeImage": "/homepageIcon/type_image.svg",
       "id": 2,
       "slug": "chacha"
     },
@@ -25,7 +25,7 @@
       "levelMax": 23,
       "famille": "Abraknes",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/182804079.w250h250.png",
-      "typeImage": "/type_image.svg",
+      "typeImage": "/homepageIcon/type_image.svg",
       "id": 3,
       "slug": "arakne"
     },
@@ -35,7 +35,7 @@
       "levelMax": 30,
       "famille": "Pious",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101500088.w250h250.png",
-      "typeImage": "/type_image.svg",
+      "typeImage": "/homepageIcon/type_image.svg",
       "id": 4,
       "slug": "piou-bleu"
     },
@@ -45,7 +45,7 @@
       "levelMax": 44,
       "famille": "Plantes des champs",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101600144.w250h250.png",
-      "typeImage": "/type_image.svg",
+      "typeImage": "/homepageIcon/type_image.svg",
       "id": 5,
       "slug": "rose-tenebreuse"
     },
@@ -55,8 +55,9 @@
       "levelMax": 44,
       "famille": "Moogrr",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/121801220.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 6
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 6,
+      "slug": "moogrron"
     },
     {
       "name": "Boufton Blanc",
@@ -64,8 +65,9 @@
       "levelMax": 8,
       "famille": "Bouftous",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/100200039.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 1
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 1,
+      "slug": "boufton-blanc"
     },
     {
       "name": "Chacha",
@@ -73,8 +75,9 @@
       "levelMax": 6,
       "famille": "Chachas",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/108900833.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 2
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 2,
+      "slug": "chacha"
     },
     {
       "name": "Arakne",
@@ -82,8 +85,9 @@
       "levelMax": 23,
       "famille": "Abraknes",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/182804079.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 3
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 3,
+      "slug": "arakne"
     },
     {
       "name": "Piou Bleu",
@@ -91,8 +95,9 @@
       "levelMax": 30,
       "famille": "Pious",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101500088.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 4
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 4,
+      "slug": "piou-bleu"
     },
     {
       "name": "Rose Ténébreuse",
@@ -100,8 +105,9 @@
       "levelMax": 44,
       "famille": "Plantes des champs",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101600144.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 5
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 5,
+      "slug": "rose-tenebreuse"
     },
     {
       "name": "Moogrron",
@@ -109,8 +115,9 @@
       "levelMax": 44,
       "famille": "Moogrr",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/121801220.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 6
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 6,
+      "slug": "moogrron"
     },
     {
       "name": "Boufton Blanc",
@@ -118,8 +125,9 @@
       "levelMax": 8,
       "famille": "Bouftous",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/100200039.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 1
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 1,
+      "slug": "boufton-blanc"
     },
     {
       "name": "Chacha",
@@ -127,8 +135,9 @@
       "levelMax": 6,
       "famille": "Chachas",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/108900833.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 2
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 2,
+      "slug": "chacha"
     },
     {
       "name": "Arakne",
@@ -136,8 +145,9 @@
       "levelMax": 23,
       "famille": "Abraknes",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/182804079.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 3
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 3,
+      "slug": "arakne"
     },
     {
       "name": "Piou Bleu",
@@ -145,8 +155,9 @@
       "levelMax": 30,
       "famille": "Pious",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101500088.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 4
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 4,
+      "slug": "piou-bleu"
     },
     {
       "name": "Rose Ténébreuse",
@@ -154,8 +165,9 @@
       "levelMax": 44,
       "famille": "Plantes des champs",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/101600144.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 5
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 5,
+      "slug": "rose-tenebreuse"
     },
     {
       "name": "Moogrron",
@@ -163,7 +175,8 @@
       "levelMax": 44,
       "famille": "Moogrr",
       "imageUrl": "https://static.ankama.com/wakfu/portal/game/monster/200/121801220.w250h250.png",
-      "typeImage": "/type_image.svg",
-      "id": 6
+      "typeImage": "/homepageIcon/type_image.svg",
+      "id": 6,
+      "slug": "moogrron"
     }
 ]

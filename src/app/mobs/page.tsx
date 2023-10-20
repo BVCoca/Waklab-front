@@ -1,7 +1,7 @@
-import CardMobs from "../components/cardHome/cardMobs/cardMobs";
+import CardMobs from "../components/card/cardMobs/cardMobs";
 import Header from "../components/header/header";
 import datas from "@/app/datas/datas.json"
-import "../components/home/home.css"
+import "../components/homepage/home.css"
 
 export default function Page() {
   

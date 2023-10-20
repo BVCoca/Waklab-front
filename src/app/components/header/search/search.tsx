@@ -1,9 +1,9 @@
 'use client'
 
-import "../../styles/globals.css"
+import "@/app/styles/globals.css"
 import "./search.css"
-import searchIcon from "../../../../public/search-solid.svg"
-import Image from "../../../../node_modules/next/image"
+import searchIcon from "public/homepageIcon/search-solid.svg"
+import Image from "next/image"
 import { usePathname } from 'next/navigation'
 
 export default function Search() {

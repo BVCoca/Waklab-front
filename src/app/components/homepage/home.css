@@ -3,3 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+.card-list {
+    overflow-y: visible; 
+}

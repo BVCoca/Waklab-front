@@ -1,13 +1,12 @@
-import "../../styles/globals.css"
+import "@/app/styles/globals.css"
 import "./home.css"
 import datas from "@/app/datas/datas.json"
-import CardMobs from "@/app/components/cardHome/cardMobs/cardMobs"
+import CardMobs from "../card/cardMobs/cardMobs"
 
 export default function Home() {
-console.log(datas);
 
     return (
-        <div id="cardList">
+        <div id="cardList" className="card-list">
             {datas && datas.map((data, index) => (
                 <CardMobs
                     key={index}

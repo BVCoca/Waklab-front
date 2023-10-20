@@ -1,10 +1,10 @@
 import Logo from "../logo/logo";
-import arrow from "../../../../public/arrow.svg"
+import arrow from "/public/arrow.svg"
 import Image from "next/image"
 import Link from "next/link";
-import "./headerDetails.css"
+import "./redirectArrow.css"
 
-export default function HeaderDetails() {
+export default function RedirectArrow() {
     return (
         <header>
             <div className="containerRedirectBack">

@@ -42,7 +42,7 @@ export default function RarityView({rarity} : Props) {
 
     return (
         <div className="rarityContainer">
-            <Image alt="Rareté" src={rarity.icon} />
+            <Image alt="Rareté" width={20} height={30} src={rarity.icon} />
             <h4 className="rarityLabel" style={{color : color}}>{rarity.name}</h4>
         </div>
     )

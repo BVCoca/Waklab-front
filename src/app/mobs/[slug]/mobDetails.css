@@ -158,3 +158,11 @@ li {
 .typeTitleTable img {
     margin-right: 15px;
 }
+
+.isCapturableMobContainer {
+    display: flex;
+    align-items: center;
+    background-color: #333333;
+    padding: 8px;
+    border-radius: 11px;
+}

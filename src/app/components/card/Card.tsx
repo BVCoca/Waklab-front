@@ -13,7 +13,7 @@ interface Props {
     item : Mob|Resource|Stuff
 }
 
-export default function CommonCard({item} : Props) {
+export default function Card({item} : Props) {
 
     // Extraction des niveaux
     let level = [];

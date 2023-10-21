@@ -2,8 +2,6 @@ import Image from "next/image";
 import { getMob } from "@/app/services/mob";
 import "./mobDetails.css";
 import HeaderDetails from "@/app/components/header/redirectArrow/redirectArrow";
-import Family from "@/app/components/global/family";
-import InfoLevel from "@/app/components/global/infoLevel";
 import Level from "@/app/components/common/Level";
 import FamilyView from "@/app/components/common/FamilyView";
 

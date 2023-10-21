@@ -17,6 +17,7 @@
 
 h3 {
     text-align: center;
+    margin-bottom: 0;
 }
 
 .primaryStatsMobContainer {
@@ -125,4 +126,43 @@ li {
 .valueHelpStats {
     font-style: italic;
     margin-left: 5px;
+}
+
+.secondaryStatsMobContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.tableStatsMobContainer table {
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+    margin-left: 25px;
+    border-collapse: separate;
+    border-spacing: 25px 0;
+    background-color: #333333;
+    border-radius: 11px;
+}
+
+.tableStatsMobContainer th {
+    font-style: italic;
+}
+
+.typeTitleTable {
+    display: flex;
+    align-items: center;
+}
+
+.typeTitleTable img {
+    margin-right: 15px;
+}
+
+.isCapturableMobContainer {
+    display: flex;
+    align-items: center;
+    background-color: #333333;
+    padding: 8px;
+    border-radius: 11px;
 }

@@ -1,11 +1,12 @@
 import Mob from "./Mob";
 import ResourceDrop from "../Resource/ResourceDrop";
 import StuffDrop from "../Stuff/StuffDrop";
+import Base from "../Hydra/Base";
 
 /**
  * Utiliser uniquement sur la page de l'item
  */
-export default interface MobSingle extends Mob {
+export default interface MobSingle extends Mob, Base {
     resourceDrops : ResourceDrop[],
     stuffDrops : StuffDrop[],
     isCapturable: boolean,

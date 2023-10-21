@@ -1,12 +1,10 @@
 import Image from "next/image";
 import { getMob } from "@/app/services/mob";
-import MobSingle from "@/app/types/Mob/MobSingle";
 import "./mobDetails.css"
 import HeaderDetails from "@/app/components/header/redirectArrow/redirectArrow";
 
 
 interface Props {
-    mobSingle: MobSingle; 
     params : {
         slug : string
     }

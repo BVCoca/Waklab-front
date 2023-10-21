@@ -7,7 +7,7 @@ interface Props {
     alt : string
 }
 
-export default function ImageResizer(props : Props) {
+export default function ImageResizer(props :any) {
 
     let url = props.src.replace('/.w\d+h\d+.png/i', `w${props.width}h${props.height}`);
 

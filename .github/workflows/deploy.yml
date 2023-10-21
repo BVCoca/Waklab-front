@@ -1,0 +1,16 @@
+name: Build and Deploy
+
+on:
+    push:
+        branches: [feat-deploiement-auto]
+
+jobs:
+    build-project:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Vérification du code
+              uses: actions/checkout@v2
+            - name: Installation des dépendances
+              run: npm install
+            - name: Build
+              run: npm run build

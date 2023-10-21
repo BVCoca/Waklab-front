@@ -4,6 +4,7 @@ import "./mobDetails.css";
 import HeaderDetails from "@/app/components/header/redirectArrow/redirectArrow";
 import Level from "@/app/components/common/Level";
 import FamilyView from "@/app/components/common/FamilyView";
+import ImageResizer from "@/app/components/common/ImageResizer";
 
 interface Props {
   params: {
@@ -49,12 +50,10 @@ export default async function MobDetails({ params }: Props) {
       <HeaderDetails />
       <div className="mobStatsContainer">
         <div className="imageMobContainer">
-          <Image
+          <ImageResizer
             width={150}
             height={150}
-            src={
-              mob.imageUrl ? mob.imageUrl : "/mobDetailsIcon/healthHearth.svg"
-            }
+            src={mob.imageUrl}
             alt={`Image du monstre ${mob.name}`}
           />
           <h3>{mob.name}</h3>

@@ -1,0 +1,30 @@
+.level {
+    width: 100%;
+    text-align: right;
+    margin : 0px;
+}
+
+.rarityContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.rarityLabel {
+    margin : 0px;
+    font-weight: 300;
+}
+
+.typeContainer {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    flex-direction: row;
+    width: 100%;
+}
+
+.typeLabel {
+    color: #D9D9D950;
+    font-weight: 100;
+}

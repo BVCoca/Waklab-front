@@ -20,7 +20,7 @@ export default function RedirectArrow() {
           </div>
         </Link>
       </div>
-      <Logo width={200} height={70} />
+      <Logo width={200} height={50} />
     </header>
   );
 }

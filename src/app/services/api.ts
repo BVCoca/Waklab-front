@@ -4,8 +4,9 @@ const call = async (method : string, path : string) => {
         {
             method: method,
             headers: {
-                'Accept': 'application/json',
+                'Accept': 'application/ld+json',
             },
+            cache : process.env.NODE_ENV === "development" ? 'no-store' : 'default'
         }
     );
 
@@ -15,7 +16,8 @@ const call = async (method : string, path : string) => {
     {
         return data;
     } else {
-        return Promise.reject("Erreur dans la ")
+        console.log(data)
+        return Promise.reject("Erreur dans la requete")
     }
 }
 

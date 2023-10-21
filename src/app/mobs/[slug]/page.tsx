@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getMob } from "@/app/services/mob";
+<<<<<<< HEAD
 import MobSingle from "@/app/types/Mob/MobSingle";
 import "./mobDetails.css";
 import HeaderDetails from "@/app/components/headerDetails/headerDetails";
@@ -11,6 +12,16 @@ interface Props {
   params: {
     slug: string;
   };
+=======
+import "./mobDetails.css"
+import HeaderDetails from "@/app/components/header/redirectArrow/redirectArrow";
+
+
+interface Props {
+    params : {
+        slug : string
+    }
+>>>>>>> dev
 }
 
 export default async function MobDetails({ params }: Props) {

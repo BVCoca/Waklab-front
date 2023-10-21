@@ -236,9 +236,30 @@ export default async function MobDetails({ params }: Props) {
 
         <div className="infoMobContainer">
           <div className="levelMobContainer">
-            <InfoLevel firstLevel={mob.levelMin} secondLevel={mob.levelMax} />
+            {mob.family.name !== "Boss Ultimes" ? (
+              <InfoLevel firstLevel={mob.levelMin} secondLevel={mob.levelMax} />
+            ) : (
+              <InfoLevel firstLevel={mob.levelMin} />
+            )}
           </div>
-          <div className="isCapturable MobContainer"></div>
+          <div className="isCapturableMobContainer">
+            {mob.isCapturable ? "Capturable" : "Non Capturable"}
+            {mob.isCapturable ? (
+              <Image
+                src="/mobDetailsIcon/iconCapt.png"
+                alt="Icône monstre non capturable"
+                width={16}
+                height={16}
+              />
+            ) : (
+              <Image
+                src="/mobDetailsIcon/iconNoCapt.png"
+                alt="Icône monstre capturable"
+                width={16}
+                height={16}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

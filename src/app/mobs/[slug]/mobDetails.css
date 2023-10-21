@@ -159,10 +159,15 @@ li {
     margin-right: 15px;
 }
 
+.levelMobContainer {
+    padding-right: 5px;
+}
+
 .isCapturableMobContainer {
     display: flex;
     align-items: center;
     background-color: #333333;
     padding: 8px;
     border-radius: 11px;
+    margin-top: 15px;
 }

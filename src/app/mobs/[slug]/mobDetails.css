@@ -21,7 +21,7 @@ h3 {
 }
 
 .primaryStatsMobContainer {
-    margin-left: 25px;
+    margin-left: 35px;
 }
 
 .healthMobContainer {
@@ -132,16 +132,16 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-right: 30px;
+    margin-right: 35px;
+    margin-left: 35px;
 }
 
 .tableStatsMobContainer table {
     color: #fff;
     line-height: 3rem;
     text-align: center;
-    margin-left: 25px;
     border-collapse: separate;
-    border-spacing: 25px 0;
+    border-spacing: 60px 0;
     background-color: #333333;
     border-radius: 11px;
 }

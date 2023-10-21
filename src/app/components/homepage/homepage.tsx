@@ -1,26 +1,20 @@
 import "@/app/styles/globals.css"
 import "./home.css"
-import datas from "@/app/datas/datas.json"
-import CardMobs from "../card/cardMobs/cardMobs"
+import { search } from "@/app/services/common"
+import Mob from "@/app/types/Mob/Mob"
+import Resource from "@/app/types/Resource/Resource"
+import Stuff from "@/app/types/Stuff/Stuff"
+import Card from "../card/Card"
 
-export default function Home() {
+export default async function Home() {
+
+    const results = await search("chacha")
 
     return (
         <div id="cardList" className="card-list">
-            {datas && datas.map((data, index) => (
-                <CardMobs
-                    key={index}
-                    levelMin={data.levelMin}
-                    levelMax={data.levelMax}
-                    image={data.imageUrl}
-                    name={data.name}
-                    typeName={data.famille}
-                    typeImage={data.typeImage}
-                    slug={data.slug}
-                    rarityImage={data.rarityImage}
-                    rarityName={data.rarityName}
-                />
-            ))}
+            {results["hydra:member"].map((item : Mob|Resource|Stuff) => {
+               return <Card key={item["@id"]} item={item}/>
+            })}
         </div> 
     )
 }

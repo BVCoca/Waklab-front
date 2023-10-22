@@ -11,8 +11,5 @@
     background:  var(--main-cyan-color);
     height: 100vh;
     padding: 0 10px;
-}
-
-.logoSvg {
-    margin: 25px 0px;
+    width: 60px;
 }

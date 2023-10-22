@@ -1,6 +1,11 @@
+import "../menu.css"
 
-export default function MenuDesc() {
+interface Props {
+    descIcon : string
+}
+
+export default function MenuDesc({descIcon} : Props) {
     return (
-        ''
+        <div className="menuDesc">{descIcon}</div>
     )
 }

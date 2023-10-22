@@ -1,4 +1,5 @@
 import "@/app/styles/globals.css"
+import "../menu.css"
 import Link from "next/link"
 import Image from "next/image"
 

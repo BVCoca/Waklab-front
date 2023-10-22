@@ -1,31 +1,49 @@
 'use client'
 
-import "@/app/styles/globals.css"
-import "./search.css"
-import SearchIcon from "@/app/icons/homepageIcon/search-solid.svg"
-import Image from "next/image"
-import { usePathname } from 'next/navigation'
+import { useEffect, useState } from "react"
+import SearchInfiniteScroll from "./searchInfiniteScroll"
+import SearchInput from "./searchInput"
+import { search } from "@/app/services/common"
+import Mob from "@/app/types/Mob/Mob"
+import Stuff from "@/app/types/Stuff/Stuff"
+import Resource from "@/app/types/Resource/Resource"
 
 export default function Search() {
 
-    let pathname = usePathname();
+    const [results, setResults] = useState<Array<Mob|Stuff|Resource>>([])
+    const [value, setValue] = useState('')
 
-    if (pathname.includes("mobs")) {
-        pathname = "un monstre";
-    } else if(pathname.includes("resources")) {
-        pathname = "une ressource";
-    } else if(pathname.includes("stuffs")) {
-        pathname = "un équipement";
-    } else {
-        pathname = "un monstre, une ressource ou un équipement";
+    function handleChange(newValue: string) {
+        setValue(newValue)
+    }
+
+    useEffect(() => {
+        let timeout: NodeJS.Timeout | null = null;
+
+        if (timeout) {
+            clearTimeout(timeout)
+        }
+
+        timeout = setTimeout(() => {
+            LoadEntity();
+        }, 500);
+        
+        return () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+        }
+    }, [value])
+
+    async function LoadEntity() {
+        const searchResults = await search(value)
+        setResults(searchResults["hydra:member"])
     }
 
     return (
-        <div id="searchbarContainer">
-            <input type="text" placeholder={`Rechercher ${pathname}`} id="searchBar" name="searchBar"/>
-            <label htmlFor="searchBar">
-                <SearchIcon alt="search icon" id="searchIcon"/>
-            </label>
-        </div> 
+        <div id="searchContainer">
+            <SearchInput valueInput={value} onChange={handleChange}/>
+            <SearchInfiniteScroll resultsScroll={results}/>
+        </div>
     )
 }

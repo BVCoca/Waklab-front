@@ -237,7 +237,7 @@ export default async function MobDetails({ params }: Props) {
             <Level level={[mob.levelMin, mob.levelMax]} isInCard={false} />
           </div>
           <div className="isCapturableMobContainer">
-            {mob.isCapturable ? "Capturable" : "Non Capturable"}
+            {mob.isCapturable ? "Capturable" : "Non capturable"}
             {mob.isCapturable ? (
               <Image
                 src="/mobDetailsIcon/iconCapt.png"
@@ -256,7 +256,16 @@ export default async function MobDetails({ params }: Props) {
           </div>
         </div>
       </div>
-      <CardDetailsType item={mob.resourceDrops[0]} />
+      <div className="mobDropsContainer">
+        {mob.resourceDrops &&
+          mob.resourceDrops.map((resourceDrop, index) => (
+            <CardDetailsType key={index} item={resourceDrop} />
+          ))}
+        {mob.stuffDrops &&
+          mob.stuffDrops.map((stuffDrop, index) => (
+            <CardDetailsType key={index} item={stuffDrop} />
+          ))}
+      </div>
     </div>
   );
 }

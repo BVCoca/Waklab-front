@@ -1,5 +1,5 @@
 import Header from "../components/header/header";
-import "../components/homepage/home.css";
+import "@/app/components/header/search/search.css";
 import { searchMobs } from "../services/mob";
 import Mob from "../types/Mob/Mob";
 import Resource from "../types/Resource/Resource";

@@ -32,3 +32,22 @@
     width: 100%;
     align-items: center;
 }
+
+.cardDetailsTypeContainer {
+    width: 200px;
+    margin: 0 20px;
+    text-align: center;
+    background-color: var(--main-bg-light-color);
+    padding: 15px 30px;
+}
+
+.cardImageValueContainer {
+    display: flex;
+    align-items: center;
+}
+
+.valueDrops {
+   color: var(--main-secondary-text);
+   font-weight: 300;
+   font-size: 2rem;
+}

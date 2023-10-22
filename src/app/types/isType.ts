@@ -1,5 +1,6 @@
 import Mob from "./Mob/Mob";
 import MobDrop from "./Mob/MobDrop";
+import Recipe from "./Recipe/Recipe";
 import Resource from "./Resource/Resource";
 import ResourceDrop from "./Resource/ResourceDrop";
 import Stuff from "./Stuff/Stuff";

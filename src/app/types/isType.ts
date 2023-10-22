@@ -1,6 +1,9 @@
 import Mob from "./Mob/Mob";
+import MobDrop from "./Mob/MobDrop";
 import Resource from "./Resource/Resource";
+import ResourceDrop from "./Resource/ResourceDrop";
 import Stuff from "./Stuff/Stuff";
+import StuffDrop from "./Stuff/StuffDrop";
 
 function isMob(item : Mob|Resource|Stuff): item is Mob {
     return item["@type"] === "Mobs";
@@ -14,4 +17,16 @@ function isStuff(item : any): item is Stuff {
     return item["@type"] === "Stuff";
 }
 
-export {isMob, isResource, isStuff}
+function isResourceDrop(item: any): item is ResourceDrop {
+    return item["@type"] === "ResourceDrop";
+}
+
+function isMobDrop(item: any): item is MobDrop {
+    return item["@type"] === "MobDrop";
+}
+
+function isStuffDrop(item: any): item is StuffDrop {
+    return item["@type"] === "StuffDrop";
+}
+
+export {isMob, isResource, isStuff, isResourceDrop, isMobDrop, isStuffDrop}

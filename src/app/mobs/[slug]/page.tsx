@@ -5,6 +5,7 @@ import Level from "@/app/components/common/Level";
 import FamilyView from "@/app/components/common/FamilyView";
 import ImageResizer from "@/app/components/common/ImageResizer";
 import Header from "@/app/components/header/header";
+import CardDetailsType from "@/app/components/card/CardDetailsType";
 
 interface Props {
   params: {
@@ -255,6 +256,7 @@ export default async function MobDetails({ params }: Props) {
           </div>
         </div>
       </div>
+      <CardDetailsType item={mob.resourceDrops[0]} />
     </div>
   );
 }

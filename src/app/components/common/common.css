@@ -27,4 +27,5 @@
 
 .typeLabel {
     color: var(--main-secondary-text);
+    font-weight: 300;
 }

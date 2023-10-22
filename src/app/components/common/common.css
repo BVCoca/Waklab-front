@@ -15,6 +15,10 @@
     margin : 0px;
 }
 
+.rarityLabelSmall {
+    font-size: 14px;
+}
+
 .typeContainer {
     height: 20%;
     display: flex;

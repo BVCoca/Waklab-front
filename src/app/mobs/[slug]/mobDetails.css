@@ -7,9 +7,8 @@
 
 .mobStatsContainer {
     display: flex;
-    font-family: 'Inter', sans-serif;
     color: #FFFF;
-    background-color: #1E1E1E;
+    background-color: var(--main-bg-color);
     border-radius: 11px;
     margin: 0 25px;
     padding: 35px;
@@ -21,7 +20,7 @@ h3 {
 }
 
 .primaryStatsMobContainer {
-    margin-left: 25px;
+    margin-left: 35px;
 }
 
 .healthMobContainer {
@@ -60,7 +59,7 @@ h3 {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: #333333;
+    background-color: var(--main-bg-light-color);
     color: #fff;
     text-align: center;
     padding: 5px 0;
@@ -103,7 +102,7 @@ h3 {
 }
 
 .helpStatsMobContainer {
-    background-color: #333333;
+    background-color: var(--main-bg-light-color);;
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 11px;
@@ -132,17 +131,17 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-right: 30px;
+    margin-right: 35px;
+    margin-left: 35px;
 }
 
 .tableStatsMobContainer table {
     color: #fff;
     line-height: 3rem;
     text-align: center;
-    margin-left: 25px;
     border-collapse: separate;
-    border-spacing: 25px 0;
-    background-color: #333333;
+    border-spacing: 60px 0;
+    background-color: var(--main-bg-light-color);;
     border-radius: 11px;
 }
 
@@ -159,10 +158,15 @@ li {
     margin-right: 15px;
 }
 
+.levelMobContainer {
+    padding-right: 5px;
+}
+
 .isCapturableMobContainer {
     display: flex;
     align-items: center;
-    background-color: #333333;
+    background-color: var(--main-bg-light-color);;
     padding: 8px;
     border-radius: 11px;
+    margin-top: 15px;
 }

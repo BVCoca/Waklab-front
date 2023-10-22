@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* Définition des variables */
+:root {
+  --main-cyan-color: #1B8684;
+  --main-cyan-light-color: #34D6D3;
+  --main-bg-light-color: #333333;
+  --main-bg-color: #242424;
+  --main-primary-text: #ffff;
+  --main-secondary-text: #D9D9D950;
+}
+
 /* ===== Scrollbar CSS =====
 /* Firefox */
 /* * {
@@ -25,7 +35,7 @@
 
 html {
   min-height: 100vh;
-  background: rgba(51, 51, 51, 1);
+  background: var(--main-bg-light-color);
   display: flex;
 }
 

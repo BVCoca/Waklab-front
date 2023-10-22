@@ -13,7 +13,7 @@ export default async function RedirectArrow() {
   const fullUrl = headersList.get('referer') || "";
   const [,last_page] = fullUrl.match( new RegExp(`https?:\/\/${domain}(.*)`))||[];
 
-  const current_page = headersList.get('next-url')
+  const current_page = headersList.get('next-url');
 
   let display_link = false;
   let message = 'Retour'

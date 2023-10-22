@@ -1,28 +1,44 @@
+'use client'
+
 import "@/app/styles/globals.css"
-import MenuIcon from "./menuIcon/menuIcon"
-import MenuDesc from "./menuDesc/menuDesc"
+import "./menu.css"
+import LogoMobs from "@/app/icons/homepageIcon/logoMobs.svg"
+import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg"
+import LogoResources from "@/app/icons/homepageIcon/logoResources.svg"
+import Link from "next/link"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 export default function Menu() {
-    
-    let srcLink = "/homepageIcon/logo"
-    let altName = "Logo "
+
+    const current_page = usePathname()
+
+    let isOnPageColor = "#34D6D3"
 
     const params = [
-        {src:`${srcLink}_menu.png`, alt:`${altName}Menu`, href:`/`},
-        {src:`${srcLink}Resources.svg`, alt:`${altName}Resources`, href:`/resources`},
-        {src:`${srcLink}Mobs.svg`, alt:`${altName}Mobs`, href:`/mobs`},
-        {src:`${srcLink}CaC.svg`, alt:`${altName}CaC`, href:`/cac`},
-        {src:`${srcLink}Stuffs.svg`, alt:`${altName}Stuffs`, href:`/stuffs`}     
+        {src:<LogoResources/> , srcOnPage: <LogoResources style={{color: `${isOnPageColor}`}}/>, alt:``, href:`/resources`, label: 'Ressources'},
+        {src: <LogoMobs/>, srcOnPage: <LogoMobs style={{color: `${isOnPageColor}`}}/>, alt:``, href:`/mobs`, label: 'Monstres'},
+        {src:<LogoStuffs/>, srcOnPage: <LogoStuffs style={{color: `${isOnPageColor}`}}/>, alt:``, href:`/stuffs`, label: 'Équipements'}     
     ]
-
+    
     return (
-        params && params.map((param, index) => {
-            return (
-                <div key={index}>
-                    <MenuIcon src={param.src} alt={param.alt} href={param.href}/>
-                    <MenuDesc />
-                </div>
-            )
-        })
+        <div id="menuContainer">
+            <Link href="/">
+                <Image  src="/homepageIcon/logo_menu.png" alt="" width={50} height={60}/>
+            </Link>
+            {params && params.map((param, index) => {
+                return (
+                    <Link className="menuWrapper" key={index} href={param.href}>
+                        {current_page.includes(param.href) 
+                            ?
+                            <div className="logoMenu">{param.srcOnPage}</div>
+                            : 
+                            <div className="logoMenu">{param.src}</div>
+                        }
+                        <div className="menuDesc">{param.label}</div>
+                    </Link>
+                )
+            })}
+        </div>   
     )
 }

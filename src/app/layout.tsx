@@ -1,5 +1,5 @@
 import "./styles/globals.css";
-import "./styles/menu.css";
+import "./components/menu/menu.css";
 import Menu from "./components/menu/menu";
 
 import type { Metadata } from "next";

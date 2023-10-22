@@ -2,7 +2,8 @@
 
 /* Définition des variables */
 :root {
-  --main-cyan-color: rgb(27, 134, 132, 1);
+  --main-cyan-color: #1B8684;
+  --main-cyan-light-color: #34D6D3;
   --main-bg-light-color: #333333;
   --main-bg-color: #242424;
   --main-primary-text: #ffff;

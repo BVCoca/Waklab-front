@@ -165,8 +165,25 @@ li {
 .isCapturableMobContainer {
     display: flex;
     align-items: center;
-    background-color: var(--main-bg-light-color);;
+    background-color: var(--main-bg-light-color);
     padding: 8px;
     border-radius: 11px;
     margin-top: 15px;
 }
+
+.isCapturableMobContainer image {
+    margin-left: 15px;
+}
+
+.mobDropsContainer {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 1200px;
+    margin-top: 30px;
+    background-color: var(--main-bg-color);
+    padding: 10px;
+    border-radius: 11px;
+}
+

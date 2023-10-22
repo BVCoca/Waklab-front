@@ -1,5 +1,5 @@
 import "./styles/globals.css";
-import "./styles/menu.css";
+import "./components/menu/menu.css";
 import Menu from "./components/menu/menu";
 
 import type { Metadata } from "next";
@@ -38,9 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className={roboto.className}>
         <main id="pageContent">
-            <div id="menuContainer">
-              <Menu />
-            </div>
+            <Menu />
             {children}
         </main>
       </body>

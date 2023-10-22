@@ -15,7 +15,7 @@ export default async function RedirectArrow() {
 
   const current_page = headersList.get('next-url');
 
-  let display_link = false;
+  let display_link = true;
   let message = 'Retour'
 
   // On affiche le lien si l'url précédent et l'url courant sont différent et que referer est différent de nul
@@ -61,7 +61,7 @@ export default async function RedirectArrow() {
         <ArrowIcon
           alt="Flèche Retour en arrière"
           width={50}
-          height={40}
+          height={50}
         />
         <h3 className='redirectLabel'>{message}</h3>
     </Link>

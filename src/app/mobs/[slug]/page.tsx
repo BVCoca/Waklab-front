@@ -5,6 +5,7 @@ import HeaderDetails from "@/app/components/header/redirectArrow/redirectArrow";
 import Level from "@/app/components/common/Level";
 import FamilyView from "@/app/components/common/FamilyView";
 import ImageResizer from "@/app/components/common/ImageResizer";
+import Header from "@/app/components/header/header";
 
 interface Props {
   params: {
@@ -47,7 +48,7 @@ export default async function MobDetails({ params }: Props) {
 
   return (
     <div className="detailsContent">
-      <HeaderDetails />
+      <Header small={true} />
       <div className="mobStatsContainer">
         <div className="imageMobContainer">
           <ImageResizer

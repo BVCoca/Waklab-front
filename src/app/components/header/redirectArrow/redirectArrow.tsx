@@ -1,6 +1,5 @@
 import { headers } from 'next/headers'
-import arrow from "/public/arrow.svg";
-import Image from "next/image";
+import ArrowIcon from "@/app/icons/arrow.svg";
 import "./redirectArrow.css";
 import Link from 'next/link';
 import { getMob } from '@/app/services/mob';
@@ -59,11 +58,10 @@ export default async function RedirectArrow() {
 
   return display_link && (
     <Link href={last_page} className="containerRedirectBack">
-        <Image
-        src={arrow}
-        alt="Flèche Retour en arrière"
-        width={50}
-        height={40}
+        <ArrowIcon
+          alt="Flèche Retour en arrière"
+          width={50}
+          height={40}
         />
         <h3 className='redirectLabel'>{message}</h3>
     </Link>

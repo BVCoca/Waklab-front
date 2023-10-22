@@ -2,7 +2,7 @@
 
 import "@/app/styles/globals.css"
 import "./search.css"
-import searchIcon from "public/homepageIcon/search-solid.svg"
+import SearchIcon from "@/app/icons/homepageIcon/search-solid.svg"
 import Image from "next/image"
 import { usePathname } from 'next/navigation'
 
@@ -24,7 +24,7 @@ export default function Search() {
         <div id="searchbarContainer">
             <input type="text" placeholder={`Rechercher ${pathname}`} id="searchBar" name="searchBar"/>
             <label htmlFor="searchBar">
-                <Image src={searchIcon} alt="search icon" id="searchIcon"/>
+                <SearchIcon alt="search icon" id="searchIcon"/>
             </label>
         </div> 
     )

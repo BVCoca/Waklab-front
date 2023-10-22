@@ -1,6 +1,6 @@
 import Family from "@/app/types/Mob/Family";
-import Image from "next/image";
 import "./common.css";
+import FamilyIcon from "@/app/icons/commonIcon/iconFamily.svg"
 
 interface Props {
   family: Family;
@@ -9,8 +9,7 @@ interface Props {
 export default function FamilyView({ family }: Props) {
   return (
     <div className="typeContainer">
-      <Image
-        src={"/commonIcon/iconFamily.svg"}
+      <FamilyIcon
         width={30}
         height={30}
         alt="Types de monstres"

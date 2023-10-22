@@ -9,7 +9,7 @@
     display: flex;
     font-family: 'Inter', sans-serif;
     color: #FFFF;
-    background-color: #1E1E1E;
+    background-color: var(--main-bg-color);
     border-radius: 11px;
     margin: 0 25px;
     padding: 35px;
@@ -60,7 +60,7 @@ h3 {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: #333333;
+    background-color: var(--main-bg-light-color);
     color: #fff;
     text-align: center;
     padding: 5px 0;
@@ -103,7 +103,7 @@ h3 {
 }
 
 .helpStatsMobContainer {
-    background-color: #333333;
+    background-color: var(--main-bg-light-color);;
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 11px;
@@ -142,7 +142,7 @@ li {
     text-align: center;
     border-collapse: separate;
     border-spacing: 60px 0;
-    background-color: #333333;
+    background-color: var(--main-bg-light-color);;
     border-radius: 11px;
 }
 
@@ -166,7 +166,7 @@ li {
 .isCapturableMobContainer {
     display: flex;
     align-items: center;
-    background-color: #333333;
+    background-color: var(--main-bg-light-color);;
     padding: 8px;
     border-radius: 11px;
     margin-top: 15px;

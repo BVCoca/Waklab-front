@@ -4,9 +4,9 @@
     align-items: center;
     width: 250px;
     height: 200px;
-    background: rgba(30, 30, 30, 0.7);
+    background: var(--main-bg-color);
     border-radius: 18px;
-    color: white;
+    color: var(--main-primary-text);
     font-family: Arial, Helvetica, sans-serif;
     transition: all 0.4s;
     margin: 10px;
@@ -14,7 +14,7 @@
 }
 
 .cardContainer:hover {
-    box-shadow: inset 1em 1em 0em 100em rgb(27, 134, 132, 1);
+    box-shadow: inset 1em 1em 0em 100em var(--main-cyan-color);
     transform: scale(1.05);
 }
 

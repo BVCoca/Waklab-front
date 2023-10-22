@@ -3,7 +3,7 @@ import Logo from "./logo/logo"
 import RedirectArrow from "./redirectArrow/redirectArrow"
 
 interface Props {
-    small : boolean
+    small? : boolean 
 }
 
 export default function Header({small = true } : Props) {

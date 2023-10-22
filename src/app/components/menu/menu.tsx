@@ -29,7 +29,7 @@ export default function Menu() {
             {params && params.map((param, index) => {
                 return (
                     <Link className="menuWrapper" key={index} href={param.href}>
-                        {current_page === param.href 
+                        {current_page.includes(param.href) 
                             ?
                             <div className="logoMenu">{param.srcOnPage}</div>
                             : 

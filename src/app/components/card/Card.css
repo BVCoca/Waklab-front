@@ -7,7 +7,6 @@
     background: var(--main-bg-color);
     border-radius: 18px;
     color: var(--main-primary-text);
-    font-family: Arial, Helvetica, sans-serif;
     transition: all 0.4s;
     margin: 10px;
     padding: 20px;

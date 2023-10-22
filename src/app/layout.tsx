@@ -5,6 +5,14 @@ import Menu from "./components/menu/menu";
 import type { Metadata } from "next";
 import Script from "next/script";
 
+import { Roboto } from 'next/font/google'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: "100"
+})
+
 export const metadata: Metadata = {
   title: "Waklab",
   description: "Outils communautaires autour du jeu wakfu",
@@ -28,14 +36,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           })();`
         }} />
       </head>
-      <body>
-        <main>
-          <div id="pageContent">
+      <body className={roboto.className}>
+        <main id="pageContent">
             <div id="menuContainer">
               <Menu />
             </div>
             {children}
-          </div>
         </main>
       </body>
     </html>

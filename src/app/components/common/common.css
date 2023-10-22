@@ -13,7 +13,6 @@
 
 .rarityLabel {
     margin : 0px;
-    font-weight: 300;
 }
 
 .typeContainer {
@@ -28,5 +27,4 @@
 
 .typeLabel {
     color: var(--main-secondary-text);
-    font-weight: 200;
 }

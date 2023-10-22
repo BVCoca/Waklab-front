@@ -5,13 +5,13 @@ import Menu from "./components/menu/menu";
 import type { Metadata } from "next";
 import Script from "next/script";
 
-import { Roboto } from 'next/font/google'
+import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: "100"
-})
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["100", "300", "400", "500", "700", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Waklab",
@@ -22,8 +22,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <head>
-        <Script id="analytics" dangerouslySetInnerHTML={{
-          __html: `var _paq = window._paq = window._paq || [];
+        <Script
+          id="analytics"
+          dangerouslySetInnerHTML={{
+            __html: `var _paq = window._paq = window._paq || [];
           /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
           _paq.push(['trackPageView']);
           _paq.push(['enableLinkTracking']);
@@ -33,15 +35,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             _paq.push(['setSiteId', '1']);
             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-          })();`
-        }} />
+          })();`,
+          }}
+        />
       </head>
       <body className={roboto.className}>
         <main id="pageContent">
-            <div id="menuContainer">
-              <Menu />
-            </div>
-            {children}
+          <div id="menuContainer">
+            <Menu />
+          </div>
+          {children}
         </main>
       </body>
     </html>

@@ -24,7 +24,7 @@ export default function Menu() {
     return (
         <div id="menuContainer">
             <Link href="/">
-                <Image  src="/homepageIcon/logo_menu.png" alt="" width={50} height={60}/>
+                <Image  src="/homepageIcon/logo_waklab.png" alt="" width={60} height={60}/>
             </Link>
             {params && params.map((param, index) => {
                 return (

@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
     push:
-        branches: [feat-deploiement-auto]
+        branches: [main]
 
 jobs:
     build-project:
@@ -46,4 +46,8 @@ jobs:
                 host: ${{ secrets.SSH_HOST }}
                 username: ${{ secrets.SSH_USERNAME }}
                 key: ${{ secrets.SSH_KEY }}
-                script: cd /home/debian/Waklab-front/ && sudo docker pull ${{ secrets.DOCKER_USERNAME }}/waklab-front && sudo docker restart waklab-front
+                script: cd /home/debian/Waklab-front/ &&
+                  sudo docker pull ${{ secrets.DOCKER_USERNAME }}/waklab-front &&
+                  sudo docker stop waklab-front &&
+                  sudo docker rm waklab-front &&
+                  sudo docker run --name waklab-front -d -p 3000:3000 amigniau/waklab-front

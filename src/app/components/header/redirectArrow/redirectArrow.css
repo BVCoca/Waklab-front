@@ -1,20 +1,23 @@
-header {
+.containerRedirectBack {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-
-}
-
-.redirectBack {
-    display: flex;
-    align-items: center;
+    column-gap: 30px;
+    padding-left: 20px;
+    padding-top: 20px;
     position: absolute;
-    left: 100px;
-    top: 30px;
-    font-family: 'Inter', sans-serif;
-    color: #1B8684;
+    left: 80px;
+    top: 1px;
+    transition: all ease-in-out 0.5s;
 }
 
-.redirectBack p {
-    margin-left: 15px;
+.containerRedirectBack:hover {
+    left: 100px;
+}
+
+.redirectLabel {
+    color: var(--main-cyan-color);
+    font-size: 24px;
+    margin: 0;
 }

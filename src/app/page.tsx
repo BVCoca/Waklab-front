@@ -5,7 +5,7 @@ import Home from "./components/homepage/homepage"
 export default function Page() {
   return (
     <div id="content">
-      <Header/>
+      <Header small={false}/>
       <Home/>
     </div>
   )

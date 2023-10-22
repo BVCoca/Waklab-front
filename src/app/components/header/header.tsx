@@ -1,12 +1,25 @@
-import "@/app/styles/globals.css"
-import Search from "./search/search"
+import "./header.css"
 import Logo from "./logo/logo"
+import RedirectArrow from "./redirectArrow/redirectArrow"
 
-export default function Header() {
+interface Props {
+    small : boolean
+}
+
+export default function Header({small = true } : Props) {
+
+    let width = 350;
+    let height = 110;
+
+    if(small) {
+        width = 150
+        height = 40
+    }
+
     return (
-        <header>
-            <Logo width={350} height={110}/>
-            <Search />
+        <header className="header">
+            <RedirectArrow />
+            <Logo width={width} height={height}/>
         </header> 
     )
 }

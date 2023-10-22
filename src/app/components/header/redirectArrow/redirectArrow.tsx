@@ -15,7 +15,7 @@ export default async function RedirectArrow() {
 
   const current_page = headersList.get('next-url');
 
-  let display_link = true;
+  let display_link = false;
   let message = 'Retour'
 
   // On affiche le lien si l'url précédent et l'url courant sont différent et que referer est différent de nul
@@ -51,7 +51,7 @@ export default async function RedirectArrow() {
       }
 
       if(item) {
-        message = `Retour sur le ${item.name}`
+        message = `Retour sur la page '${item.name}'`
       }
     }
   }

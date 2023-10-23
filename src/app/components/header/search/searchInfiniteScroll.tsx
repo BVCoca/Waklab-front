@@ -9,11 +9,9 @@ interface Props {
 
 export default function SearchInfiniteScroll({resultsScroll} : Props) {
 
-    const results = resultsScroll.slice(0, 20)
-
     return (
         <div id="cardList">
-            {results && results.map((result, index ) => (
+            {resultsScroll && resultsScroll.map((result, index ) => (
                 <Card
                     key={index}
                     item={result}

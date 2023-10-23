@@ -20,7 +20,7 @@
 }
 
 .typeContainer {
-    height: 20%;
+    height: 12%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -32,4 +32,24 @@
 .typeLabel {
     color: var(--main-secondary-text);
     font-weight: 300;
+    margin-left: -10px;
+}
+
+.mobDropsContainer {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 60%;
+    background-color: var(--main-bg-color);
+    padding: 10px;
+    border-radius: 11px;
+    margin: 15px 25px 0 25px;
+    padding: 35px;
+}
+
+.titleDropMob {
+    width: 64%;
+    color : var(--main-cyan-color);
+    margin-bottom: 0;
 }

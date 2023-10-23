@@ -8,10 +8,11 @@ import FamilyView from "../common/FamilyView"
 import TypeView from "../common/TypeView"
 import { isMob, isStuff } from "@/app/types/isType"
 import "./LongCard.css"
+import { ReactNode } from "react"
 
 interface Props {
     item : Mob|Stuff|Resource,
-    value? : number|null,
+    value? : ReactNode,
     theme? : string
 }
 
@@ -42,12 +43,12 @@ export default function LongCard({item , value = null, theme = ''} : Props) {
                     width={100}
                     height={100}
                 />
-                <div>
+                <div className="cardData">
                     <h3 className="cardName">{item.name}</h3>
                     {isMob(item) && <FamilyView family={item.family} />}
                     {isStuff(item) && <TypeView type={item.type} />}
                 </div>
-                {value && <span className="cardValue">{value} %</span>}
+                {value && <span className="cardValue">{value}</span>}
             </div>
         </Link>
     )

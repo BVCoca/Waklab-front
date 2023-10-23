@@ -63,3 +63,8 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.jobLevel {
+    font-size: 14px;
+    text-wrap: nowrap;
+}

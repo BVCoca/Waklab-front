@@ -23,10 +23,13 @@
 .cardName {
     margin: 0px;
     padding-top: 20px;
+    text-wrap: nowrap;
 }
 
 .cardImage {
     margin-bottom: 10px;
+    object-fit: cover;
+    width: 80px;
 }
 
 .cardHeader {
@@ -35,6 +38,10 @@
     flex-direction: row;
     width: 100%;
     align-items: center;
+}
+
+.cardData {
+    width: 0px;
 }
 
 .cardDetailsTypeContainer {

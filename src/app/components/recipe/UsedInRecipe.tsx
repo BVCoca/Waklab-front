@@ -70,7 +70,9 @@ export default function UsedInRecipe({recipeIngredients} : Props) {
                     ))}
                 </ul>
                 <div className="tabContent">
-                    {currentIngredients && currentIngredients.map((item : any) => <LongCard theme="light" key={item["@id"]} item={item.stuff ?? item.resource} />)}
+                    {currentIngredients && currentIngredients.map((item : any) => <LongCard theme="light" key={item["@id"]} item={item.stuff ?? item.resource} value={
+                        <p className="jobLevel">Métier Lvl. {item.job_level}</p>
+                    }/>)}
                 </div>
             </div>
         </div>

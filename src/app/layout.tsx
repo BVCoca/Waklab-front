@@ -14,8 +14,20 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Waklab",
-  description: "Outils communautaires autour du jeu wakfu",
+  title: {
+    'default' : 'Waklab',
+    'template' : '%s | Waklab'
+  },
+  description: "Outils communautaires autour du jeu Wakfu",
+  applicationName : "Waklab",
+  keywords: ['Wakfu', 'Bestiaires', 'Ressources', 'Stuff'],
+  openGraph : {
+    title : {
+      'default' : 'Waklab',
+      'template' : '%s | Waklab'
+    },
+    description : "Outils communautaires autour du jeu Wakfu"
+  }
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

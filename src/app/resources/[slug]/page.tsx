@@ -6,11 +6,32 @@ import RarityView from "@/app/components/common/RarityView";
 import Level from "@/app/components/common/Level";
 import MobDropList from "@/app/components/mob/MobDropList";
 import UsedInRecipe from "@/app/components/recipe/UsedInRecipe";
+import { Metadata } from "next";
 
 interface Props {
   params: {
     slug: string;
   };
+}
+
+export async function generateMetadata({ params } : Props) : Promise<Metadata> {
+  
+  const resource = await getResource(params.slug);
+  
+  return {
+    title: resource.name,
+    description : resource.description,
+    openGraph : {
+      title : resource.name,
+      description : resource.description,
+      images : {
+        url : resource.imageUrl,
+        width : 300,
+        height : 300,
+      },
+      url : process.env.NEXT_PUBLIC_SITE_URL + "/resources/" + resource.slug
+    }
+  }
 }
 
 export default async function ResourceDetails({ params }: Props) {

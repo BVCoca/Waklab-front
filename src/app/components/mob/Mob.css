@@ -3,7 +3,9 @@
 }
 
 .dropMobContainer {
-    width: 60%;
+    width: 70%;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .cardDropContainer {

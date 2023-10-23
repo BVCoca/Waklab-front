@@ -6,6 +6,7 @@ import FamilyView from "@/app/components/common/FamilyView";
 import ImageResizer from "@/app/components/common/ImageResizer";
 import Header from "@/app/components/header/header";
 import CardDetailsType from "@/app/components/card/CardDetailsType";
+import DropsRecipesContainer from "@/app/components/common/DropsRecipesContainer";
 
 interface Props {
   params: {
@@ -15,7 +16,6 @@ interface Props {
 
 export default async function MobDetails({ params }: Props) {
   const mob = await getMob(params.slug);
-  console.log(mob);
 
   function calculatePercent(Rflat: number): number {
     const R = (1 - Math.pow(0.8, Rflat / 100)) * 100;
@@ -156,6 +156,29 @@ export default async function MobDetails({ params }: Props) {
         </div>
 
         <div className="secondaryStatsMobContainer">
+          <div className="infoMobContainer">
+            <div className="levelMobContainer">
+              <Level level={[mob.levelMin, mob.levelMax]} isInCard={false} />
+            </div>
+            <div className="isCapturableMobContainer">
+              {mob.isCapturable ? "Capturable" : "Non capturable"}
+              {mob.isCapturable ? (
+                <Image
+                  src="/mobDetailsIcon/iconCapt.png"
+                  alt="Icône monstre non capturable"
+                  width={16}
+                  height={16}
+                />
+              ) : (
+                <Image
+                  src="/mobDetailsIcon/iconNoCapt.png"
+                  alt="Icône monstre capturable"
+                  width={16}
+                  height={16}
+                />
+              )}
+            </div>
+          </div>
           <div className="tableStatsMobContainer">
             <table>
               <thead>
@@ -231,41 +254,12 @@ export default async function MobDetails({ params }: Props) {
             </table>
           </div>
         </div>
-
-        <div className="infoMobContainer">
-          <div className="levelMobContainer">
-            <Level level={[mob.levelMin, mob.levelMax]} isInCard={false} />
-          </div>
-          <div className="isCapturableMobContainer">
-            {mob.isCapturable ? "Capturable" : "Non capturable"}
-            {mob.isCapturable ? (
-              <Image
-                src="/mobDetailsIcon/iconCapt.png"
-                alt="Icône monstre non capturable"
-                width={16}
-                height={16}
-              />
-            ) : (
-              <Image
-                src="/mobDetailsIcon/iconNoCapt.png"
-                alt="Icône monstre capturable"
-                width={16}
-                height={16}
-              />
-            )}
-          </div>
-        </div>
       </div>
-      <div className="mobDropsContainer">
-        {mob.resourceDrops &&
-          mob.resourceDrops.map((resourceDrop, index) => (
-            <CardDetailsType key={index} item={resourceDrop} />
-          ))}
-        {mob.stuffDrops &&
-          mob.stuffDrops.map((stuffDrop, index) => (
-            <CardDetailsType key={index} item={stuffDrop} />
-          ))}
-      </div>
+      <DropsRecipesContainer
+        drops={[...mob.resourceDrops, ...mob.stuffDrops].sort(
+          (a, b) => b.value - a.value
+        )}
+      />
     </div>
   );
 }

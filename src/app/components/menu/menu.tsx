@@ -16,9 +16,9 @@ export default function Menu() {
     let isOnPageColor = "#34D6D3"
 
     const params = [
-        {src:<LogoResources/> , srcOnPage: <LogoResources style={{color: `${isOnPageColor}`}}/>, alt:``, href:`/resources`, label: 'Ressources'},
+        {src: <LogoResources/> , srcOnPage: <LogoResources style={{color: `${isOnPageColor}`}}/>, alt:``, href:`/resources`, label: 'Ressources'},
         {src: <LogoMobs/>, srcOnPage: <LogoMobs style={{color: `${isOnPageColor}`}}/>, alt:``, href:`/mobs`, label: 'Monstres'},
-        {src:<LogoStuffs/>, srcOnPage: <LogoStuffs style={{color: `${isOnPageColor}`}}/>, alt:``, href:`/stuffs`, label: 'Équipements'}     
+        {src: <LogoStuffs/>, srcOnPage: <LogoStuffs style={{color: `${isOnPageColor}`}}/>, alt:``, href:`/stuffs`, label: 'Équipements'}     
     ]
     
     return (

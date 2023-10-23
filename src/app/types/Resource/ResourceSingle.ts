@@ -10,5 +10,6 @@ import Resource from "./Resource";
 export default interface ResourceSingle extends Resource, Base {
     resourceDrops : MobDrop[]
     recipes : Recipe[],
-    recipeIngredients : RecipeIngredient[]
+    recipeIngredients : RecipeIngredient[],
+    description : string
 }

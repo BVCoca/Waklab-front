@@ -12,26 +12,17 @@
 
 /* ===== Scrollbar CSS =====
 /* Firefox */
-/* * {
-  scrollbar-width: auto;
-  scrollbar-color: #404040 #ffffff;
-} */
 
-/* Chrome, Edge, and Safari */
-/* *::-webkit-scrollbar {
-  width: 15px;
-  margin: 15px;
+::-webkit-scrollbar {
+  width: 20px;
 }
 
-*::-webkit-scrollbar-track {
-  background: none;
+::-webkit-scrollbar-thumb {
+  border: 6px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: var(--main-cyan-color);
 }
-
-*::-webkit-scrollbar-thumb {
-  background-color: #0a0a0a;
-  border-radius: 8px;
-  border: 2px solid rgb(27, 134, 132, 1);
-} */ 
 
 html {
   min-height: 100vh;

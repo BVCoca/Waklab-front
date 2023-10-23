@@ -5,6 +5,7 @@ import Header from "@/app/components/header/header";
 import RarityView from "@/app/components/common/RarityView";
 import Level from "@/app/components/common/Level";
 import MobDropList from "@/app/components/mob/MobDropList";
+import UsedInRecipe from "@/app/components/recipe/UsedInRecipe";
 
 interface Props {
   params: {
@@ -36,6 +37,7 @@ export default async function ResourceDetails({ params }: Props) {
         </div>
       </div>
       <MobDropList drops={resource.resourceDrops} />
+      <UsedInRecipe recipeIngredients={resource.recipeIngredients} />
     </div>
   );
 }

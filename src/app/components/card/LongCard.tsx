@@ -11,10 +11,11 @@ import "./LongCard.css"
 
 interface Props {
     item : Mob|Stuff|Resource,
-    value : number|null
+    value? : number|null,
+    theme? : string
 }
 
-export default function LongCard({item , value = null} : Props) {
+export default function LongCard({item , value = null, theme = ''} : Props) {
 
     let level = [];
 
@@ -31,7 +32,7 @@ export default function LongCard({item , value = null} : Props) {
     }
 
     return(
-        <Link href={item["@id"].slice(4)} className="cardContainer">
+        <Link href={item["@id"].slice(4)} className={`cardContainer ${theme}`}>
             <CardHeader level={level} rarity={rarity} />
             <div className="cardContent">
                 <ImageResizer

@@ -11,6 +11,10 @@
     padding: 10px;
 }
 
+.cardContainer.light {
+    background: var(--main-bg-light-color);
+}
+
 .cardContainer:hover {
     box-shadow: inset 1em 1em 0em 100em var(--main-cyan-color);
     transform: scale(1.05);

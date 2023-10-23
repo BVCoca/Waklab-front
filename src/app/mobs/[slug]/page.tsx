@@ -6,11 +6,34 @@ import FamilyView from "@/app/components/common/FamilyView";
 import ImageResizer from "@/app/components/common/ImageResizer";
 import Header from "@/app/components/header/header";
 import CardDetailsType from "@/app/components/card/CardDetailsType";
+import { Metadata } from "next";
 
 interface Props {
   params: {
     slug: string;
   };
+}
+
+export async function generateMetadata({ params } : Props) : Promise<Metadata> {
+  
+  const mob = await getMob(params.slug);
+
+  const description = mob.name + " - " + mob.hp + " PDV, " + mob.actionPoints + " PA, " + mob.movementPoints + " PM"
+  
+  return {
+    title: mob.name,
+    description : description,
+    openGraph : {
+      title : mob.name,
+      description : description,
+      images : {
+        url : mob.imageUrl,
+        width : 300,
+        height : 300,
+      },
+      url : process.env.NEXT_PUBLIC_SITE_URL + "/mobs/" + mob.slug
+    }
+  }
 }
 
 export default async function MobDetails({ params }: Props) {

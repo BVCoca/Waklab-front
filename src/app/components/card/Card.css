@@ -35,10 +35,12 @@
 
 .cardDetailsTypeContainer {
     width: 200px;
-    margin: 0 20px;
+    margin: 0 15px;
     text-align: center;
+    color: var(--main-primary-text);
     background-color: var(--main-bg-light-color);
     padding: 15px 30px;
+    border-radius: 11px;
 }
 
 .cardImageValueContainer {
@@ -50,4 +52,8 @@
    color: var(--main-secondary-text);
    font-weight: 300;
    font-size: 2rem;
+}
+
+.linkCardDetailsContainer {
+    width: 200px;
 }

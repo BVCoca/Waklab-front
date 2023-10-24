@@ -53,8 +53,8 @@ export default function CardDetailsType({ item }: Props) {
 
   return (
     <Link href={entity["@id"].slice(4)} className="cardDetailsTypeContainer">
-      <div>
-        <CardHeader level={level} rarity={rarity} />
+      <div className="linkCardDetailsContainer">
+        <CardHeader level={level} rarity={rarity} isSmall={true} />
         <div className="cardImageValueContainer">
           <ImageResizer
             className=""

@@ -2,15 +2,22 @@
 
 import "./search.css"
 import { useEffect, useState } from "react"
-import SearchInfiniteScroll from "./searchInfiniteScroll"
-import SearchInput from "./searchInput"
-import SearchFilter from "./searchFilter"
-import { search } from "@/app/services/common"
+import SearchInfiniteScroll from "../search/searchInfiniteScroll"
+import SearchInput from "../search/searchInput"
+import SearchFilter from "../search/searchFilter"
 import Mob from "@/app/types/Mob/Mob"
 import Stuff from "@/app/types/Stuff/Stuff"
 import Resource from "@/app/types/Resource/Resource"
+import MobSearch from "@/app/types/Mob/MobSearch"
+import ResourceSearch from "@/app/types/Resource/ResourceSearch"
+import StuffSearch from "@/app/types/Stuff/StuffSearch"
+import Search from "@/app/types/Search"
 
-export default function Search() {
+interface Props {
+    Search: (value : string, page : number) => Promise<MobSearch | ResourceSearch | StuffSearch | Search>
+}
+
+export default function SearchComponent({Search} : Props) {
 
     const [results, setResults] = useState<Array<Mob|Stuff|Resource>>([])
     const [value, setValue] = useState('')
@@ -72,7 +79,7 @@ export default function Search() {
         } else {
             setLoading(true)
         }
-        const searchResults = await search(value, page)
+        const searchResults = await Search(value, page)
         setTotalItems(searchResults['hydra:totalItems'])
         setResults(prevResults => [...prevResults, ...searchResults["hydra:member"]])
         setLoading(false)

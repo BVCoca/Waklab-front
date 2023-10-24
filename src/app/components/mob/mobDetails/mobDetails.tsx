@@ -1,52 +1,62 @@
-import { getMob } from "@/app/services/mob";
-import "./mobDetails.css";
-import Header from "@/app/components/header/header";
-import CardDetailsType from "@/app/components/card/CardDetailsType";
-import { Metadata } from "next";
+"use client";
+
+import Image from "next/image";
+import "@/app/mobs/[slug]/mobDetails.css";
+import Level from "@/app/components/common/Level";
+import FamilyView from "@/app/components/common/FamilyView";
+import ImageResizer from "@/app/components/common/ImageResizer";
 import DropsRecipesContainer from "@/app/components/common/DropsRecipesContainer";
-import MobDetails from "@/app/components/mob/mobDetails/mobDetails";
+
+import MobSingle from "@/app/types/Mob/MobSingle";
+import StasisMultiplier from "../stasis/stasisMultiplier";
+import { useState } from "react";
 
 interface Props {
-  params: {
-    slug: string;
-  };
+  mob: MobSingle;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const mob = await getMob(params.slug);
+export default function MobDetails({ mob }: Props) {
+  const [mobValue, setmobValue] = useState(mob);
 
-  const description =
-    mob.name +
-    " - " +
-    mob.hp +
-    " PDV, " +
-    mob.actionPoints +
-    " PA, " +
-    mob.movementPoints +
-    " PM";
+  function handleMultiplier(multiplier: number) {
+    setmobValue({
+      ...mobValue,
+      hp: mob.hp * multiplier,
+    });
+    return mobValue;
+  }
 
-  return {
-    title: mob.name,
-    description: description,
-    openGraph: {
-      title: mob.name,
-      description: description,
-      images: {
-        url: mob.imageUrl,
-        width: 300,
-        height: 300,
-      },
-      url: process.env.NEXT_PUBLIC_SITE_URL + "/mobs/" + mob.slug,
-    },
-  };
-}
+  function calculatePercent(Rflat: number): number {
+    const R = (1 - Math.pow(0.8, Rflat / 100)) * 100;
+    return Math.floor(R);
+  }
 
-export default async function MobPage({ params }: Props) {
-  const mob = await getMob(params.slug);
+  function nFormatter(num: number, digits: number): string {
+    const lookup = [
+      { value: 1, symbol: "" },
+      { value: 1e3, symbol: "k" },
+      { value: 1e6, symbol: "M" },
+    ];
+    const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+
+    var item = lookup
+      .slice()
+      .reverse()
+      .find(function (item) {
+        return num >= item.value;
+      });
+
+    return item
+      ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol
+      : "0";
+  }
+
+  if (!mob) {
+    return <p>Monstre non trouvé</p>;
+  }
 
   return (
-    <div className="detailsContent">
-      <Header small={true} />
+    <>
       <div className="mobStatsContainer">
         <div className="imageMobContainer">
           <ImageResizer
@@ -72,7 +82,7 @@ export default async function MobPage({ params }: Props) {
                   width={100}
                   height={93}
                 />
-                <span id="valueHealth">{nFormatter(mob.hp, 0)}</span>
+                <span id="valueHealth">{nFormatter(mobValue.hp, 0)}</span>
               </div>
             </div>
             <div className="actionMovementContainer">
@@ -155,26 +165,29 @@ export default async function MobPage({ params }: Props) {
 
         <div className="secondaryStatsMobContainer">
           <div className="infoMobContainer">
-            <div className="levelMobContainer">
-              <Level level={[mob.levelMin, mob.levelMax]} isInCard={false} />
-            </div>
-            <div className="isCapturableMobContainer">
-              {mob.isCapturable ? "Capturable" : "Non capturable"}
-              {mob.isCapturable ? (
-                <Image
-                  src="/mobDetailsIcon/iconCapt.png"
-                  alt="Icône monstre non capturable"
-                  width={16}
-                  height={16}
-                />
-              ) : (
-                <Image
-                  src="/mobDetailsIcon/iconNoCapt.png"
-                  alt="Icône monstre capturable"
-                  width={16}
-                  height={16}
-                />
-              )}
+            <StasisMultiplier mob={mob} onChange={handleMultiplier} />
+            <div>
+              <div className="levelMobContainer">
+                <Level level={[mob.levelMin, mob.levelMax]} isInCard={false} />
+              </div>
+              <div className="isCapturableMobContainer">
+                {mob.isCapturable ? "Capturable" : "Non capturable"}
+                {mob.isCapturable ? (
+                  <Image
+                    src="/mobDetailsIcon/iconCapt.png"
+                    alt="Icône monstre non capturable"
+                    width={16}
+                    height={16}
+                  />
+                ) : (
+                  <Image
+                    src="/mobDetailsIcon/iconNoCapt.png"
+                    alt="Icône monstre capturable"
+                    width={16}
+                    height={16}
+                  />
+                )}
+              </div>
             </div>
           </div>
           <div className="tableStatsMobContainer">
@@ -215,7 +228,8 @@ export default async function MobPage({ params }: Props) {
                   </td>
                   <td>{mob.attackEarth}</td>
                   <td>
-                    {calculatePercent(mob.resEarth)} % ({mob.resEarth})
+                    {calculatePercent(mobValue.resEarth)} % ({mobValue.resEarth}
+                    )
                   </td>
                 </tr>
                 <tr>
@@ -258,6 +272,6 @@ export default async function MobPage({ params }: Props) {
           (a, b) => b.value - a.value
         )}
       />
-    </div>
+    </>
   );
 }

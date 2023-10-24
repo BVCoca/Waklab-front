@@ -2,11 +2,11 @@
 
 import StasisBar from "@/app/components/mob/stasis/stasisBar/stasisBar";
 import MobSingle from "@/app/types/Mob/MobSingle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   mob: MobSingle;
-  onChange: () => number;
+  onChange: (modifiedValue: number) => number;
 }
 
 export default function StasisMultiplier({ mob, onChange }: Props) {
@@ -29,22 +29,15 @@ export default function StasisMultiplier({ mob, onChange }: Props) {
     10: 11,
   };
 
- 
-
-  const calculateModifiedHP = () => {
-    if (selectedStasisMultiplier !== null) {
-      mob.hp = Math.floor(mob.hp * selectedStasisMultiplier);
-    }
-    mob.hp = mob.hp;
-  };
-
-  onChange() {
-    calculateModifiedHP();
-  };
-
   const onStasisButtonClick = (multiplier: number) => {
     setSelectedStasisMultiplier(multiplier);
   };
+
+  useEffect(() => {
+    if (selectedStasisMultiplier !== null) {
+      onChange(selectedStasisMultiplier);
+    }
+  }, [selectedStasisMultiplier]);
 
   return (
     <>

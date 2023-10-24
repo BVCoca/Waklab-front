@@ -3,8 +3,7 @@ import "./Card.css";
 import CardHeader from "./CardHeader";
 import {
   isMob,
-  isMobDrop,
-  isResource,
+  isRecipeIngredientFromRecipe,
   isResourceDrop,
   isStuff,
   isStuffDrop,
@@ -13,38 +12,41 @@ import ImageResizer from "../common/ImageResizer";
 import FamilyView from "../common/FamilyView";
 import TypeView from "../common/TypeView";
 import ResourceDrop from "@/app/types/Resource/ResourceDrop";
-import MobDrop from "@/app/types/Mob/MobDrop";
-import Mob from "@/app/types/Mob/Mob";
 import Resource from "@/app/types/Resource/Resource";
 import StuffDrop from "@/app/types/Stuff/StuffDrop";
 import Stuff from "@/app/types/Stuff/Stuff";
 import Rarity from "@/app/types/Rarity";
+import RecipeIngredientFromRecipe from "@/app/types/Recipe/RecipeIngredientFromRecipe";
 
 interface Props {
-  item: MobDrop | ResourceDrop | StuffDrop;
+  item: ResourceDrop | StuffDrop | RecipeIngredientFromRecipe;
 }
 
 export default function CardDetailsType({ item }: Props) {
+
   // Extraction des niveaux
   let level: number[] = [];
-  let entity: Resource | Mob | Stuff | null;
-  let rarity: Rarity | null;
+  let entity: Resource | Stuff | null = null;
+  let rarity: Rarity | null = null;
 
   if (isResourceDrop(item)) {
     entity = item.resource;
     level = [entity.level];
     rarity = entity.rarity;
-  } else if (isMobDrop(item)) {
-    entity = item.mob;
-    level = [entity.levelMin, entity.levelMax];
-    rarity = null;
   } else if (isStuffDrop(item)) {
     entity = item.stuff;
     level = [entity.level];
     rarity = entity.rarity;
-  } else {
-    entity = null;
-    rarity = null;
+  } else if(isRecipeIngredientFromRecipe(item)) {
+    if(item.resource) {
+      entity = item.resource;
+      level = [entity.level];
+      rarity = entity.rarity;
+    } else if(item.stuff) {
+      entity = item.stuff;
+      level = [entity.level];
+      rarity = entity.rarity;
+    }
   }
 
   if (entity == null) {
@@ -66,10 +68,13 @@ export default function CardDetailsType({ item }: Props) {
           {(isResourceDrop(item) || isStuffDrop(item)) && (
             <p className="valueDrops">{item.value} %</p>
           )}
+          {isRecipeIngredientFromRecipe(item) && (
+            <p className="valueDrops">{item.quantity} X</p>
+          )}
         </div>
-        <h3 className="">{entity.name}</h3>
+        <h3>{entity.name}</h3>
         {isMob(entity) && <FamilyView family={entity.family} />}
-        {isStuff(item) && <TypeView type={item.type} />}
+        {isStuff(entity) && <TypeView type={entity.type} />}
       </div>
     </Link>
   );

@@ -279,7 +279,7 @@ export default async function MobDetails({ params }: Props) {
         </div>
       </div>
       <DropsRecipesContainer
-        drops={[...mob.resourceDrops, ...mob.stuffDrops].sort(
+        items={[...mob.resourceDrops, ...mob.stuffDrops].sort(
           (a, b) => b.value - a.value
         )}
       />

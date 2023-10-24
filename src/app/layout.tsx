@@ -56,7 +56,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div id="menuContainer">
             <Menu />
           </div>
-          {children}
+          <div id="content">
+            <div id="centerContainer">
+            {children}
+            </div>
+          </div>
         </main>
       </body>
     </html>

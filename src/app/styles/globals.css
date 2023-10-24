@@ -33,13 +33,35 @@ html {
 body {
   margin: 0;
   width: 100%;
+  overflow-x: hidden;
+  margin-bottom: 20px;
 }
 
 #content {
   width: 100%;
+  display: flex;
+  padding-left: 55px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+#menuContainer {
+  height: 100%;
+}
+
+#pageContent {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+#centerContainer {
+  width: 70%;
 }

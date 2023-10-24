@@ -11,14 +11,11 @@ interface Props {
 export default function DropsRecipesContainer({ items }: Props) {
 
   return (
-    <>
-      <h2 className="titleDropMob">Drops</h2>
       <div className="mobDropsContainer">
         {items &&
           items.map((item, index) => (
             <CardDetailsType key={index} item={item} />
           ))}
       </div>
-    </>
   );
 }

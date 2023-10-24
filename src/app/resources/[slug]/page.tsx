@@ -60,11 +60,12 @@ export default async function ResourceDetails({ params }: Props) {
         </div>
       </div>
       <MobDropList drops={resource.resourceDrops} />
+      <h2 className="titleBlock">Recettes</h2>
       {resource.recipes.length > 0 && resource.recipes.map((recipe : Recipe) => (
         <div key={`recipe-${recipe["@id"]}`} className="recipeContainer">
           <div className="jobRecipe">
             <Image src={recipe.job.icon} width={30} height={30} alt="" />
-            <h2>{recipe.job.name} - {recipe.job_level}</h2>
+            <h3>{recipe.job.name} - {recipe.job_level}</h3>
           </div>
           <DropsRecipesContainer
             items={recipe.recipeIngredients}

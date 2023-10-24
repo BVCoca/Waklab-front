@@ -1,16 +1,12 @@
-#pageContent {
-    display: flex;
-}
-
-#menuContainer 
+#menu
 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    position: fixed;
     align-items: center;
-    background:  var(--main-cyan-color);
+    background-color:  var(--main-cyan-color);
     height: 100vh;
+    position: fixed;
     padding: 0 10px;
     width: 60px;
     z-index: 9;

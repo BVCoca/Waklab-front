@@ -17,12 +17,16 @@
     flex-direction: row;
     align-items: center;
     position: relative;
+    height: 60px;
+    width: 100%;
+    justify-content: center;
 }
 
 .menuDesc {
     position: absolute;
     overflow: hidden;
-    left: 4.9rem;
+    width: 60px;
+    left: 60px;
     background-color: var(--main-cyan-color);
     color: var(--main-primary-text);
     border-radius: 0px 10px 10px 0px;

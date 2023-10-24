@@ -23,8 +23,9 @@ export default function Menu() {
     
     return (
         <div id="menu">
-            <Link href="/">
-                <Image  src="/homepageIcon/logo_waklab.png" alt="" width={60} height={60}/>
+            <Link href="/" className="menuWrapper">
+                <Image className="logoMenu" src="/homepageIcon/logo_waklab.png" alt="" width={60} height={60}/>
+                <div className="menuDesc">Accueil</div>
             </Link>
             {params && params.map((param, index) => {
                 return (

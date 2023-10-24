@@ -40,10 +40,10 @@ body {
 #content {
   width: 100%;
   display: flex;
-  padding-left: 55px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding-left: 40px;
 }
 
 a {

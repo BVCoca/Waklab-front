@@ -1,0 +1,136 @@
+#searchContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#searchbarContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#searchBar {
+  width: 550px;
+  height: 20px;
+  padding: 1rem 2rem;
+  margin-bottom: 35px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(30, 30, 30, 1);
+  color: #FFFF;
+}
+
+#searchIcon {
+  height: max-content;
+  width: 25px;
+  position: relative;
+  top: 0.8em;
+  right: 3rem;
+}
+
+#cardList {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-around;
+}
+
+.card-list {
+    overflow-y: visible; 
+}
+
+/* -------------------------------------- */
+
+#ending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#backToTheTop {
+  display: flex;
+  justify-content: center;
+  width: 140px;
+  font-size: large;
+  font-weight: 700;
+  margin: 25px 0px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: var(--main-bg-color);
+  color: var(--main-cyan-color);
+}
+
+#endingMessage {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  font-weight: 700;
+  margin: 25px 0px;
+  color: var(--main-cyan-color);
+}
+
+/* -------------------------------------- */
+
+#totalItems {
+  width: fit-content;
+  display: flex;
+  position: absolute;
+  right: 45px;
+  padding: 8px;
+  border-radius: 10px;
+  color: var(--main-cyan-color); 
+  background-color: var(--main-bg-color);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* -------------------------------------- */
+
+#loaderWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 60px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  --base-color: #263238; /*use your base color*/
+}
+.loader::before {
+  content: '';  
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #FFF;
+  background-image: radial-gradient(circle 8px at 18px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 18px 0px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 0px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 36px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 18px 36px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 5px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 5px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 30px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 5px 30px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 5px 5px, var(--base-color) 100%, transparent 0);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 3s linear infinite;
+}
+.loader::after {
+  content: '';  
+  left: 35px;
+  top: 15px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #FFF;
+  background-image: radial-gradient(circle 5px at 12px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 12px 0px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 0px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 24px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 12px 24px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 3px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 3px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 20px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 3px 20px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 3px 3px, var(--base-color) 100%, transparent 0);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 4s linear infinite reverse;
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}  

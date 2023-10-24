@@ -51,7 +51,7 @@ export default function RarityView({ rarity, isSmall = false }: Props) {
     <div className="rarityContainer">
       <Image alt="Rareté" width={width} height={height} src={rarity.icon} />
       <h4
-        className={`rarityLabel ${isSmall ? "rarityLabelSmall" : ""}`}
+        className={`rarityLabel ${isSmall && "rarityLabelSmall"}`}
         style={{ color: color }}
       >
         {rarity.name}

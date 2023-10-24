@@ -1,0 +1,21 @@
+.recipesContainer {
+    width: 100%;
+}
+
+.jobRecipe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+    color: var(--main-primary-text);
+}
+
+.recipeContainer {
+    width: 100%;
+}
+
+.titleBlock {
+    text-align: left;
+    width: 100%;
+    color: var(--main-cyan-color);
+}

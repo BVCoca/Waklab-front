@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./Card.css";
+import "./CardDetailsType.css";
 import CardHeader from "./CardHeader";
 import {
   isMob,
@@ -62,8 +62,8 @@ export default function CardDetailsType({ item }: Props) {
             className=""
             src={entity.imageUrl}
             alt={`Image ${entity.name}`}
-            width={100}
-            height={100}
+            width={80}
+            height={80}
           />
           {(isResourceDrop(item) || isStuffDrop(item)) && (
             <p className="valueDrops">{item.value} %</p>

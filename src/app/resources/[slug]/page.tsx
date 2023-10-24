@@ -7,8 +7,7 @@ import Level from "@/app/components/common/Level";
 import MobDropList from "@/app/components/mob/MobDropList";
 import UsedInRecipe from "@/app/components/recipe/UsedInRecipe";
 import { Metadata } from "next";
-import Recipe from "@/app/types/Recipe/Recipe";
-import DropsRecipesContainer from "@/app/components/common/DropsRecipesContainer";
+import Recipes from "@/app/components/recipe/Recipes";
 
 interface Props {
   params: {
@@ -60,18 +59,7 @@ export default async function ResourceDetails({ params }: Props) {
         </div>
       </div>
       <MobDropList drops={resource.resourceDrops} />
-      <h2 className="titleBlock">Recettes</h2>
-      {resource.recipes.length > 0 && resource.recipes.map((recipe : Recipe) => (
-        <div key={`recipe-${recipe["@id"]}`} className="recipeContainer">
-          <div className="jobRecipe">
-            <Image src={recipe.job.icon} width={30} height={30} alt="" />
-            <h3>{recipe.job.name} - {recipe.job_level}</h3>
-          </div>
-          <DropsRecipesContainer
-            items={recipe.recipeIngredients}
-          />
-        </div>
-      ))}
+      <Recipes recipes={resource.recipes} />
       { resource.recipeIngredients.length > 0 && <UsedInRecipe recipeIngredients={resource.recipeIngredients} />}
     </div>
   );

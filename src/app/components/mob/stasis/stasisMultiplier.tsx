@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 interface Props {
   mob: MobSingle;
-  onChange: (modifiedValue: number) => number;
+  onChange: (modifiedValue: number) => MobSingle;
 }
 
 export default function StasisMultiplier({ mob, onChange }: Props) {

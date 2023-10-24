@@ -21,7 +21,7 @@ export default function MobDetails({ mob }: Props) {
   function handleMultiplier(multiplier: number) {
     setmobValue({
       ...mobValue,
-      hp: mob.hp * multiplier,
+      hp: Math.floor(mob.hp * multiplier),
     });
     return mobValue;
   }
@@ -74,7 +74,7 @@ export default function MobDetails({ mob }: Props) {
             <div className="valueContainer">
               <div className="tooltip">
                 <span className="tooltiptext">
-                  {mob.hp.toLocaleString()} HP
+                  {mobValue.hp.toLocaleString()} HP
                 </span>
                 <Image
                   src="/mobDetailsIcon/healthHearth.svg"

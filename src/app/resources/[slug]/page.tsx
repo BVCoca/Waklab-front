@@ -7,6 +7,7 @@ import Level from "@/app/components/common/Level";
 import MobDropList from "@/app/components/mob/MobDropList";
 import UsedInRecipe from "@/app/components/recipe/UsedInRecipe";
 import { Metadata } from "next";
+import Recipes from "@/app/components/recipe/Recipes";
 
 interface Props {
   params: {
@@ -58,6 +59,7 @@ export default async function ResourceDetails({ params }: Props) {
         </div>
       </div>
       <MobDropList drops={resource.resourceDrops} />
+      <Recipes recipes={resource.recipes} />
       { resource.recipeIngredients.length > 0 && <UsedInRecipe recipeIngredients={resource.recipeIngredients} />}
     </div>
   );

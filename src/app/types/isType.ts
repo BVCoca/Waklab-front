@@ -1,6 +1,7 @@
 import Mob from "./Mob/Mob";
 import MobDrop from "./Mob/MobDrop";
 import Recipe from "./Recipe/Recipe";
+import RecipeIngredientFromRecipe from "./Recipe/RecipeIngredientFromRecipe";
 import Resource from "./Resource/Resource";
 import ResourceDrop from "./Resource/ResourceDrop";
 import Stuff from "./Stuff/Stuff";
@@ -30,4 +31,8 @@ function isStuffDrop(item: any): item is StuffDrop {
     return item["@type"] === "StuffDrop";
 }
 
-export {isMob, isResource, isStuff, isResourceDrop, isMobDrop, isStuffDrop}
+function isRecipeIngredientFromRecipe(item: any): item is RecipeIngredientFromRecipe {
+    return item["@type"] === "RecipeIngredient";
+}
+
+export {isMob, isResource, isStuff, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe}

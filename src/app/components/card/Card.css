@@ -5,7 +5,7 @@
     width: 250px;
     height: 200px;
     background: var(--main-bg-color);
-    border-radius: 18px;
+    border-radius: 20px;
     color: var(--main-primary-text);
     transition: all 0.4s;
     margin: 10px;
@@ -31,29 +31,4 @@
     flex-direction: row;
     width: 100%;
     align-items: center;
-}
-
-.cardDetailsTypeContainer {
-    width: 200px;
-    margin: 0 15px;
-    text-align: center;
-    color: var(--main-primary-text);
-    background-color: var(--main-bg-light-color);
-    padding: 15px 30px;
-    border-radius: 11px;
-}
-
-.cardImageValueContainer {
-    display: flex;
-    align-items: center;
-}
-
-.valueDrops {
-   color: var(--main-secondary-text);
-   font-weight: 300;
-   font-size: 2rem;
-}
-
-.linkCardDetailsContainer {
-    width: 200px;
 }

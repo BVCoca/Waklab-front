@@ -3,7 +3,7 @@
 }
 
 .recipeIngredientContainer {
-    width: 70%;
+    width: 100%;
 }
 
 .headTabContainer {
@@ -18,6 +18,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     padding: 0px;
+    padding-top: 10px;
     margin: 0px;
 }
 
@@ -27,7 +28,7 @@
     color: var(--main-secondary-text);
     font-weight: 500;
     font-size: 20px;
-    border-bottom: 8px solid var(--main-bg-light-color);
+    border-bottom: 4px solid var(--main-bg-light-color);
     display: flex;
     justify-content: center;
     align-items: center;

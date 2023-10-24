@@ -4,7 +4,7 @@ import Stuff from "@/app/types/Stuff/Stuff";
 import Link from "next/link";
 import "./Card.css";
 import CardHeader from "./CardHeader";
-import { isMob, isResource, isStuff } from "@/app/types/isType";
+import { isMob, isStuff } from "@/app/types/isType";
 import ImageResizer from "../common/ImageResizer";
 import FamilyView from "../common/FamilyView";
 import TypeView from "../common/TypeView";

@@ -13,14 +13,15 @@
 
 .rarityLabel {
     margin : 0px;
+    text-wrap: nowrap;
 }
 
 .rarityLabelSmall {
     font-size: 14px;
+    text-wrap: nowrap;
 }
 
 .typeContainer {
-    height: 12%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,10 +30,13 @@
     width: 100%;
 }
 
+.typeContainer.long {
+    justify-content: start;
+}
+
 .typeLabel {
     color: var(--main-secondary-text);
     font-weight: 300;
-    margin-left: -10px;
     text-wrap: nowrap;
 }
 
@@ -41,16 +45,19 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    width: 60%;
+    width: 100%;
     background-color: var(--main-bg-color);
-    padding: 10px;
-    border-radius: 11px;
-    margin: 15px 25px 0 25px;
-    padding: 35px;
+    padding: 10px 0px;
+    border-radius: 20px;
+    margin-top: 20px;
+    column-gap: 20px;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .titleDropMob {
-    width: 64%;
+    width: 100%;
     color : var(--main-cyan-color);
     margin-bottom: 0;
 }

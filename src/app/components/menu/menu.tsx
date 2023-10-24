@@ -22,7 +22,7 @@ export default function Menu() {
     ]
     
     return (
-        <div id="menuContainer">
+        <div id="menu">
             <Link href="/">
                 <Image  src="/homepageIcon/logo_waklab.png" alt="" width={60} height={60}/>
             </Link>

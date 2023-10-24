@@ -10,10 +10,10 @@
     justify-content: space-around;
     color: #FFFF;
     background-color: var(--main-bg-color);
-    border-radius: 11px;
+    border-radius: 20px;
     margin: 0 25px;
-    padding: 35px;
-    width: 60%;
+    padding: 35px 0px;
+    width: 100%;
 }
 
 h3 {
@@ -103,7 +103,7 @@ h3 {
     background-color: var(--main-bg-light-color);;
     margin-top: 20px;
     padding: 10px 20px;
-    border-radius: 11px;
+    border-radius: 20px;
 }
 
 ul {
@@ -148,7 +148,7 @@ li {
     border-collapse: separate;
     border-spacing: 60px 0;
     background-color: var(--main-bg-light-color);;
-    border-radius: 11px;
+    border-radius: 20px;
 }
 
 .tableStatsMobContainer th {
@@ -173,7 +173,7 @@ li {
     align-items: center;
     background-color: var(--main-bg-light-color);
     padding: 8px;
-    border-radius: 11px;
+    border-radius: 20px;
     margin-top: 15px;
 }
 

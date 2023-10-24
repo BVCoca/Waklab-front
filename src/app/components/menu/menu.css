@@ -1,16 +1,12 @@
-#pageContent {
-    display: flex;
-}
-
-#menuContainer 
+#menu
 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    position: fixed;
     align-items: center;
-    background:  var(--main-cyan-color);
+    background-color:  var(--main-cyan-color);
     height: 100vh;
+    position: fixed;
     padding: 0 10px;
     width: 60px;
     z-index: 9;
@@ -36,9 +32,9 @@
     padding: 8px 10px;
     z-index: 2;
     width: 0px;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     opacity: 0%;
-    text-align: end;
+    text-align: center;
 }
 
 .logoMenu:hover + .menuDesc {

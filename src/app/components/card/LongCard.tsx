@@ -33,22 +33,22 @@ export default function LongCard({item , value = null, theme = ''} : Props) {
     }
 
     return(
-        <Link href={item["@id"].slice(4)} className={`cardContainer ${theme}`}>
+        <Link href={item["@id"].slice(4)} className={`longCardContainer ${theme}`}>
             <CardHeader level={level} rarity={rarity} />
-            <div className="cardContent">
+            <div className="longCardContent">
                 <ImageResizer
-                    className="cardImage"
+                    className="longCardImage"
                     src={item.imageUrl}
                     alt=""
                     width={100}
                     height={100}
                 />
-                <div className="cardData">
-                    <h3 className="cardName">{item.name}</h3>
+                <div className="longCardData">
+                    <h3 className="longCardName">{item.name}</h3>
                     {isMob(item) && <FamilyView family={item.family} />}
-                    {isStuff(item) && <TypeView type={item.type} />}
+                    {isStuff(item) && <TypeView type={item.type} isLong={true}/>}
                 </div>
-                {value && <span className="cardValue">{value}</span>}
+                {value && <span className="longCardValue">{value}</span>}
             </div>
         </Link>
     )

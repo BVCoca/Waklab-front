@@ -1,12 +1,12 @@
 import Header from "../components/header/header";
-import SearchResources from "../components/search/searchResources";
+import SearchStuffs from "../components/search/searchStuffs";
 
 export default function Page() {
 
   return (
     <div id="content">
       <Header />
-      <SearchResources />
+      <SearchStuffs />
     </div>
   );
 }

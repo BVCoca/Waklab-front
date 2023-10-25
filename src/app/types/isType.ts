@@ -35,4 +35,8 @@ function isRecipeIngredientFromRecipe(item: any): item is RecipeIngredientFromRe
     return item["@type"] === "RecipeIngredient";
 }
 
-export {isMob, isResource, isStuff, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe}
+function isWeapon(item : Stuff): boolean {
+    return ['armes-2-mains', 'armes-1-main', 'seconde-main'].includes(item.type.slug)
+}
+
+export {isMob, isResource, isStuff, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe, isWeapon}

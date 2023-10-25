@@ -1,5 +1,6 @@
 .titleDropMob {
     color : var(--main-cyan-color);
+    margin-bottom: 20px;
 }
 
 .dropMobContainer {

@@ -3,12 +3,13 @@ import "./common.css";
 import FamilyIcon from "@/app/icons/commonIcon/iconFamily.svg"
 
 interface Props {
-  family: Family;
+  family: Family,
+  isLong? : boolean
 }
 
-export default function FamilyView({ family }: Props) {
+export default function FamilyView({ family, isLong = false }: Props) {
   return (
-    <div className="typeContainer">
+    <div className={`typeContainer ${isLong && "long"}`}>
       <FamilyIcon
         width={30}
         height={30}

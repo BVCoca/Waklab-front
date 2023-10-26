@@ -1,11 +1,11 @@
 .cardDetailsTypeContainer {
-    width: 180px;
+    width: 200px;
     height: 210px;
     text-align: center;
     color: var(--main-primary-text);
     background-color: var(--main-bg-light-color);
     padding: 15px 30px;
-    border-radius: 20px;
+    border-radius: 15px;
     transition: all 0.4s;
 }
 

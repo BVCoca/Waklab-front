@@ -12,6 +12,8 @@ import MobSearch from "@/app/types/Mob/MobSearch"
 import ResourceSearch from "@/app/types/Resource/ResourceSearch"
 import StuffSearch from "@/app/types/Stuff/StuffSearch"
 import Search from "@/app/types/Search"
+import ArrowTop from "public/arrowTop.png"
+import Image from "next/image"
 
 interface Props {
     Search: (value : string, page : number) => Promise<MobSearch | ResourceSearch | StuffSearch | Search>
@@ -23,14 +25,17 @@ export default function SearchComponent({Search} : Props) {
     const [value, setValue] = useState('')
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false)
-    const [isFinished, setIsFinished] = useState<string>()
-    const [totalItems, setTotalItems] = useState<number>()
+    const [isFinished, setIsFinished] = useState(false)
+    const [totalItems, setTotalItems] = useState<number>(0)
+    const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
         function handleScroll() {
+            setScrollPosition(window.scrollY);
             if (
                 window.innerHeight + document.documentElement.scrollTop ===
                 document.documentElement.offsetHeight
+                
             ) {
                 setPage(prevPage => prevPage + 1);
             }
@@ -48,8 +53,9 @@ export default function SearchComponent({Search} : Props) {
 
         timeout = setTimeout(() => {
             setResults([])
-            setTotalItems(undefined)
-            if (value.length > 3) {
+            setTotalItems(0)
+            setLoading(false)
+            if (value.length >= 3) {
                 setPage(1);
                 LoadEntity();
             }
@@ -63,7 +69,7 @@ export default function SearchComponent({Search} : Props) {
     }, [value])
 
     useEffect(() => {
-        if (value.length > 3) {
+        if (value.length >= 3) {
             LoadEntity();
         }
     }, [page]);
@@ -74,25 +80,35 @@ export default function SearchComponent({Search} : Props) {
 
     async function LoadEntity() {
         if (results.length === totalItems) {
-            setIsFinished('Aucun résultats de plus pour cette recherche')
             setLoading(false)
+            setIsFinished(true)
+        } else if (results.length === 0) {
+            setLoading(true)
         } else {
             setLoading(true)
+            setIsFinished(false)
         }
         const searchResults = await Search(value, page)
         setTotalItems(searchResults['hydra:totalItems'])
         setResults(prevResults => [...prevResults, ...searchResults["hydra:member"]])
-        setLoading(false)
+    }
+
+    function toTheTop() {
+       window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      }); 
     }
 
     return (
         <div id="searchContainer">
-            {totalItems && <div id="totalItems">{totalItems} résultats</div>}
+            {totalItems > 0 && <div id="totalItems">{totalItems} résultats</div>}
             <SearchInput valueInput={value} onChange={handleChange}/>
             <SearchFilter/>
             <SearchInfiniteScroll resultsScroll={results}/>
             {loading && <div id="loaderWrapper"><span className="loader"></span></div>}  
-            {isFinished && <div id="ending"><div id="endingMessage">{isFinished}</div><a href="#top" id="backToTheTop">Retour en Haut</a></div> }
+            {isFinished && results.length > 0 && <div id="endingMessage">Aucun résultat de plus pour cette recherche.</div>}
+            {scrollPosition >= 500 && <Image onClick={toTheTop} id="backToTheTop" src={ArrowTop} width={30} alt="Bouton vers le haut de page"/>}      
         </div>
     )
 }

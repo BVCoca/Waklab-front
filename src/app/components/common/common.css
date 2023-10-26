@@ -61,3 +61,46 @@
     color : var(--main-cyan-color);
     margin-bottom: 0;
 }
+
+.selectContainer {
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    width: 100%;
+    z-index: 999;
+}
+
+.selectedHeader, .selectedOption {
+    all: unset;
+    width: 100%;
+    min-height: 40px;
+    background-color: var(--main-cyan-color);
+    border-radius: 10px;
+    color: var(--main-primary-text);
+    font-weight: 600;
+    position: relative;
+    padding-left: 20px;
+    right: 20px;
+    transition: all 1s ease;
+}
+
+.selectedHeader:hover, .selectedOption:hover {
+    background-color: var(--main-cyan-light-color);
+}
+
+.selectedOption {
+    border-radius: 0px;
+    position: relative;
+    top : 10px;
+    right: 20px;
+    max-width: 100%;
+    min-height: 40px;
+}
+
+.selectedOption:nth-child(2) {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.selectedOption:last-child {
+    border-radius: 0px 0px 10px 10px;
+}

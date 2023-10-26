@@ -10,6 +10,7 @@ import LongCard from "../card/LongCard";
 import Recipe from "@/app/types/Recipe/Recipe";
 import Resource from "@/app/types/Resource/Resource";
 import Stuff from "@/app/types/Stuff/Stuff";
+import Select from "../common/Select";
 
 interface Props {
     recipeIngredients : RecipeIngredient[]
@@ -99,24 +100,29 @@ export default function UsedInRecipe({recipeIngredients} : Props) {
     const sortOptions = [
         {
             'label' : "Trier par niveau croissant",
+            'value' : 0,
             'callBack' : sortByLevelAsc
         },
         {
             'label' : "Trier par niveau décroissant",
+            'value' : 1,
             'callBack' : sortByLevelDesc
         },
         {
             'label' : "Trier du moins rare au plus rare",
+            'value' : 2,
             'callBack' : sortByRarityAsc
         },
         {
             'label' : "Trier du plus rare au moins rare",
+            'value' : 3,
             'callBack' : sortByRarityDesc
         },
     ]
 
     const handleSortSelected = (e : any) => {
-        setSelectedSort(e.target.value)
+        console.log(e)
+        setSelectedSort(e)
     }
 
     const [selectedSort, setSelectedSort] = useState<number>(0);
@@ -131,12 +137,17 @@ export default function UsedInRecipe({recipeIngredients} : Props) {
 
     return activeTab !== '' && (
         <div className="recipeIngredientContainer">
-            <h2 className="titleRecipeIngredient">Utilisée dans les recettes</h2>
-            <select className="sortSelect" onChange={handleSortSelected}>
-                {sortOptions && sortOptions.map((sort, key) => (
-                    <option key={`sort-${key}`} value={key} selected={key === selectedSort}>{sort.label}</option>
-                ))}
-            </select>
+            <div className="recipeIngredientHeader">
+                <h2 className="titleRecipeIngredient">Utilisée dans les recettes</h2>
+                {/* <select className="sortSelect" onChange={handleSortSelected}>
+                    {sortOptions && sortOptions.map((sort, key) => (
+                        <option key={`sort-${key}`} value={key} selected={key === selectedSort}>{sort.label}</option>
+                    ))}
+                </select> */}
+                <div className="selectSort">
+                    <Select selectedValue={selectedSort} onChange={handleSortSelected} options={sortOptions} />
+                </div>
+            </div>
             <div className="tabContainer">
                 <ul className="headTabContainer">
                     {jobs && jobs.map(job => (

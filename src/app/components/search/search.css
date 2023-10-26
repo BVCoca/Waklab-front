@@ -7,10 +7,11 @@
 #searchbarContainer {
   display: flex;
   justify-content: center;
+  
 }
 
 #searchBar {
-  width: 550px;
+  width: 50%;
   height: 20px;
   padding: 1rem 2rem;
   margin-bottom: 35px;
@@ -33,6 +34,7 @@
   flex-wrap: wrap;
   position: relative;
   justify-content: space-around;
+  width: 100%;
 }
 
 .card-list {
@@ -41,24 +43,30 @@
 
 /* -------------------------------------- */
 
-#ending {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 #backToTheTop {
   display: flex;
   justify-content: center;
-  width: 140px;
+  width: 40px;
+  height: 40px;
   font-size: large;
   font-weight: 700;
   margin: 25px 0px;
   padding: 5px;
-  border-radius: 15px;
-  background-color: var(--main-bg-color);
+  border-radius: 10px;
+  background: none;
   color: var(--main-cyan-color);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
 }
+
+#backToTheTop:hover {
+  scale: 1.1;
+}
+
+/* -------------------------------------- */
 
 #endingMessage {
   display: flex;
@@ -77,11 +85,16 @@
   position: absolute;
   right: 45px;
   padding: 8px;
-  border-radius: 10px;
   color: var(--main-cyan-color); 
   background-color: var(--main-bg-color);
   font-size: 13px;
   font-weight: 600;
+  background: rgba( 10, 10, 10, 0.3 );
+  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur( 9.5px );
+  -webkit-backdrop-filter: blur( 9.5px );
+  border-radius: 10px;
+  border: 1px solid rgba(23, 23, 23, 0.18);
 }
 
 /* -------------------------------------- */

@@ -46,7 +46,7 @@ export default function LongCard({item , value = null, theme = ''} : Props) {
                 <div className="longCardData">
                     <h3 className="longCardName">{item.name}</h3>
                     {isMob(item) && <FamilyView family={item.family} isLong={true}/>}
-                    {isStuff(item) && <TypeView type={item.type} isLong={true}/>}
+                    {!isMob(item) && <TypeView type={item.type} isLong={true}/>}
                 </div>
                 {value && <span className="longCardValue">{value}</span>}
             </div>

@@ -74,7 +74,7 @@ export default function CardDetailsType({ item }: Props) {
         </div>
         <h3>{entity.name}</h3>
         {isMob(entity) && <FamilyView family={entity.family} />}
-        {isStuff(entity) && <TypeView type={entity.type} />}
+        {!isMob(entity) && <TypeView type={entity.type} />}
       </div>
     </Link>
   );

@@ -65,3 +65,30 @@ a {
 #centerContainer {
   width: 70%;
 }
+
+#tagForWakfu {
+  display: inline-block;
+  text-align: center;
+  color: white;
+  opacity: 0.9;
+  padding: 7px 8px 0px 8px;
+  border-radius: 12px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 10px;
+  background: rgba(36, 36, 36, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#textWakfu1 {
+  display: inline;
+}
+
+#linkWakfu {
+  color: var(--main-cyan-light-color);
+}

@@ -41,7 +41,7 @@ export default function Card({ item }: Props) {
       />
       <h3 className="cardName">{item.name}</h3>
       {isMob(item) && <FamilyView family={item.family} />}
-      {isStuff(item) && <TypeView type={item.type} />}
+      {!isMob(item) && <TypeView type={item.type} />}
     </Link>
   );
 }

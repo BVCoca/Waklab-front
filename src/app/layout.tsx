@@ -52,6 +52,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body className={roboto.className}>
+        <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu1"> est un jeu édité par Ankama.</p><p id="textWakfu2">&quot;WakLab&quot; n&apos;est pas un site officiel d&apos;Ankama</p></div>
         <main id="pageContent">
           <div id="menuContainer">
             <Menu />

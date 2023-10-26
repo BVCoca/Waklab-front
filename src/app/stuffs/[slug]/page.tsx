@@ -95,7 +95,7 @@ export default async function StuffDetails({ params }: Props) {
         <div className="otherCaracteristicsContainer">
           {stuff.stuffCaracteristics.map((stuffCarac : stuffCaracteristic) =>
             <div className="caracContainer" key={stuffCarac["@id"]}>
-              {stuffCarac.caracteristic.icon && <Image alt="" src={stuffCarac.caracteristic.icon} width={20} height={20} />}
+              {stuffCarac.caracteristic.icon && <Image className="caracImg" alt="" src={stuffCarac.caracteristic.icon} width={20} height={20} />}
               <p className="caracLabel"><span>{stuffCarac.value}</span> {stuffCarac.caracteristic.name}</p>
             </div>
           )}

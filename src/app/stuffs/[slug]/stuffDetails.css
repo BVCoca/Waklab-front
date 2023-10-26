@@ -97,6 +97,8 @@
 }
 
 .caracContainer {
+    display: flex;
+    flex-direction: row;
     width: 80%;
     border-radius: 10px;
     background-color: var(--main-bg-light-color);
@@ -110,4 +112,12 @@
 .caracLabel > span {
     color: var(--main-cyan-color);
     font-weight: 600;
+}
+
+.caracImg {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 13px;
+    left: 10px;
 }

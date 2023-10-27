@@ -10,6 +10,8 @@ import DropsRecipesContainer from "@/app/components/common/DropsRecipesContainer
 import MobSingle from "@/app/types/Mob/MobSingle";
 import StasisMultiplier from "../stasis/stasisMultiplier";
 import { useState } from "react";
+import StuffDrop from "@/app/types/Stuff/StuffDrop";
+import ResourceDrop from "@/app/types/Resource/ResourceDrop";
 
 interface Props {
   mob: MobSingle;
@@ -18,10 +20,33 @@ interface Props {
 export default function MobDetails({ mob }: Props) {
   const [mobValue, setmobValue] = useState(mob);
 
-  function handleMultiplier(multiplier: number) {
+  function handleMultiplier(
+    hpMultiplier: number,
+    attackMultiplier: number,
+    dropMultiplier: number
+  ) {
     setmobValue({
       ...mobValue,
-      hp: Math.floor(mob.hp * multiplier),
+      hp: Math.floor(mob.hp * hpMultiplier),
+      attackEarth: Math.floor(mob.attackEarth * attackMultiplier),
+      attackWater: Math.floor(mob.attackWater * attackMultiplier),
+      attackFire: Math.floor(mob.attackFire * attackMultiplier),
+      attackWind: Math.floor(mob.attackWind * attackMultiplier),
+      stuffDrops: mob.stuffDrops.map((stuffDrop): StuffDrop => {
+        return {
+          ...stuffDrop,
+          value: Math.min(+(stuffDrop.value * dropMultiplier).toFixed(3), 100),
+        };
+      }),
+      resourceDrops: mob.resourceDrops.map((resourceDrop): ResourceDrop => {
+        return {
+          ...resourceDrop,
+          value: Math.min(
+            +(resourceDrop.value * dropMultiplier).toFixed(3),
+            100
+          ),
+        };
+      }),
     });
     return mobValue;
   }
@@ -163,9 +188,16 @@ export default function MobDetails({ mob }: Props) {
           </div>
         </div>
 
+        <div>
+          {mob.slug != "rushu" && mob.slug != "ogrest" ? (
+            <StasisMultiplier mob={mob} onChange={handleMultiplier} />
+          ) : (
+            ""
+          )}
+        </div>
+
         <div className="secondaryStatsMobContainer">
           <div className="infoMobContainer">
-            <StasisMultiplier mob={mob} onChange={handleMultiplier} />
             <div>
               <div className="levelMobContainer">
                 <Level level={[mob.levelMin, mob.levelMax]} isInCard={false} />
@@ -211,7 +243,7 @@ export default function MobDetails({ mob }: Props) {
                     />
                     Eau
                   </td>
-                  <td>{mob.attackWater}</td>
+                  <td>{mobValue.attackWater}</td>
                   <td>
                     {calculatePercent(mob.resWater)} % ({mob.resWater})
                   </td>
@@ -226,10 +258,9 @@ export default function MobDetails({ mob }: Props) {
                     />
                     Terre
                   </td>
-                  <td>{mob.attackEarth}</td>
+                  <td>{mobValue.attackEarth}</td>
                   <td>
-                    {calculatePercent(mobValue.resEarth)} % ({mobValue.resEarth}
-                    )
+                    {calculatePercent(mob.resEarth)} % ({mob.resEarth})
                   </td>
                 </tr>
                 <tr>
@@ -242,7 +273,7 @@ export default function MobDetails({ mob }: Props) {
                     />
                     Air
                   </td>
-                  <td>{mob.attackWind}</td>
+                  <td>{mobValue.attackWind}</td>
                   <td>
                     {calculatePercent(mob.resWind)} % ({mob.resWind})
                   </td>
@@ -257,7 +288,7 @@ export default function MobDetails({ mob }: Props) {
                     />
                     Feu
                   </td>
-                  <td>{mob.attackFire}</td>
+                  <td>{mobValue.attackFire}</td>
                   <td>
                     {calculatePercent(mob.resFire)} % ({mob.resFire})
                   </td>
@@ -268,7 +299,7 @@ export default function MobDetails({ mob }: Props) {
         </div>
       </div>
       <DropsRecipesContainer
-        drops={[...mob.resourceDrops, ...mob.stuffDrops].sort(
+        items={[...mobValue.resourceDrops, ...mobValue.stuffDrops].sort(
           (a, b) => b.value - a.value
         )}
       />

@@ -1,36 +1,44 @@
 "use client";
-import StasisButton from "./stasisButton/stasisButton";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 
 interface stasisProps {
   stasisValues: number[];
-  stasisMultipliers: { [key: number]: number };
   onStasisButtonClick: (stasisValue: number) => void;
 }
 
-export default function stasisBar({
+export default function StasisBar({
   stasisValues,
-  stasisMultipliers,
   onStasisButtonClick,
 }: stasisProps) {
-  const [selectedStasisValue, setSelectedStasisValue] = useState(1);
+  const [selectedStasisValue, setSelectedStasisValue] = useState(2);
 
-  const handleStasisButtonClick = (stasisValue: number) => {
-    const multiplier = stasisMultipliers[stasisValue];
-    setSelectedStasisValue(stasisValue);
-    onStasisButtonClick(multiplier);
+  const handleStasisButtonClick = (stasisValue: any) => {
+    setSelectedStasisValue(stasisValue.target.value);
+    onStasisButtonClick(stasisValue.target.value);
   };
 
   return (
     <div className="stasisBar">
-      {stasisValues.map((stasisValue: number) => (
-        <StasisButton
-          key={stasisValue}
-          stasisValue={stasisValue}
-          onClick={() => handleStasisButtonClick(stasisValue)}
-          isSelected={stasisValue === selectedStasisValue}
+      <label>Stasis : {selectedStasisValue}</label>
+      <div className="vertical-slider">
+        <input
+          type="range"
+          min="1"
+          max="10"
+          step="1"
+          value={selectedStasisValue}
+          onChange={handleStasisButtonClick}
+          id="stasisSlider"
         />
-      ))}
+        <div className="graduations">
+          {stasisValues.map((value) => (
+            <div className="graduation" key={value}>
+              -
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

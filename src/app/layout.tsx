@@ -14,8 +14,20 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Waklab",
-  description: "Outils communautaires autour du jeu wakfu",
+  title: {
+    'default' : 'Waklab',
+    'template' : '%s | Waklab'
+  },
+  description: "Outils communautaires autour du jeu Wakfu",
+  applicationName : "Waklab",
+  keywords: ['Wakfu', 'Bestiaires', 'Ressources', 'Stuff'],
+  openGraph : {
+    title : {
+      'default' : 'Waklab',
+      'template' : '%s | Waklab'
+    },
+    description : "Outils communautaires autour du jeu Wakfu"
+  }
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -40,11 +52,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body className={roboto.className}>
+        <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu1"> est un jeu édité par Ankama.</p><p id="textWakfu2">&quot;WakLab&quot; n&apos;est pas un site officiel d&apos;Ankama</p></div>
         <main id="pageContent">
           <div id="menuContainer">
             <Menu />
           </div>
-          {children}
+          <div id="content">
+            <div id="centerContainer">
+            {children}
+            </div>
+          </div>
         </main>
       </body>
     </html>

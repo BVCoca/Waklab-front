@@ -1,0 +1,16 @@
+.titleDropMob {
+    color : var(--main-cyan-color);
+    margin-bottom: 20px;
+}
+
+.dropMobContainer {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.cardDropContainer {
+   display: flex;
+   flex-direction: row;
+   column-gap: 20px;
+}

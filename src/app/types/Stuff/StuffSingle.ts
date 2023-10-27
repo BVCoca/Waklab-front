@@ -12,5 +12,11 @@ export default interface StuffSingle extends Stuff, Base {
     stuffCaracteristics : stuffCaracteristic[],
     stuffDrops : MobDrop[]
     recipes : Recipe[],
-    recipeIngredients : RecipeIngredient[]
+    recipeIngredients : RecipeIngredient[],
+    description : string,
+    costPa : number,
+    requiredPo : number,
+    effectType : string,
+    effectValue : number,
+    criticalEffectValue : number
 }

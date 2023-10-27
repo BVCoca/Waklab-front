@@ -51,7 +51,7 @@ export default async function RedirectArrow() {
       }
 
       if(item) {
-        message = `Retour sur le ${item.name}`
+        message = `Retour sur la page '${item.name}'`
       }
     }
   }
@@ -61,7 +61,7 @@ export default async function RedirectArrow() {
         <ArrowIcon
           alt="Flèche Retour en arrière"
           width={50}
-          height={40}
+          height={50}
         />
         <h3 className='redirectLabel'>{message}</h3>
     </Link>

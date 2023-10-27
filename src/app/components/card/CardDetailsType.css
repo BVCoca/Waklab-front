@@ -1,0 +1,36 @@
+.cardDetailsTypeContainer {
+    width: 200px;
+    height: 210px;
+    text-align: center;
+    color: var(--main-primary-text);
+    background-color: var(--main-bg-light-color);
+    padding: 15px 30px;
+    border-radius: 15px;
+    transition: all 0.4s;
+}
+
+.cardDetailsTypeContainer:hover {
+    box-shadow: inset 1em 1em 0em 100em var(--main-cyan-color);
+    transform: scale(1.05);
+}
+
+.cardImageValueContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.valueDrops {
+   color: var(--main-secondary-text);
+   font-weight: 300;
+   font-size: 2rem;
+}
+
+.linkCardDetailsContainer {
+    width: 200px;
+    text-wrap: pretty;
+}
+
+.linkCardDetailsContainer > h3 {
+    margin: 0px;
+}

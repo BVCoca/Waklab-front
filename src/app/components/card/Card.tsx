@@ -4,7 +4,7 @@ import Stuff from "@/app/types/Stuff/Stuff";
 import Link from "next/link";
 import "./Card.css";
 import CardHeader from "./CardHeader";
-import { isMob, isResource, isStuff } from "@/app/types/isType";
+import { isMob, isStuff } from "@/app/types/isType";
 import ImageResizer from "../common/ImageResizer";
 import FamilyView from "../common/FamilyView";
 import TypeView from "../common/TypeView";
@@ -41,7 +41,7 @@ export default function Card({ item }: Props) {
       />
       <h3 className="cardName">{item.name}</h3>
       {isMob(item) && <FamilyView family={item.family} />}
-      {isStuff(item) && <TypeView type={item.type} />}
+      {!isMob(item) && <TypeView type={item.type} />}
     </Link>
   );
 }

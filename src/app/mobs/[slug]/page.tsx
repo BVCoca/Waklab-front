@@ -1,11 +1,10 @@
-import Image from "next/image";
 import { getMob } from "@/app/services/mob";
 import "./mobDetails.css";
-import Level from "@/app/components/common/Level";
-import FamilyView from "@/app/components/common/FamilyView";
-import ImageResizer from "@/app/components/common/ImageResizer";
 import Header from "@/app/components/header/header";
 import CardDetailsType from "@/app/components/card/CardDetailsType";
+import { Metadata } from "next";
+import DropsRecipesContainer from "@/app/components/common/DropsRecipesContainer";
+import MobDetails from "@/app/components/mob/mobDetails/mobDetails";
 
 interface Props {
   params: {
@@ -13,38 +12,37 @@ interface Props {
   };
 }
 
-export default async function MobDetails({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const mob = await getMob(params.slug);
-  console.log(mob);
 
-  function calculatePercent(Rflat: number): number {
-    const R = (1 - Math.pow(0.8, Rflat / 100)) * 100;
-    return Math.floor(R);
-  }
+  const description =
+    mob.name +
+    " - " +
+    mob.hp +
+    " PDV, " +
+    mob.actionPoints +
+    " PA, " +
+    mob.movementPoints +
+    " PM";
 
-  function nFormatter(num: number, digits: number): string {
-    const lookup = [
-      { value: 1, symbol: "" },
-      { value: 1e3, symbol: "k" },
-      { value: 1e6, symbol: "M" },
-    ];
-    const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+  return {
+    title: mob.name,
+    description: description,
+    openGraph: {
+      title: mob.name,
+      description: description,
+      images: {
+        url: mob.imageUrl,
+        width: 300,
+        height: 300,
+      },
+      url: process.env.NEXT_PUBLIC_SITE_URL + "/mobs/" + mob.slug,
+    },
+  };
+}
 
-    var item = lookup
-      .slice()
-      .reverse()
-      .find(function (item) {
-        return num >= item.value;
-      });
-
-    return item
-      ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol
-      : "0";
-  }
-
-  if (!mob) {
-    return <p>Monstre non trouvé</p>;
-  }
+export default async function MobPage({ params }: Props) {
+  const mob = await getMob(params.slug);
 
   return (
     <div className="detailsContent">
@@ -156,6 +154,29 @@ export default async function MobDetails({ params }: Props) {
         </div>
 
         <div className="secondaryStatsMobContainer">
+          <div className="infoMobContainer">
+            <div className="levelMobContainer">
+              <Level level={[mob.levelMin, mob.levelMax]} isInCard={false} />
+            </div>
+            <div className="isCapturableMobContainer">
+              {mob.isCapturable ? "Capturable" : "Non capturable"}
+              {mob.isCapturable ? (
+                <Image
+                  src="/mobDetailsIcon/iconCapt.png"
+                  alt="Icône monstre non capturable"
+                  width={16}
+                  height={16}
+                />
+              ) : (
+                <Image
+                  src="/mobDetailsIcon/iconNoCapt.png"
+                  alt="Icône monstre capturable"
+                  width={16}
+                  height={16}
+                />
+              )}
+            </div>
+          </div>
           <div className="tableStatsMobContainer">
             <table>
               <thead>
@@ -231,32 +252,12 @@ export default async function MobDetails({ params }: Props) {
             </table>
           </div>
         </div>
-
-        <div className="infoMobContainer">
-          <div className="levelMobContainer">
-            <Level level={[mob.levelMin, mob.levelMax]} isInCard={false} />
-          </div>
-          <div className="isCapturableMobContainer">
-            {mob.isCapturable ? "Capturable" : "Non Capturable"}
-            {mob.isCapturable ? (
-              <Image
-                src="/mobDetailsIcon/iconCapt.png"
-                alt="Icône monstre non capturable"
-                width={16}
-                height={16}
-              />
-            ) : (
-              <Image
-                src="/mobDetailsIcon/iconNoCapt.png"
-                alt="Icône monstre capturable"
-                width={16}
-                height={16}
-              />
-            )}
-          </div>
-        </div>
       </div>
-      <CardDetailsType item={mob.resourceDrops[0]} />
+      <DropsRecipesContainer
+        drops={[...mob.resourceDrops, ...mob.stuffDrops].sort(
+          (a, b) => b.value - a.value
+        )}
+      />
     </div>
   );
 }

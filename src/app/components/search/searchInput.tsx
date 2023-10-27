@@ -2,11 +2,21 @@
 
 import "@/app/styles/globals.css"
 import "./search.css"
+import React, { ChangeEvent } from 'react';
 import SearchIcon from "@/app/icons/homepageIcon/search-solid.svg"
-import Image from "next/image"
 import { usePathname } from 'next/navigation'
 
-export default function Search() {
+interface Props {
+    valueInput : string
+    onChange : Function
+}
+
+export default function SearchInput({valueInput, onChange} : Props) {
+
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+        const newValue = event.target.value;
+        onChange(newValue);
+    }
 
     let pathname = usePathname();
 
@@ -22,7 +32,7 @@ export default function Search() {
 
     return (
         <div id="searchbarContainer">
-            <input type="text" placeholder={`Rechercher ${pathname}`} id="searchBar" name="searchBar"/>
+            <input type="text" placeholder={`Rechercher ${pathname}`} id="searchBar" name="searchBar" onChange={handleInputChange} value={valueInput}/>
             <label htmlFor="searchBar">
                 <SearchIcon alt="search icon" id="searchIcon"/>
             </label>

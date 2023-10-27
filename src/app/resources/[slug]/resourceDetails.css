@@ -1,0 +1,41 @@
+.detailsContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.headerDetails {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    padding-bottom: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: var(--main-primary-text);
+}
+
+.resourceDescription {
+    color: var(--main-secondary-text);
+    font-weight: 700;
+}
+
+.blockCenter {
+    text-align: center;
+    width: 100%;
+}
+
+.imageRarityContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.levelContainer {
+    height: 100%;
+    width: 80px;
+    padding-top: 30px;
+    padding-right: 20px;
+}

@@ -7,20 +7,18 @@
 
 .mobStatsContainer {
     display: flex;
+    justify-content: space-around;
     color: #FFFF;
     background-color: var(--main-bg-color);
-    border-radius: 11px;
+    border-radius: 20px;
     margin: 0 25px;
-    padding: 35px;
+    padding: 35px 0px;
+    width: 100%;
 }
 
 h3 {
     text-align: center;
     margin-bottom: 0;
-}
-
-.primaryStatsMobContainer {
-    margin-left: 35px;
 }
 
 .healthMobContainer {
@@ -105,7 +103,7 @@ h3 {
     background-color: var(--main-bg-light-color);;
     margin-top: 20px;
     padding: 10px 20px;
-    border-radius: 11px;
+    border-radius: 20px;
 }
 
 ul {
@@ -122,6 +120,10 @@ li {
     align-items: center;
 }
 
+.lineValue img {
+    margin-right: 10px;
+}
+
 .valueHelpStats {
     font-style: italic;
     margin-left: 5px;
@@ -130,9 +132,13 @@ li {
 .secondaryStatsMobContainer {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    margin-right: 35px;
-    margin-left: 35px;
+    justify-content: space-between;
+}
+
+.infoMobContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
 }
 
 .tableStatsMobContainer table {
@@ -143,6 +149,7 @@ li {
     border-spacing: 60px 0;
     background-color: var(--main-bg-light-color);;
     border-radius: 11px;
+    width: 100%;
 }
 
 .tableStatsMobContainer th {
@@ -165,8 +172,12 @@ li {
 .isCapturableMobContainer {
     display: flex;
     align-items: center;
-    background-color: var(--main-bg-light-color);;
+    background-color: var(--main-bg-light-color);
     padding: 8px;
-    border-radius: 11px;
+    border-radius: 20px;
     margin-top: 15px;
+}
+
+.isCapturableMobContainer img {
+    margin-left: 15px;
 }

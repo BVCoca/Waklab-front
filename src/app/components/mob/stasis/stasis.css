@@ -1,0 +1,70 @@
+.stasisBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.vertical-slider {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 13rem;
+}
+
+/*Safari and Chrome*/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none; 
+    width: 20rem;
+    height: 2rem;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: none;
+    background: #cd2ad91e;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 2rem;
+    background: #cd2ad91e;
+    border-radius: 1rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; 
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-image: url("/mobDetailsIcon/iconStasisOrb.png");
+    background-size: cover;
+  /*Colors*/
+    box-shadow: -50rem 0 5rem 20rem #a621af,
+                -40rem 0 5rem 30rem #a621af,
+                -30rem 0 2rem 25rem #a621af,
+                -25.5rem 0 0 25rem  #a621af;
+}
+
+.graduations {
+    display: flex;
+    justify-content: space-between;
+    width: 20rem; /* Ajustez en fonction de votre mise en page */
+    height: 10px;
+    transform: rotate(0deg); /* Inverse la rotation pour afficher horizontalement */
+    position: relative;
+    top: -18px;
+    left: 28px;
+    font-size: 3rem;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    color: var(--main-secondary-text);
+
+}
+
+.graduation {
+    transform: rotate(90deg); /* Applique la rotation pour afficher verticalement */
+    text-align: center;
+    width: 10%; /* Ajustez la largeur des graduations */
+}

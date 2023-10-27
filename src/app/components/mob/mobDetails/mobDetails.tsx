@@ -8,7 +8,7 @@ import ImageResizer from "@/app/components/common/ImageResizer";
 import DropsRecipesContainer from "@/app/components/common/DropsRecipesContainer";
 
 import MobSingle from "@/app/types/Mob/MobSingle";
-import StasisMultiplier from "../stasis/stasisMultiplier";
+import StasisMultiplier from "@/app/components/mob/stasis/StasisMultiplier";
 import { useState } from "react";
 import StuffDrop from "@/app/types/Stuff/StuffDrop";
 import ResourceDrop from "@/app/types/Resource/ResourceDrop";

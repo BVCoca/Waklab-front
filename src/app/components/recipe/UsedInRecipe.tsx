@@ -121,7 +121,6 @@ export default function UsedInRecipe({recipeIngredients} : Props) {
     ]
 
     const handleSortSelected = (e : any) => {
-        console.log(e)
         setSelectedSort(e)
     }
 

@@ -40,8 +40,6 @@ export async function generateMetadata({ params } : Props) : Promise<Metadata> {
 export default async function StuffDetails({ params }: Props) {
   const stuff = await getStuff(params.slug);
 
-  console.log(stuff)
-
   if (!stuff) {
     return <p>Stuff non trouvé</p>;
   }

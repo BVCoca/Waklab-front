@@ -137,7 +137,7 @@ li {
 
 .infoMobContainer {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: end;
 }
 
@@ -148,7 +148,8 @@ li {
     border-collapse: separate;
     border-spacing: 60px 0;
     background-color: var(--main-bg-light-color);;
-    border-radius: 20px;
+    border-radius: 11px;
+    width: 100%;
 }
 
 .tableStatsMobContainer th {

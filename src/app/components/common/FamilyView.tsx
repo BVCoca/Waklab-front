@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function FamilyView({ family, isLong = false }: Props) {
-  return (
+  return family && (
     <div className={`typeContainer ${isLong && "long"}`}>
       <FamilyIcon
         width={30}

@@ -1,16 +1,14 @@
 "use client";
-import StasisButton from "./stasisButton/stasisButton";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 
 interface stasisProps {
   stasisValues: number[];
-  stasisMultipliers: { [key: number]: number };
   onStasisButtonClick: (stasisValue: number) => void;
 }
 
-export default function stasisBar({
+export default function StasisBar({
   stasisValues,
-  stasisMultipliers,
   onStasisButtonClick,
 }: stasisProps) {
   const [selectedStasisValue, setSelectedStasisValue] = useState(2);

@@ -1,6 +1,6 @@
 "use client";
 
-import StasisBar from "@/app/components/mob/stasis/stasisBar/stasisBar";
+import StasisBar from "@/app/components/mob/stasis/stasisBar/StasisBar";
 import MobSingle from "@/app/types/Mob/MobSingle";
 import "./stasis.css";
 import { useEffect, useState } from "react";
@@ -204,7 +204,6 @@ export default function StasisMultiplier({ onChange, mob }: Props) {
     <>
       <StasisBar
         stasisValues={stasisValues}
-        stasisMultipliers={stasisValues}
         onStasisButtonClick={onStasisButtonClick}
       />
 

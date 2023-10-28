@@ -29,6 +29,7 @@
     margin: 0px;
     padding-top: 20px;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .longCardImage {

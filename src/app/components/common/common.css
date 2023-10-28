@@ -14,11 +14,13 @@
 .rarityLabel {
     margin : 0px;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .rarityLabelSmall {
     font-size: 14px;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .typeContainer {
@@ -32,12 +34,14 @@
 
 .typeContainer.long {
     justify-content: start;
+    margin-bottom : 15px;
 }
 
 .typeLabel {
     color: var(--main-secondary-text);
     font-weight: 300;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .mobDropsContainer {

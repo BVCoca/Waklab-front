@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import ChevronIcon from "@/app/icons/chevron.svg"
 
 interface Props {
     options : Option[],
@@ -27,10 +28,15 @@ export default function Select({options = [], onChange} : Props) {
 
     return (
         <div className="selectContainer">
-            <button className="selectedHeader" onClick={() => setIsOpen(!isOpen)}>{options.find((o) => o.value === currentValue.value)?.label}</button>
-            {isOpen && options.map((o) => o.value !== currentValue.value && (
-                <button className="selectedOption" key={o.value} onClick={() => handleOptionsChange(o)} >{o.label}</button>
-            ))}
+            <button className="selectedHeader" onClick={() => setIsOpen(!isOpen)}>
+                <p>{options.find((o) => o.value === currentValue.value)?.label}</p>
+                <ChevronIcon className={ isOpen ? "active" : "inactive"} width={30} height={30}/>
+            </button>
+            <div className={ isOpen ? "optionContainer active" : "optionContainer inactive"}>
+                {isOpen && options.map((o) => o.value !== currentValue.value && (
+                    <button className={isOpen ? "selectedOption active" : "selectedOption inactive"} key={o.value} onClick={() => handleOptionsChange(o)} >{o.label}</button>
+                ))}
+            </div>
         </div>
     )
 }

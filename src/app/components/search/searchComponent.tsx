@@ -12,15 +12,16 @@ import ResourceSearch from "@/app/types/Resource/ResourceSearch"
 import StuffSearch from "@/app/types/Stuff/StuffSearch"
 import Search from "@/app/types/Search"
 import ArrowTop from "@/app/icons/homepageIcon/arrow_top.svg"
-import Image from "next/image"
+import DungeonSearch from "@/app/types/Dungeon/DungeonSearch"
+import Dungeon from "@/app/types/Dungeon/Dungeon"
 
 interface Props {
-    Search: (value : string, page : number) => Promise<MobSearch | ResourceSearch | StuffSearch | Search>
+    Search: (value : string, page : number) => Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search>
 }
 
 export default function SearchComponent({Search} : Props) {
 
-    const [results, setResults] = useState<Array<Mob|Stuff|Resource>>([])
+    const [results, setResults] = useState<Array<Mob|Stuff|Resource|Dungeon>>([])
     const [value, setValue] = useState('')
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false)

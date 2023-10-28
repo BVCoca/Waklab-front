@@ -5,6 +5,7 @@ import "./menu.css";
 import LogoMobs from "@/app/icons/homepageIcon/logoMobs.svg";
 import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg";
 import LogoResources from "@/app/icons/homepageIcon/logoResources.svg";
+import LogoDungeons from "@/app/icons/homepageIcon/logoDungeon.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -16,18 +17,18 @@ export default function Menu() {
 
   const params = [
     {
-      src: <LogoResources />,
-      srcOnPage: <LogoResources style={{ color: `${isOnPageColor}` }} />,
-      alt: ``,
-      href: `/resources`,
-      label: "Ressources",
-    },
-    {
       src: <LogoMobs />,
       srcOnPage: <LogoMobs style={{ color: `${isOnPageColor}` }} />,
       alt: ``,
       href: `/mobs`,
       label: "Monstres",
+    },
+    {
+      src: <LogoDungeons />,
+      srcOnPage: <LogoDungeons style={{ color: `${isOnPageColor}` }} />,
+      alt: ``,
+      href: `/dungeons`,
+      label: "Donjons",
     },
     {
       src: <LogoStuffs />,
@@ -36,6 +37,14 @@ export default function Menu() {
       href: `/stuffs`,
       label: "Équipements",
     },
+    {
+      src: <LogoResources />,
+      srcOnPage: <LogoResources style={{ color: `${isOnPageColor}` }} />,
+      alt: ``,
+      href: `/resources`,
+      label: "Ressources",
+    },
+    
   ];
 
   return (

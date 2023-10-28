@@ -11,7 +11,7 @@ async function collectDataWithPagination(type : string) {
   
       allData = allData.concat(data["hydra:member"]); 
 
-      if (data["hydra:view"]["hydra:next"] === undefined) {
+      if (data["hydra:view"] === undefined || data["hydra:view"]["hydra:next"] === undefined) {
         break; 
       }
 
@@ -27,18 +27,24 @@ export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
 
     let urls : MetadataRoute.Sitemap = [
         {
-            url: BASE_URL,
-            priority: 2
+            url: BASE_URL
         },
     ]
 
-    const TYPES : string[] = ['mobs','stuffs','resources']
+    const TYPES : string[] = ['mobs','stuffs','resources','dungeons']
 
     TYPES.map((type : string) => {
         urls.push({
-            url: `${BASE_URL}/${type}`,
-            priority: 2
+            url: `${BASE_URL}/${type}`
         })
+    })
+
+    const dungeon_slugs = await collectDataWithPagination('dungeon');
+
+    const dungeons = dungeon_slugs.map((slug : Slug) => {
+        return {
+            url: `${BASE_URL}/dungeons/${slug.slug}`,
+        };
     })
 
     const mob_slugs = await collectDataWithPagination('mobs');
@@ -65,5 +71,6 @@ export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
         };
     })
 
-    return [...urls, ...mobs, ...resources, ...stuffs];
+
+    return [...urls, ...mobs, ...resources, ...stuffs, ...dungeons];
 }

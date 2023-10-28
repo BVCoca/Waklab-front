@@ -9,6 +9,11 @@
     color: var(--main-primary-text);
     transition: all 0.4s;
     padding: 10px;
+    margin-bottom: 7px;
+}
+
+.longCardContainer:first-child {
+    margin-left: 9px;
 }
 
 .longCardContainer.light {

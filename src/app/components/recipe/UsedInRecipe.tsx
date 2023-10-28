@@ -155,7 +155,7 @@ export default function UsedInRecipe({recipeIngredients} : Props) {
                             key={`job-${job["@id"]}`}
                             onClick={() => setActiveTab(job["@id"])}
                         >
-                            <Image alt="" src={job.icon} width={20} height={20}/>
+                            <Image alt="" src={job.icon} width={50} height={50}/>
                             <p>{job.name}</p>
                         </li>
                     ))}

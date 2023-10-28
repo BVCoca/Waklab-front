@@ -1,3 +1,4 @@
+import Dungeon from "./Dungeon/Dungeon";
 import Mob from "./Mob/Mob";
 import MobDrop from "./Mob/MobDrop";
 import Recipe from "./Recipe/Recipe";
@@ -17,6 +18,10 @@ function isResource(item : any): item is Resource {
 
 function isStuff(item : any): item is Stuff {
     return item["@type"] === "Stuff";
+}
+
+function isDungeon(item : any): item is Dungeon {
+    return item["@type"] === "Dungeon";
 }
 
 function isResourceDrop(item: any): item is ResourceDrop {
@@ -39,4 +44,4 @@ function isWeapon(item : Stuff): boolean {
     return ['armes-2-mains', 'armes-1-main', 'seconde-main'].includes(item.type.slug)
 }
 
-export {isMob, isResource, isStuff, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe, isWeapon}
+export {isMob, isResource, isStuff, isDungeon, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe, isWeapon}

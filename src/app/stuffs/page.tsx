@@ -5,7 +5,7 @@ export default function Page() {
 
   return (
     <div id="content">
-      <Header />
+      <Header small={false}/>
       <SearchStuffs />
     </div>
   );

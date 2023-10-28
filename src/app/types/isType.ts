@@ -1,14 +1,13 @@
 import Dungeon from "./Dungeon/Dungeon";
 import Mob from "./Mob/Mob";
 import MobDrop from "./Mob/MobDrop";
-import Recipe from "./Recipe/Recipe";
 import RecipeIngredientFromRecipe from "./Recipe/RecipeIngredientFromRecipe";
 import Resource from "./Resource/Resource";
 import ResourceDrop from "./Resource/ResourceDrop";
 import Stuff from "./Stuff/Stuff";
 import StuffDrop from "./Stuff/StuffDrop";
 
-function isMob(item : Mob|Resource|Stuff): item is Mob {
+function isMob(item : any): item is Mob {
     return item["@type"] === "Mobs";
 }
 

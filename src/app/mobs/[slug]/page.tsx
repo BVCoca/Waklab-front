@@ -1,9 +1,7 @@
 import { getMob } from "@/app/services/mob";
 import "./mobDetails.css";
 import Header from "@/app/components/header/header";
-import CardDetailsType from "@/app/components/card/CardDetailsType";
 import { Metadata } from "next";
-import DropsRecipesContainer from "@/app/components/common/DropsRecipesContainer";
 import MobDetails from "@/app/components/mob/mobDetails/MobDetails";
 
 interface Props {

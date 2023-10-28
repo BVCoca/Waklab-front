@@ -14,11 +14,13 @@
 .rarityLabel {
     margin : 0px;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .rarityLabelSmall {
     font-size: 14px;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .typeContainer {
@@ -32,12 +34,14 @@
 
 .typeContainer.long {
     justify-content: start;
+    margin-bottom : 15px;
 }
 
 .typeLabel {
     color: var(--main-secondary-text);
     font-weight: 300;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .mobDropsContainer {
@@ -82,10 +86,23 @@
     padding-left: 20px;
     right: 20px;
     transition: all 1s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .selectedHeader:hover, .selectedOption:hover {
     background-color: var(--main-cyan-light-color);
+}
+
+.selectedHeader > svg {
+    transform: rotate(-90deg);
+    padding: 10px;
+}
+
+.selectedHeader > svg.active {
+    transform: rotate(90deg);
 }
 
 .selectedOption {
@@ -97,7 +114,7 @@
     min-height: 40px;
 }
 
-.selectedOption:nth-child(2) {
+.selectedOption:first-child {
     border-radius: 10px 10px 0px 0px;
 }
 

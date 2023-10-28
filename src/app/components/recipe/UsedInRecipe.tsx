@@ -161,7 +161,7 @@ export default function UsedInRecipe({recipeIngredients} : Props) {
                     ))}
                 </ul>
                 <div className="tabContent">
-                    {currentIngredients && currentIngredients.map((item : any) => <LongCard theme="light" key={item["@id"]} item={item.stuff ?? item.resource} value={
+                    {currentIngredients && currentIngredients.map((item : any) => (item.stuff || item.resource) && <LongCard theme="light" key={item["@id"]} item={item.stuff ?? item.resource} value={
                         <p className="jobLevel">Craft Lvl. {item.job_level}</p>
                     }/>)}
                 </div>

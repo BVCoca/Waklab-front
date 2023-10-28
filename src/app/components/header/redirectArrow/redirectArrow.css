@@ -15,6 +15,7 @@
 
 .containerRedirectBack > svg {
     padding-top: 2px;
+    color: var(--main-cyan-color)
 }
 
 .redirectLabel {

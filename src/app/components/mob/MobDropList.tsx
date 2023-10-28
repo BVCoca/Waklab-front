@@ -14,9 +14,9 @@ export default function MobDropList({drops} : Props) {
 
     return(
         <div className="dropMobContainer">
-            <h2 className="titleDropMob">Peut se drop sur</h2>
+            <h2 className="titleDropMob">{`Peut s'obtenir sur`}</h2>
             <div className="cardDropContainer">
-                {drops.map((drop,index) => <LongCard key={`dropMob-${index}`} item={drop.mob} value={drop.value + " %"} />)}
+                {drops.sort((a, b) => a.value - b.value).map((drop,index) => <LongCard key={`dropMob-${index}`} item={drop.mob} value={drop.value + " %"} />)}
             </div>
         </div>
     )

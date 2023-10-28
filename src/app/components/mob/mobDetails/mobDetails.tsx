@@ -298,14 +298,21 @@ export default function MobDetails({ mob }: Props) {
           </div>
         </div>
       </div>
-      <div className="titleDropMob titleDropMobDetails">
-        <h2>Drops</h2>
-      </div>
-      <DropsRecipesContainer
-        items={[...mobValue.resourceDrops, ...mobValue.stuffDrops].sort(
-          (a, b) => b.value - a.value
-        )}
-      />
+      {mob.family ? (
+        <div className="containerDropMobDetails">
+          <div className="titleDropMob titleDropMobDetails">
+            <h2>Drops</h2>
+          </div>
+
+          <DropsRecipesContainer
+            items={[...mobValue.resourceDrops, ...mobValue.stuffDrops].sort(
+              (a, b) => b.value - a.value
+            )}
+          />
+        </div>
+      ) : (
+        ""
+      )}
     </>
   );
 }

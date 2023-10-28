@@ -30,20 +30,28 @@ export default function StasisMultiplier({ onChange, mob }: Props) {
 
   useEffect(() => {
     if (selectedStasisMultiplier !== null) {
-      if (isCompetitive && mob.family.name != "Boss Ultimes") {
+      if (isCompetitive && mob.family && mob.family.name != "Boss Ultimes") {
         onChange(
           stasisMultipliers[selectedStasisMultiplier].competitif.hpMultiplier,
           stasisMultipliers[selectedStasisMultiplier].competitif
             .attackMultiplier,
           stasisMultipliers[selectedStasisMultiplier].competitif.dropMultiplier
         );
-      } else if (!isCompetitive && mob.family.name != "Boss Ultimes") {
+      } else if (
+        !isCompetitive &&
+        mob.family &&
+        mob.family.name != "Boss Ultimes"
+      ) {
         onChange(
           stasisMultipliers[selectedStasisMultiplier].normal.hpMultiplier,
           stasisMultipliers[selectedStasisMultiplier].normal.attackMultiplier,
           stasisMultipliers[selectedStasisMultiplier].normal.dropMultiplier
         );
-      } else if (!isCompetitive && mob.family.name == "Boss Ultimes") {
+      } else if (
+        !isCompetitive &&
+        mob.family &&
+        mob.family.name == "Boss Ultimes"
+      ) {
         onChange(
           stasisMultipliers[selectedStasisMultiplier].bossUltime.hpMultiplier,
           stasisMultipliers[selectedStasisMultiplier].bossUltime
@@ -65,7 +73,7 @@ export default function StasisMultiplier({ onChange, mob }: Props) {
         onStasisButtonClick={onStasisButtonClick}
       />
 
-      {mob.family.name != "Boss Ultimes" ? (
+      {mob.family && mob.family.name != "Boss Ultimes" ? (
         <div>
           <label>Compétitif :</label>
           <input

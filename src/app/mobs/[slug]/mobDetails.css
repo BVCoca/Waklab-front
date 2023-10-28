@@ -186,3 +186,7 @@ li {
     color: var(--main-cyan-color);
     margin-bottom: 0!important;
 }
+
+.containerDropMobDetails {
+    width: 100%;
+}

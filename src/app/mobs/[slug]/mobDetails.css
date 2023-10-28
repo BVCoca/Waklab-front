@@ -181,3 +181,8 @@ li {
 .isCapturableMobContainer img {
     margin-left: 15px;
 }
+
+.titleDropMobDetails {
+    color: var(--main-cyan-color);
+    margin-bottom: 0!important;
+}

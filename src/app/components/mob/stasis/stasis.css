@@ -81,7 +81,7 @@ input[type="range"]::-webkit-slider-thumb {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
     color: var(--main-secondary-text);
-
+    overflow: hidden;
 }
 
 .graduation {

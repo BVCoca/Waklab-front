@@ -1,6 +1,7 @@
 import "./styles/globals.css";
 import "./components/menu/menu.css";
 import Menu from "./components/menu/menu";
+import Info from "@/app/components/common/Info"
 
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+
   return (
     <html lang="fr">
       <head>
@@ -53,6 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className={roboto.className}> 
         <main id="pageContent">
+          <Info/>
           <div id="menuContainer">
             <Menu />
           </div>

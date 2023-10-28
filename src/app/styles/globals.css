@@ -71,12 +71,13 @@ a {
   text-align: center;
   color: white;
   opacity: 0.9;
-  padding: 7px 8px 0px 8px;
+  padding: 7px 8px 7px 8px;
   border-radius: 12px;
   position: fixed;
-  top: 10px;
-  right: 10px;
-  font-size: 10px;
+  bottom: 0;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
   background: rgba(36, 36, 36, 0.2);
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.07);
   backdrop-filter: blur( 5.5px );
@@ -85,8 +86,9 @@ a {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-#textWakfu1 {
+#textWakfu {
   display: inline;
+  margin: 0px 5px;
 }
 
 #linkWakfu {

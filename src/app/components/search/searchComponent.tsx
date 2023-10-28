@@ -1,10 +1,9 @@
 'use client'
 
 import "./search.css"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import SearchInfiniteScroll from "../search/searchInfiniteScroll"
 import SearchInput from "../search/searchInput"
-import SearchFilter from "../search/searchFilter"
 import Mob from "@/app/types/Mob/Mob"
 import Stuff from "@/app/types/Stuff/Stuff"
 import Resource from "@/app/types/Resource/Resource"
@@ -12,7 +11,7 @@ import MobSearch from "@/app/types/Mob/MobSearch"
 import ResourceSearch from "@/app/types/Resource/ResourceSearch"
 import StuffSearch from "@/app/types/Stuff/StuffSearch"
 import Search from "@/app/types/Search"
-import ArrowTop from "public/arrowTop.png"
+import ArrowTop from "@/app/icons/homepageIcon/arrow_top.svg"
 import Image from "next/image"
 
 interface Props {
@@ -104,11 +103,10 @@ export default function SearchComponent({Search} : Props) {
         <div id="searchContainer">
             {totalItems > 0 && <div id="totalItems">{totalItems} résultats</div>}
             <SearchInput valueInput={value} onChange={handleChange}/>
-            <SearchFilter/>
             <SearchInfiniteScroll resultsScroll={results}/>
             {loading && <div id="loaderWrapper"><span className="loader"></span></div>}  
-            {isFinished && results.length > 0 && <div id="endingMessage">Aucun résultat de plus pour cette recherche.</div>}
-            {scrollPosition >= 500 && <Image onClick={toTheTop} id="backToTheTop" src={ArrowTop} width={30} alt="Bouton vers le haut de page"/>}      
+            {totalItems === 0 && <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu">MMORPG: © 2023 Ankama Studio. Tous droits réservés. &quot;WakLab&quot; est un site non-officiel en aucun lien avec Ankama.</p></div>}
+            {scrollPosition >= 600 && <ArrowTop onClick={toTheTop} id="backToTheTop" alt="Bouton vers le haut de page"/>}      
         </div>
     )
 }

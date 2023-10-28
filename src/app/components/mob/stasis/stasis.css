@@ -32,12 +32,15 @@ input[type="range"]::-moz-range-track {
     border-radius: 1rem;
 }
 
+/* Version Firefox */
 input[type="range"]::-moz-range-thumb {
     appearance: none; 
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
-    /* background-image: url("/mobDetailsIcon/iconStasisOrb.png"); */
+    background-color: transparent;
+    border-color: #a621af;
+    background-image: url("/mobDetailsIcon/iconStasisOrb.png");
     background-size: cover;
     
   /*Colors*/
@@ -67,7 +70,7 @@ input[type="range"]::-webkit-slider-thumb {
 .graduations {
     display: flex;
     justify-content: space-between;
-    width: 20rem; /* Ajustez en fonction de votre mise en page */
+    width: 20rem; 
     height: 10px;
     transform: rotate(0deg); /* Inverse la rotation pour afficher horizontalement */
     position: relative;

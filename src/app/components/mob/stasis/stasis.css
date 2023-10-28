@@ -6,6 +6,10 @@
     font-size: 1.5rem;
 }
 
+.stasisBar label {
+    width: 111px;
+}
+
 .vertical-slider {
     transform: rotate(-90deg);
     position: absolute;

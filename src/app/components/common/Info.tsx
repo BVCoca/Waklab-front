@@ -1,25 +1,33 @@
 "use client"
 
 import { useState } from "react"
-import ModalInfo from "./Modal"
+import ModalInfo from "./ModalInfo"
 import InfoIcon from "@/app/icons/commonIcon/info.svg"
+import FormBug from "@/app/components/common/FormBug"
+import { useOutsideClick } from "../hooks/useOutsideClick"
 
-export default function Modal() {
+export default function Info() {
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [openModalInfo, setOpenModalInfo] = useState(false);
+    const [openModalReport, setOpenModalReport] = useState(false)
 
-    const openModal = () => {
-        if (isOpen) {
-            setIsOpen(false);
+    const handleOpenModalInfo = () => {
+        if (openModalInfo) {
+            setOpenModalInfo(false);
         } else {
-            setIsOpen(true);
+            setOpenModalInfo(true);
         }
     };
 
+    const ref = useOutsideClick(() => {
+        setOpenModalInfo(false)
+    });
+
     return (
-        <>
-            <InfoIcon id="info" alt="Page Info" onClick={openModal}/>
-            {isOpen && <ModalInfo/>}
-        </>
+        <div ref={ref}>
+            <InfoIcon id="info" alt="Page Info" onClick={handleOpenModalInfo}/>
+            {openModalInfo && <ModalInfo setOpenModalInfo={setOpenModalInfo} setOpenModalReport={setOpenModalReport}/>}
+            {openModalReport && <FormBug setOpenModalReport={setOpenModalReport}/>}
+        </div>
     )
 }

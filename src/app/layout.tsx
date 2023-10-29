@@ -1,7 +1,7 @@
 import "./styles/globals.css";
 import "./components/menu/menu.css";
 import Menu from "./components/menu/menu";
-import Info from "@/app/components/common/Info"
+import Info from "@/app/components/modal/Info"
 
 import type { Metadata } from "next";
 import Script from "next/script";

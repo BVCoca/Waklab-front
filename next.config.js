@@ -2,7 +2,11 @@
 
 module.exports = {
   images: {
-    domains: ["static.ankama.com", "api.waklaboratory.fr"], // Ajoutez tous les domaines qui hébergent vos images
+    domains: [
+      "static.ankama.com",
+      "api.waklaboratory.fr",
+      "methodwakfu.com"
+    ],
   },
   output: 'standalone',
   webpack(config) {

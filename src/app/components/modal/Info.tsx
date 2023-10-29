@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ModalInfo from "./ModalInfo"
 import InfoIcon from "@/app/icons/commonIcon/info.svg"
-import FormBug from "@/app/components/common/FormBug"
+import FormBug from "@/app/components/modal/FormBug"
 import { useOutsideClick } from "../hooks/useOutsideClick"
 
 export default function Info() {

@@ -75,7 +75,7 @@ a {
   border-radius: 12px;
   position: fixed;
   bottom: 0;
-  left: 53%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 12px;
   background: rgba(36, 36, 36, 0.2);
@@ -115,7 +115,7 @@ a {
   position: fixed;
   top: 40px;
   right: 40px;
-  width: 30%;
+  width: 27%;
   height: fit-content;
   padding:  15px;
   border-radius: 15px 0px 15px 15px;
@@ -139,7 +139,7 @@ a {
 
 #h2Modal {
   display: inline;
-  color: var(--main-cyan-color);
+  color: var(--main-cyan-light-color);
   font-size: 24px;
   margin-left: 30px;
 }

@@ -5,7 +5,6 @@ import MobWithDrops from "./MobWithDrops";
  * Utiliser uniquement sur la page de l'item
  */
 export default interface MobSingle extends MobWithDrops, Base {
-    
     isCapturable: boolean,
     actionPoints: number,
     movementPoints: number,

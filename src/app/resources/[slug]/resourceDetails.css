@@ -39,3 +39,42 @@
     padding-top: 30px;
     padding-right: 20px;
 }
+
+.subliContainer {
+    width: 100%;
+    text-align: left;
+    color: var(--main-cyan-color);
+}
+
+.subliHeader {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    padding-bottom: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    color: var(--main-primary-text);
+    justify-content: space-between;
+}
+
+.subliRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.subliRow > * {
+    width: 100%;
+    text-align: center;
+}
+
+.chasseContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}

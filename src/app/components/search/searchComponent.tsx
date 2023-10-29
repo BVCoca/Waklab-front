@@ -14,6 +14,7 @@ import Search from "@/app/types/Search"
 import ArrowTop from "@/app/icons/homepageIcon/arrow_top.svg"
 import DungeonSearch from "@/app/types/Dungeon/DungeonSearch"
 import Dungeon from "@/app/types/Dungeon/Dungeon"
+import { useSearchParams } from "next/navigation"
 
 interface Props {
     Search: (value : string, page : number) => Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search>
@@ -29,6 +30,8 @@ export default function SearchComponent({Search} : Props) {
     const [totalItems, setTotalItems] = useState<number>(0)
     const [scrollPosition, setScrollPosition] = useState(0);
 
+    let params = useSearchParams();
+
     useEffect(() => {
         function handleScroll() {
             setScrollPosition(window.scrollY);
@@ -40,6 +43,13 @@ export default function SearchComponent({Search} : Props) {
                 setPage(prevPage => prevPage + 1);
             }
         }
+
+        // Si il y a un paramètre, alors on le recupère
+        if(params.get('q'))
+        {
+            setValue(params.get('q') ?? '')
+        }   
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);

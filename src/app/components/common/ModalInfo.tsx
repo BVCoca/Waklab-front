@@ -1,7 +1,22 @@
 import Warning from "@/app/icons/commonIcon/warning.svg"
 import Link from "next/link"
 
-export default function ModalInfo() {
+interface Props {
+    setOpenModalInfo: any,
+    setOpenModalReport: any
+}
+
+export default function ModalInfo({setOpenModalInfo, setOpenModalReport} : Props) {
+
+    function openModalReport() {
+        setOpenModalReport(true)
+        setOpenModalInfo(false) 
+    }
+
+    function closeModal() {
+        setOpenModalInfo(false)
+    }
+
     return (
         <div id="modalContainer">
             <div id="textModalContainer">
@@ -13,8 +28,8 @@ export default function ModalInfo() {
                 </p>
             </div>
             <div id="linkModalContainer">
-                <Link href={"/report"} className="linkModal">Report un bug</Link>
-                <Link href={"/notices"} className="linkModal">Mentions Légales</Link>
+                <button onClick={openModalReport} className="linkModal">Report un bug</button>
+                <Link href={"/notices"} onClick={closeModal} className="linkModal">Mentions Légales</Link>
             </div>
         </div>
     )

@@ -1,0 +1,71 @@
+.detailsContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.headerDetails {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    padding-bottom: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: var(--main-primary-text);
+}
+
+.imageContainer {
+    display: flex;
+}
+
+.blockCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.dungeonMaxPlayer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.dungeonMaxPlayerText {
+    margin-right: 10px;
+}
+
+.dungeonRoomCount {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.dungeonRoomCountNumber {
+    color: var(--main-cyan-color);
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.dungeonMaxPlayerNumber {
+    color: var(--main-cyan-color);
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+
+.dungeonRoomCountImage {
+    margin-left: 15px;
+}
+
+.levelContainer {
+    height: 100%;
+    width: 80px;
+    padding-top: 30px;
+    padding-right: 20px;
+}

@@ -18,7 +18,7 @@ export default function Recipes({ recipes } : Props) {
                         <h3>{recipe.job.name} - {recipe.job_level}</h3>
                     </div>
                     <DropsRecipesContainer
-                        items={recipe.recipeIngredients}
+                        items={recipe.recipeIngredients.sort((a,b) => b.quantity - a.quantity)}
                     />
                 </div>
             ))}

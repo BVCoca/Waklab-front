@@ -1,14 +1,11 @@
-import Mob from "./Mob";
-import ResourceDrop from "../Resource/ResourceDrop";
-import StuffDrop from "../Stuff/StuffDrop";
+import Dungeon from "../Dungeon/Dungeon";
 import Base from "../Hydra/Base";
+import MobWithDrops from "./MobWithDrops";
 
 /**
  * Utiliser uniquement sur la page de l'item
  */
-export default interface MobSingle extends Mob, Base {
-    resourceDrops : ResourceDrop[],
-    stuffDrops : StuffDrop[],
+export default interface MobSingle extends MobWithDrops, Base {
     isCapturable: boolean,
     actionPoints: number,
     movementPoints: number,
@@ -25,5 +22,7 @@ export default interface MobSingle extends Mob, Base {
     resEarth: number,
     resWind: number,
     resFire: number,
-    hp : number
+    hp : number,
+    dungeons : Dungeon[],
+    boss? : Dungeon
 }

@@ -71,12 +71,13 @@ a {
   text-align: center;
   color: white;
   opacity: 0.9;
-  padding: 7px 8px 0px 8px;
+  padding: 7px 8px 7px 8px;
   border-radius: 12px;
   position: fixed;
-  top: 10px;
-  right: 10px;
-  font-size: 10px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
   background: rgba(36, 36, 36, 0.2);
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.07);
   backdrop-filter: blur( 5.5px );
@@ -85,10 +86,103 @@ a {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-#textWakfu1 {
+#textWakfu {
   display: inline;
+  margin: 0px 5px;
 }
 
 #linkWakfu {
   color: var(--main-cyan-light-color);
+}
+
+/* -----------------Modal----------------- */
+
+#info {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.15s ease-in;
+}
+
+#info:hover {
+  scale: 1.15;
+  fill: var(--main-cyan-light-color);
+}
+
+#modalContainer {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 27%;
+  height: fit-content;
+  padding:  15px;
+  border-radius: 15px 0px 15px 15px;
+  z-index: 5;
+  background: rgba( 0, 0, 0, 0.5 );
+  backdrop-filter: blur( 6.5px );
+  -webkit-backdrop-filter: blur( 6.5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#titleModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#emojiModal {
+  height: fit-content;
+  width: 50px;
+}
+
+#h2Modal {
+  display: inline;
+  color: var(--main-cyan-light-color);
+  font-size: 24px;
+  margin-left: 30px;
+}
+
+#textModalContainer>p {
+  color: white;
+  font-size: 13px;
+}
+
+#linkModalContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.linkModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: var(--main-cyan-color);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.linkModal:hover {
+  background-color: var(--main-cyan-light-color);
+}
+
+.customError {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-start;
+  align-items: center;
+  padding-top: 10%;
+  color: var(--main-cyan-color);
+}
+
+.customError h2 {
+  color: var(--main-primary-text);
 }

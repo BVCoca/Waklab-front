@@ -1,6 +1,7 @@
 import "./styles/globals.css";
 import "./components/menu/menu.css";
 import Menu from "./components/menu/menu";
+import Info from "@/app/components/modal/Info"
 
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+
   return (
     <html lang="fr">
       <head>
@@ -51,15 +53,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           }}
         />
       </head>
-      <body className={roboto.className}>
-        <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu1"> est un jeu édité par Ankama.</p><p id="textWakfu2">&quot;WakLab&quot; n&apos;est pas un site officiel d&apos;Ankama</p></div>
+      <body className={roboto.className}> 
         <main id="pageContent">
+          <Info/>
           <div id="menuContainer">
             <Menu />
           </div>
           <div id="content">
             <div id="centerContainer">
-            {children}
+              {children}
             </div>
           </div>
         </main>

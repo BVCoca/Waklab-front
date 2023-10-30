@@ -21,9 +21,9 @@
 }
 
 .valueDrops {
-   color: var(--main-secondary-text);
    font-weight: 300;
    font-size: 2rem;
+   color: var(--main-primary-text);
 }
 
 .linkCardDetailsContainer {

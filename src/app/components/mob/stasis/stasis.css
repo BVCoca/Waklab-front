@@ -6,6 +6,10 @@
     font-size: 1.5rem;
 }
 
+.stasisBar label {
+    width: 111px;
+}
+
 .vertical-slider {
     transform: rotate(-90deg);
     position: absolute;
@@ -25,31 +29,52 @@ input[type="range"] {
     background: #cd2ad91e;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-moz-range-track {
     height: 2rem;
     background: #cd2ad91e;
     border-radius: 1rem;
 }
 
+/* Version Firefox */
+input[type="range"]::-moz-range-thumb {
+    appearance: none; 
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border-color: #a621af;
+    background-image: url("/mobDetailsIcon/iconStasisOrb.png");
+    background-size: cover;
+    
+  /*Colors*/
+    box-shadow: -50rem 0 5rem 20rem #430547,
+                -40rem 0 5rem 30rem #530858,
+                -30rem 0 2rem 25rem #87168f,
+                -25.5rem 0 0 25rem  #a621af;
+}
+
+
+/* Version Chrome */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none; 
+    appearance: none;
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
     background-image: url("/mobDetailsIcon/iconStasisOrb.png");
     background-size: cover;
-  /*Colors*/
-    box-shadow: -50rem 0 5rem 20rem #a621af,
-                -40rem 0 5rem 30rem #a621af,
-                -30rem 0 2rem 25rem #a621af,
+    /* Colors */
+    box-shadow: -50rem 0 5rem 20rem #430547,
+                -40rem 0 5rem 30rem #530858,
+                -30rem 0 2rem 25rem #87168f,
                 -25.5rem 0 0 25rem  #a621af;
 }
 
 .graduations {
     display: flex;
     justify-content: space-between;
-    width: 20rem; /* Ajustez en fonction de votre mise en page */
+    width: 20rem; 
     height: 10px;
     transform: rotate(0deg); /* Inverse la rotation pour afficher horizontalement */
     position: relative;
@@ -60,7 +85,7 @@ input[type="range"]::-webkit-slider-thumb {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
     color: var(--main-secondary-text);
-
+    overflow: hidden;
 }
 
 .graduation {

@@ -137,7 +137,7 @@ li {
 
 .infoMobContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: end;
 }
 
@@ -180,4 +180,18 @@ li {
 
 .isCapturableMobContainer img {
     margin-left: 15px;
+}
+
+.titleDropMobDetails {
+    color: var(--main-cyan-color);
+    margin-bottom: 0!important;
+}
+
+.containerDropMobDetails {
+    width: 100%;
+}
+
+.containerDungeon {
+    width: 100%;
+    color: var(--main-cyan-color);
 }

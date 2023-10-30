@@ -155,13 +155,13 @@ export default function UsedInRecipe({recipeIngredients} : Props) {
                             key={`job-${job["@id"]}`}
                             onClick={() => setActiveTab(job["@id"])}
                         >
-                            <Image alt="" src={job.icon} width={20} height={20}/>
+                            <Image alt="" src={job.icon} width={50} height={50}/>
                             <p>{job.name}</p>
                         </li>
                     ))}
                 </ul>
                 <div className="tabContent">
-                    {currentIngredients && currentIngredients.map((item : any) => <LongCard theme="light" key={item["@id"]} item={item.stuff ?? item.resource} value={
+                    {currentIngredients && currentIngredients.map((item : any) => (item.stuff || item.resource) && <LongCard theme="light" key={item["@id"]} item={item.stuff ?? item.resource} value={
                         <p className="jobLevel">Craft Lvl. {item.job_level}</p>
                     }/>)}
                 </div>

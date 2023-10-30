@@ -14,11 +14,13 @@
 .rarityLabel {
     margin : 0px;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .rarityLabelSmall {
     font-size: 14px;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .typeContainer {
@@ -32,28 +34,57 @@
 
 .typeContainer.long {
     justify-content: start;
+    margin-bottom : 15px;
 }
 
 .typeLabel {
     color: var(--main-secondary-text);
     font-weight: 300;
     text-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.dungeonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+    flex-direction: row;
+    width: 100%;
+    color: var(--main-secondary-text);
+}
+
+.dungeonContainer.long {
+    justify-content: start;
+    margin-bottom : 15px;
+}
+
+.dungeonLabel {
+    color: var(--main-secondary-text);
+    font-weight: 300;
+    font-size: 18px;
 }
 
 .mobDropsContainer {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    overflow-x: hidden;
+    overflow-y: auto;
     white-space: nowrap;
     width: 100%;
+    height: 500px;
     background-color: var(--main-bg-color);
     padding: 10px 0px;
     border-radius: 20px;
-    margin-top: 20px;
     column-gap: 20px;
     justify-content: flex-start;
     padding-left: 10px;
     padding-right: 10px;
+    border: 4px solid var(--main-bg-color)
+}
+
+.cardDetailsTypeContainer {
+    margin: 10px;
 }
 
 .titleDropMob {
@@ -82,10 +113,23 @@
     padding-left: 20px;
     right: 20px;
     transition: all 1s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .selectedHeader:hover, .selectedOption:hover {
     background-color: var(--main-cyan-light-color);
+}
+
+.selectedHeader > svg {
+    transform: rotate(-90deg);
+    padding: 10px;
+}
+
+.selectedHeader > svg.active {
+    transform: rotate(90deg);
 }
 
 .selectedOption {
@@ -97,7 +141,7 @@
     min-height: 40px;
 }
 
-.selectedOption:nth-child(2) {
+.selectedOption:first-child {
     border-radius: 10px 10px 0px 0px;
 }
 

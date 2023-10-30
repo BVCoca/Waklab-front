@@ -4,13 +4,15 @@ import Stuff from "@/app/types/Stuff/Stuff";
 import Link from "next/link";
 import "./Card.css";
 import CardHeader from "./CardHeader";
-import { isMob, isStuff } from "@/app/types/isType";
-import ImageResizer from "../common/ImageResizer";
+import { isDungeon, isMob, isResource, isStuff } from "@/app/types/isType";
 import FamilyView from "../common/FamilyView";
 import TypeView from "../common/TypeView";
+import Image from "next/image";
+import Dungeon from "@/app/types/Dungeon/Dungeon";
+import DungeonLabel from "../common/DungeonLabel";
 
 interface Props {
-  item: Mob | Resource | Stuff;
+  item: Mob | Resource | Stuff | Dungeon;
 }
 
 export default function Card({ item }: Props) {
@@ -25,14 +27,14 @@ export default function Card({ item }: Props) {
 
   let rarity = null;
 
-  if (!isMob(item)) {
+  if (isResource(item) || isStuff(item)) {
     rarity = item.rarity;
   }
 
   return (
     <Link href={item["@id"].slice(4)} className="cardContainer">
       <CardHeader level={level} rarity={rarity} />
-      <ImageResizer
+      <Image
         className="cardImage"
         src={item.imageUrl}
         alt=""
@@ -41,7 +43,8 @@ export default function Card({ item }: Props) {
       />
       <h3 className="cardName">{item.name}</h3>
       {isMob(item) && <FamilyView family={item.family} />}
-      {!isMob(item) && <TypeView type={item.type} />}
+      {(isStuff(item) || isResource(item)) && <TypeView type={item.type} />}
+      {isDungeon(item) && <DungeonLabel />}
     </Link>
   );
 }

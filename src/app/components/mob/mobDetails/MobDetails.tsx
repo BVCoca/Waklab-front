@@ -12,6 +12,8 @@ import StasisMultiplier from "@/app/components/mob/stasis/StasisMultiplier";
 import { useState } from "react";
 import StuffDrop from "@/app/types/Stuff/StuffDrop";
 import ResourceDrop from "@/app/types/Resource/ResourceDrop";
+import Dungeon from "@/app/types/Dungeon/Dungeon";
+import Card from "../../card/Card";
 
 interface Props {
   mob: MobSingle;
@@ -312,6 +314,22 @@ export default function MobDetails({ mob }: Props) {
         </div>
       ) : (
         ""
+      )}
+      {mob.dungeons && mob.dungeons.length > 0 && (
+        <div className="containerDungeon">
+          <h2>{mob.dungeons.length > 1 ? 'Peut se trouver dans les donjons' : 'Peut se trouver dans le donjon'}</h2>
+          <div className="containerDungeons">
+            {mob.dungeons.map((d : Dungeon) => (
+              <Card key={d["@id"]} item={d} />
+            ))}
+          </div>
+        </div>
+      )}
+      {mob.boss && (
+        <div className="containerDungeon">
+          <h2>Boss du donjon</h2>
+          <Card item={mob.boss} />
+        </div>
       )}
     </>
   );

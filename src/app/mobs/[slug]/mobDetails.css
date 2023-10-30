@@ -190,3 +190,8 @@ li {
 .containerDropMobDetails {
     width: 100%;
 }
+
+.containerDungeon {
+    width: 100%;
+    color: var(--main-cyan-color);
+}

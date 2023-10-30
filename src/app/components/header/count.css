@@ -1,0 +1,18 @@
+.Count {
+    padding: 2rem;
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-cyan-color);
+}
+
+.statsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    width: 100%;
+    justify-content: space-evenly;
+}

@@ -18,7 +18,8 @@
 }
 
 .imageContainer {
-    display: flex;
+    align-self: center;
+    padding-left: 20px;
 }
 
 .blockCenter {

@@ -23,9 +23,7 @@ export default function DungeonDetails({ dungeon }: Props) {
   return (
     <div className="detailsContent">
       <div className="headerDetails">
-        <div className="imageContainer">
-          <Image src={dungeon.imageUrl} width={150} height={150} alt="" />
-        </div>
+        <Image className="imageContainer" src={dungeon.imageUrl} width={150} height={150} alt="" />
         <div className="blockCenter">
           <h1>{dungeon.name}</h1>
           <div className="dungeonMaxPlayer">

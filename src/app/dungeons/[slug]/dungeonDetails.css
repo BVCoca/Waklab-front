@@ -18,7 +18,7 @@
 }
 
 .imageContainer {
-    padding: 10px 0px 0px 20px
+    display: flex;
 }
 
 .blockCenter {
@@ -33,6 +33,10 @@
     align-items: center;
     justify-content: flex-end;
     width: 100%;
+}
+
+.dungeonMaxPlayerText {
+    margin-right: 10px;
 }
 
 .dungeonRoomCount {
@@ -54,9 +58,6 @@
     font-size: 20px;
 }
 
-.dungeonMaxPlayerImage {
-    margin:0px 15px;
-}
 
 .dungeonRoomCountImage {
     margin-left: 15px;

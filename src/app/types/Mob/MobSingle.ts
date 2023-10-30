@@ -1,3 +1,4 @@
+import Dungeon from "../Dungeon/Dungeon";
 import Base from "../Hydra/Base";
 import MobWithDrops from "./MobWithDrops";
 
@@ -21,5 +22,7 @@ export default interface MobSingle extends MobWithDrops, Base {
     resEarth: number,
     resWind: number,
     resFire: number,
-    hp : number
+    hp : number,
+    dungeons : Dungeon[],
+    boss? : Dungeon
 }

@@ -6,3 +6,7 @@
     font-size: 18px;
     color: white;
 }
+
+.pseudoDiscord {
+    display: flex;
+}

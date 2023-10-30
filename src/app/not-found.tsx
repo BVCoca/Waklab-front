@@ -5,7 +5,7 @@ export default function Error() {
   return (
     <div className="customError">
       <h1 className="title">ERREUR 404</h1>
-      <h2>La page demandée n'existe pas</h2>
+      <h2>La page demandée n&apos;existe pas</h2>
       <Image
         src="/errorIcon/error404Icon.png"
         width={150}

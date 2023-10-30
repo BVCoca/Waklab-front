@@ -17,7 +17,7 @@ export default function SearchInput({valueInput, onChange} : Props) {
         const newValue = event.target.value;
 
         // On update l'URL
-        window.history.replaceState(null, null, '?q=' + newValue)
+        window.history.replaceState(null, '', '?q=' + newValue)
         
         onChange(newValue);
     }
@@ -30,8 +30,7 @@ export default function SearchInput({valueInput, onChange} : Props) {
         pathname = "une ressource";
     } else if(pathname.includes("stuffs")) {
         pathname = "un équipement";
-    } 
-    else if(pathname.includes("dungeons")) {
+    } else if(pathname.includes("dungeons")) {
         pathname = "un donjons";
     } else {
         pathname = "un monstre, une ressource ou un équipement";

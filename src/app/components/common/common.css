@@ -44,7 +44,7 @@
     white-space: nowrap;
 }
 
-.dongeonContainer {
+.dungeonContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,12 +54,12 @@
     color: var(--main-secondary-text);
 }
 
-.dongeonContainer.long {
+.dungeonContainer.long {
     justify-content: start;
     margin-bottom : 15px;
 }
 
-.dongeonLabel {
+.dungeonLabel {
     color: var(--main-secondary-text);
     font-weight: 300;
     font-size: 18px;

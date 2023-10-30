@@ -5,11 +5,11 @@ interface Props {
     isLong? : boolean
 }
 
-export default function DongeonLabel({ isLong = false} : Props) {
+export default function DungeonLabel({ isLong = false} : Props) {
     return (
-        <div className={`dongeonContainer ${isLong && "long"}`}>
+        <div className={`dungeonContainer ${isLong && "long"}`}>
             <LogoDungeons width={30} height={30}/>
-            <h4 className="dongeonLabel">Donjon</h4>
+            <h4 className="dungeonLabel">Donjon</h4>
         </div>
     )
 }

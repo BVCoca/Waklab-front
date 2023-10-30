@@ -9,7 +9,7 @@ import FamilyView from "../common/FamilyView";
 import TypeView from "../common/TypeView";
 import Image from "next/image";
 import Dungeon from "@/app/types/Dungeon/Dungeon";
-import DongeonLabel from "../common/DongeonLabel";
+import DungeonLabel from "../common/DungeonLabel";
 
 interface Props {
   item: Mob | Resource | Stuff | Dungeon;
@@ -44,7 +44,7 @@ export default function Card({ item }: Props) {
       <h3 className="cardName">{item.name}</h3>
       {isMob(item) && <FamilyView family={item.family} />}
       {(isStuff(item) || isResource(item)) && <TypeView type={item.type} />}
-      {isDungeon(item) && <DongeonLabel />}
+      {isDungeon(item) && <DungeonLabel />}
     </Link>
   );
 }

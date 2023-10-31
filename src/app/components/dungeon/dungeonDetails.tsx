@@ -28,12 +28,24 @@ export default function DungeonDetails({ dungeon }: Props) {
 
   // Séparation des drops en resource et stuff
   let allMobs = [...dungeon.Mobs, dungeon.Boss]
-  let stuffDrops : any = [];
+  let stuffDrops : StuffDrop[] = [];
   let resourceDrops : any = [];
 
   allMobs.forEach((mob) => {
-    stuffDrops.push(...mob.stuffDrops)
-    resourceDrops.push(...mob.resourceDrops)
+    
+    mob.stuffDrops.forEach((stuffDrop : StuffDrop) => {
+      if(stuffDrop.stuff && stuffDrops.find((s : StuffDrop) => s.stuff.name === stuffDrop.stuff.name) === undefined)
+      {
+        stuffDrops.push(stuffDrop)
+      }
+    })
+
+    mob.resourceDrops.forEach((resourceDrop : ResourceDrop) => {
+      if(resourceDrop.resource && resourceDrops.find((r : ResourceDrop) => r.resource.name === resourceDrop.resource.name) === undefined)
+      {
+        resourceDrops.push(resourceDrop)
+      }
+    })
   });
 
   return (

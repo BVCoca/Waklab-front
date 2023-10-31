@@ -31,6 +31,9 @@ export default function CardDetailsType({ item }: Props) {
 
   if (isResourceDrop(item)) {
     entity = item.resource;
+    if (entity === undefined) {
+      return ""
+    }
     level = [entity.level];
     rarity = entity.rarity;
   } else if (isStuffDrop(item)) {
@@ -49,7 +52,7 @@ export default function CardDetailsType({ item }: Props) {
     }
   }
 
-  if (entity == null) {
+  if (entity == null || level == null) {
     return "";
   }
 

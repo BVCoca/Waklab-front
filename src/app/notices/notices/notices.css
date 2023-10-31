@@ -1,10 +1,30 @@
 #notices {
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 5%;
     align-items: center;
     font-size: 18px;
     color: white;
+}
+
+.devName {
+    color: var(--main-cyan-light-color);
+}
+
+.devDiscord {
+    display: flex;
+}
+
+.discordLogo {
+    margin-right: 10px;
+}
+
+.devEmail {
+    display: flex;
+}
+
+.emailLogo {
+    margin-right: 10px;
 }
 
 .pseudoDiscord {

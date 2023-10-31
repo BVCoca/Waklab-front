@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { fetchSlugs } from "./services/common";
-import Slugs, { Slug } from "./types/Slug";
+import { Slug } from "./types/Slug";
 
 async function collectDataWithPagination(type : string) {
     let allData : Slug[] = [];

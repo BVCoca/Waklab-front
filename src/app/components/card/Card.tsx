@@ -16,6 +16,9 @@ interface Props {
 }
 
 export default function Card({ item }: Props) {
+
+  let imageUrlError = "/errorIcon/errorItem.png"
+  
   // Extraction des niveaux
   let level = [];
 

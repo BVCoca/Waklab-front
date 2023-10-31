@@ -16,9 +16,9 @@ export default function Page() {
       'number' : 796
     },
     {
-      'icon' : <LogoDungeons width={60} height={60} />,
+      'icon' : <LogoDungeons width={40} height={60} />,
       'label' : 'Donjons',
-      'number' : 69
+      'number' : 104
     },
     {
       'icon' : <LogoStuffs width={60} height={60} />,

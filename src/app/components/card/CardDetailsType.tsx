@@ -5,7 +5,6 @@ import {
   isMob,
   isRecipeIngredientFromRecipe,
   isResourceDrop,
-  isStuff,
   isStuffDrop,
 } from "@/app/types/isType";
 import ImageResizer from "../common/ImageResizer";
@@ -19,21 +18,22 @@ import Rarity from "@/app/types/Rarity";
 import RecipeIngredientFromRecipe from "@/app/types/Recipe/RecipeIngredientFromRecipe";
 
 interface Props {
-  item: ResourceDrop | StuffDrop | RecipeIngredientFromRecipe;
+  item: ResourceDrop | StuffDrop | RecipeIngredientFromRecipe,
+  theme? : string
 }
 
-export default function CardDetailsType({ item }: Props) {
+export default function CardDetailsType({ item, theme = '' }: Props) {
 
   // Extraction des niveaux
   let level: number[] = [];
   let entity: Resource | Stuff | null = null;
   let rarity: Rarity | null = null;
 
-  if (isResourceDrop(item)) {
+  if (isResourceDrop(item) && item.resource !== undefined) {
     entity = item.resource;
     level = [entity.level];
     rarity = entity.rarity;
-  } else if (isStuffDrop(item)) {
+  } else if (isStuffDrop(item) && item.stuff !== undefined) {
     entity = item.stuff;
     level = [entity.level];
     rarity = entity.rarity;
@@ -54,7 +54,7 @@ export default function CardDetailsType({ item }: Props) {
   }
 
   return (
-    <Link href={entity["@id"].slice(4)} className="cardDetailsTypeContainer">
+    <Link href={entity["@id"].slice(4)} className={`cardDetailsTypeContainer ${theme}`}>
       <div className="linkCardDetailsContainer">
         <CardHeader level={level} rarity={rarity} isSmall={true} />
         <div className="cardImageValueContainer">

@@ -18,7 +18,8 @@
 }
 
 .imageContainer {
-    display: flex;
+    align-self: center;
+    padding-left: 20px;
 }
 
 .blockCenter {
@@ -68,4 +69,23 @@
     width: 80px;
     padding-top: 30px;
     padding-right: 20px;
+}
+
+.titleMob {
+    color : var(--main-cyan-color);
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.MobsContainer {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.cardMobContainer {
+   display: flex;
+   flex-direction: row;
+   column-gap: 20px;
 }

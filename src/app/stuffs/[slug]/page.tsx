@@ -10,6 +10,7 @@ import { getStuff } from "@/app/services/stuff";
 import "./stuffDetails.css"
 import { isWeapon } from "@/app/types/isType";
 import stuffCaracteristic from "@/app/types/Stuff/StuffCaracteristic";
+import ImageWithFallback from "@/app/components/common/ImageWithFallback";
 
 interface Props {
   params: {
@@ -49,7 +50,7 @@ export default async function StuffDetails({ params }: Props) {
       <Header small={true} />
       <div className="headerDetails">
         <div className="imageRarityContainer">
-          <Image src={stuff.imageUrl} width={150} height={150} alt=""/>
+          <ImageWithFallback src={stuff.imageUrl} width={150} height={150} alt=""/>
           <RarityView rarity={stuff.rarity} />
         </div>
         <div className="blockCenter">

@@ -3,12 +3,12 @@ import Resource from "@/app/types/Resource/Resource"
 import Stuff from "@/app/types/Stuff/Stuff"
 import CardHeader from "./CardHeader"
 import Link from "next/link"
-import ImageResizer from "../common/ImageResizer"
 import FamilyView from "../common/FamilyView"
 import TypeView from "../common/TypeView"
-import { isMob, isStuff } from "@/app/types/isType"
+import { isMob } from "@/app/types/isType"
 import "./LongCard.css"
 import { ReactNode } from "react"
+import ImageWithFallback from "../common/ImageWithFallback"
 
 interface Props {
     item : Mob|Stuff|Resource,
@@ -36,7 +36,7 @@ export default function LongCard({item , value = null, theme = ''} : Props) {
         <Link href={item["@id"].slice(4)} className={`longCardContainer ${theme}`}>
             <CardHeader level={level} rarity={rarity} />
             <div className="longCardContent">
-                <ImageResizer
+                <ImageWithFallback
                     className="longCardImage"
                     src={item.imageUrl}
                     alt=""

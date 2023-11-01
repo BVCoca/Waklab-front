@@ -7,7 +7,6 @@ import {
   isResourceDrop,
   isStuffDrop,
 } from "@/app/types/isType";
-import ImageResizer from "../common/ImageResizer";
 import FamilyView from "../common/FamilyView";
 import TypeView from "../common/TypeView";
 import ResourceDrop from "@/app/types/Resource/ResourceDrop";
@@ -16,6 +15,7 @@ import StuffDrop from "@/app/types/Stuff/StuffDrop";
 import Stuff from "@/app/types/Stuff/Stuff";
 import Rarity from "@/app/types/Rarity";
 import RecipeIngredientFromRecipe from "@/app/types/Recipe/RecipeIngredientFromRecipe";
+import ImageWithFallback from "../common/ImageWithFallback";
 
 interface Props {
   item: ResourceDrop | StuffDrop | RecipeIngredientFromRecipe,
@@ -61,7 +61,7 @@ export default function CardDetailsType({ item, theme = '' }: Props) {
       <div className="linkCardDetailsContainer">
         <CardHeader level={level} rarity={rarity} isSmall={true} />
         <div className="cardImageValueContainer">
-          <ImageResizer
+          <ImageWithFallback
             className=""
             src={entity.imageUrl}
             alt={`Image ${entity.name}`}

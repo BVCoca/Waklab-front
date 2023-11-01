@@ -9,6 +9,7 @@ import CardDetailsType from "../card/CardDetailsType";
 import StuffDrop from "@/app/types/Stuff/StuffDrop";
 import "@/app/components/common/common.css";
 import ResourceDrop from "@/app/types/Resource/ResourceDrop";
+import ImageWithFallback from "../common/ImageWithFallback";
 
 interface Props {
   dungeon: DungeonSingle;
@@ -51,7 +52,7 @@ export default function DungeonDetails({ dungeon }: Props) {
   return (
     <div className="detailsContent">
       <div className="headerDetails">
-        <Image className="imageContainer" src={dungeon.imageUrl} width={150} height={150} alt="" />
+        <ImageWithFallback className="imageContainer" src={dungeon.imageUrl} width={150} height={150} alt="" />
         <div className="blockCenter">
           <h1>{dungeon.name}</h1>
           <div className="dungeonMaxPlayer">

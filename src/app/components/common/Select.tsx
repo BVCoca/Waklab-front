@@ -5,7 +5,6 @@ import { useOutsideClick } from '@/app/components/hooks/useOutsideClick';
 interface Props {
     options : Option[],
     onChange : (value : Option) => void,
-    selectedValue :any
 }
 
 interface Option {

@@ -4,7 +4,6 @@ import Image from "next/image";
 import "@/app/mobs/[slug]/mobDetails.css";
 import Level from "@/app/components/common/Level";
 import FamilyView from "@/app/components/common/FamilyView";
-import ImageResizer from "@/app/components/common/ImageResizer";
 import DropsRecipesContainer from "@/app/components/common/DropsRecipesContainer";
 
 import MobSingle from "@/app/types/Mob/MobSingle";
@@ -14,6 +13,7 @@ import StuffDrop from "@/app/types/Stuff/StuffDrop";
 import ResourceDrop from "@/app/types/Resource/ResourceDrop";
 import Dungeon from "@/app/types/Dungeon/Dungeon";
 import Card from "../../card/Card";
+import ImageWithFallback from "@/app/components/common/ImageWithFallback";
 
 interface Props {
   mob: MobSingle;
@@ -86,7 +86,7 @@ export default function MobDetails({ mob }: Props) {
     <>
       <div className="mobStatsContainer">
         <div className="imageMobContainer">
-          <ImageResizer
+          <ImageWithFallback
             width={150}
             height={150}
             src={mob.imageUrl}

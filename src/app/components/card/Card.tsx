@@ -7,9 +7,9 @@ import CardHeader from "./CardHeader";
 import { isDungeon, isMob, isResource, isStuff } from "@/app/types/isType";
 import FamilyView from "../common/FamilyView";
 import TypeView from "../common/TypeView";
-import Image from "next/image";
 import Dungeon from "@/app/types/Dungeon/Dungeon";
 import DungeonLabel from "../common/DungeonLabel";
+import ImageWithFallback from "../common/ImageWithFallback";
 
 interface Props {
   item: Mob | Resource | Stuff | Dungeon;
@@ -37,7 +37,7 @@ export default function Card({ item }: Props) {
   return (
     <Link href={item["@id"].slice(4)} className="cardContainer">
       <CardHeader level={level} rarity={rarity} />
-      <Image
+      <ImageWithFallback
         className="cardImage"
         src={item.imageUrl}
         alt=""

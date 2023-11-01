@@ -9,6 +9,7 @@ import UsedInRecipe from "@/app/components/recipe/UsedInRecipe";
 import { Metadata } from "next";
 import Recipes from "@/app/components/recipe/Recipes";
 import React from "react";
+import ImageWithFallback from "@/app/components/common/ImageWithFallback";
 
 interface Props {
   params: {
@@ -50,7 +51,7 @@ export default async function ResourceDetails({ params }: Props) {
       <Header small={true} />
       <div className="headerDetails">
         <div className="imageRarityContainer">
-          <Image src={resource.imageUrl} width={150} height={150} alt=""/>
+          <ImageWithFallback src={resource.imageUrl} width={150} height={150} alt=""/>
           <RarityView rarity={resource.rarity} />
         </div>
         <div className="blockCenter">

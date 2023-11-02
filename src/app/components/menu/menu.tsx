@@ -10,6 +10,7 @@ import LogoDungeons from "@/app/icons/homepageIcon/logoDungeon.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Info from "../modal/Info";
 
 export default function Menu() {
   const current_page = usePathname();
@@ -73,6 +74,7 @@ export default function Menu() {
             </Link>
           );
         })}
+      <Info />
     </div>
   );
 }

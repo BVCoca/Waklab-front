@@ -113,12 +113,14 @@ a {
   right: 10px;
   width: 30px;
   height: 30px;
-  transition: all 0.15s ease-in;
+  transition: all 0.3s ease-in;
+  fill: var(--main-bg-light-color);
 }
 
 #info:hover {
   scale: 1.15;
   fill: var(--main-cyan-light-color);
+  cursor: pointer;
 }
 
 #modalContainer {

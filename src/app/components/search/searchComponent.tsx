@@ -136,16 +136,18 @@ export default function SearchComponent({Search, sortFields = []} : Props) {
 
     return (
         <div id="searchContainer">
-            <div className="searchHeader">
-                {totalItems > 0 && <div id="totalItems">{totalItems} résultats</div>}
+            <div className="filterContainer">
+                <div id="totalItems">{totalItems} résultats</div>
                 <SearchInput valueInput={value} onChange={handleChange}/>
                 {currentSort && sortFields.length > 0 && <SearchOrder onChange={handleSortChange} sort_fields={sortFields} />}
             </div>
-            <SearchInfiniteScroll resultsScroll={results}/>
-            {loading && <div id="loaderWrapper"><span className="loader"></span></div>}  
-            {totalItems === 0 && <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu">MMORPG: © 2023 Ankama Studio. Tous droits réservés. &quot;WakLaboratory&quot; est un site non-officiel en aucun lien avec Ankama.</p></div>}
-            {isFinished && results.length > 0 && <div id="endingMessage">Aucun résultat de plus pour cette recherche.</div>}
-            {scrollPosition >= 600 && <ArrowTop onClick={toTheTop} id="backToTheTop" alt="Bouton vers le haut de page"/>}      
+            <div className="resultContainer">
+                <SearchInfiniteScroll resultsScroll={results}/>
+                {loading && <div id="loaderWrapper"><span className="loader"></span></div>}  
+                {totalItems === 0 && <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu">MMORPG: © 2023 Ankama Studio. Tous droits réservés. &quot;WakLaboratory&quot; est un site non-officiel en aucun lien avec Ankama.</p></div>}
+                {isFinished && results.length > 0 && <div id="endingMessage">Aucun résultat de plus pour cette recherche.</div>}
+                {scrollPosition >= 600 && <ArrowTop onClick={toTheTop} id="backToTheTop" alt="Bouton vers le haut de page"/>}      
+            </div>
         </div>
     )
 }

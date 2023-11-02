@@ -1,20 +1,38 @@
 #searchContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
+  row-gap: 20px;
+}
+
+.filterContainer {
+  min-width: 20%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  row-gap: 20px;
+}
+
+.resultContainer {
+  min-width: 80%;
+  padding-left: 22%;
 }
 
 #searchbarContainer {
   display: flex;
   justify-content: center;
-  
+  width: 100%;
+}
+
+.labelSearchInput {
+  width: 0px;
 }
 
 #searchBar {
-  width: 50%;
+  width: 100%;
   height: 20px;
   padding: 1rem 2rem;
-  margin-bottom: 35px;
   border: none;
   border-radius: 20px;
   background-color: rgba(30, 30, 30, 1);
@@ -89,9 +107,6 @@
 
 #totalItems {
   width: fit-content;
-  display: flex;
-  position: absolute;
-  right: 45px;
   padding: 8px;
   color: var(--main-cyan-color); 
   background-color: var(--main-bg-color);

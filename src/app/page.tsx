@@ -33,7 +33,7 @@ export default function Page() {
   ]
 
   return (
-    <div id="content">
+    <div>
       <Header small={false}/>
       <div className="statsContainer">
         {stats.map((stat, index) => (

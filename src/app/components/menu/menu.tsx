@@ -2,6 +2,7 @@
 
 import "@/app/styles/globals.css";
 import "./menu.css";
+import HomeIcon from "@/app/icons/homepageIcon/logo_home.svg"
 import LogoMobs from "@/app/icons/homepageIcon/logoMobs.svg";
 import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg";
 import LogoResources from "@/app/icons/homepageIcon/logoResources.svg";
@@ -52,10 +53,10 @@ export default function Menu() {
       <Link href="/" className="menuWrapper">
         <Image
           className="logoMenu"
-          src="/homepageIcon/logo_waklab.png"
+          src="/homepageIcon/logo_home.svg"
           alt=""
-          width={70}
-          height={60}
+          width={160}
+          height={50}
         />
         <div className="menuDesc">Accueil</div>
       </Link>

@@ -4,7 +4,7 @@ import SearchDungeons from "../components/search/searchDungeons";
 export default function Page() {
 
   return (
-    <div id="content">
+    <div>
       <Header small={false}/>
       <SearchDungeons />
     </div>

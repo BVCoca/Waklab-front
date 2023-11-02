@@ -18,7 +18,6 @@ export default function Header({ small = true }: Props) {
   return (
     <header className="header">
       <RedirectArrow />
-      <Logo width={width} height={height} />
     </header>
   );
 }

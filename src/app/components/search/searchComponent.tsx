@@ -32,19 +32,9 @@ export default function SearchComponent({Search, sortFields = []} : Props) {
     const [isFinished, setIsFinished] = useState(false)
     const [totalItems, setTotalItems] = useState<number>(0)
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [pageContainer, setPageContainer] = useState<Element>()
 
     let params = useSearchParams();
-
-    function handleScroll() {
-        setScrollPosition(window.scrollY);
-        if (
-            window.innerHeight + document.documentElement.scrollTop ===
-            document.documentElement.offsetHeight
-            
-        ) {
-            setPage(prevPage => prevPage + 1);
-        }
-    }
 
     const handleSortChange = (sort : SortOption) => {
         setCurrentSort(sort)
@@ -60,10 +50,12 @@ export default function SearchComponent({Search, sortFields = []} : Props) {
         if(params.get('q'))
         {
             setValue(params.get('q') ?? '')
-        }   
+        }
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        let pageContainer = document.querySelector(".contentContainer")
+
+        if(pageContainer !== null)
+            setPageContainer(pageContainer)
     }, []);
 
     useEffect(() => {
@@ -96,6 +88,7 @@ export default function SearchComponent({Search, sortFields = []} : Props) {
         }
     }, [page]);
 
+    // Changement de tri
     useEffect(() => {
         if(value.length >= 3) {
             setResults([])
@@ -107,6 +100,26 @@ export default function SearchComponent({Search, sortFields = []} : Props) {
             }
         }
     }, [currentSort])
+
+    // Création de la fonction de scroll
+    useEffect(() => {
+        if(pageContainer !== null && pageContainer !== undefined) {
+
+            const handleScroll = () => {
+                setScrollPosition(pageContainer?.scrollTop);
+                if (
+                    pageContainer.scrollTop + pageContainer.clientHeight + 100 >=
+                    pageContainer.scrollHeight
+                    
+                ) {
+                    setPage(prevPage => prevPage + 1);
+                }
+            }
+
+            pageContainer.addEventListener('scroll', handleScroll);
+            return () => pageContainer.removeEventListener('scroll', handleScroll);
+        }
+    }, [pageContainer])
 
     function handleChange(newValue: string) {
         setValue(newValue)
@@ -128,10 +141,12 @@ export default function SearchComponent({Search, sortFields = []} : Props) {
     }
 
     function toTheTop() {
-       window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      }); 
+        if(pageContainer) {
+            pageContainer.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            }); 
+        }
     }
 
     return (

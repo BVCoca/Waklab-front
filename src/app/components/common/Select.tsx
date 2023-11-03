@@ -38,7 +38,7 @@ export default function Select({options = [], onChange} : Props) {
             </button>
             <div className={ isOpen ? "optionContainer active" : "optionContainer inactive"}>
                 {isOpen && options.map((o) => o.value !== currentValue.value && (
-                    <button className={isOpen ? "selectedOption active" : "selectedOption inactive"} key={o.value} onClick={() => handleOptionsChange(o)} >{o.label}</button>
+                    <button className={isOpen ? "selectedOption active" : "selectedOption inactive"} key={o.value} onClick={() => handleOptionsChange(o)} ><p>{o.label}</p></button>
                 ))}
             </div>
         </div>

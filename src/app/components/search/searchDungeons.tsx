@@ -16,7 +16,7 @@ export default function SearchDungeons() {
         <div id="cardList" className="card-list">
             <SearchComponent Search={onSearch} sortFields={[
                 {
-                    label : "Trier par partinence"
+                    label : "Trier par pertinence"
                 },
                 {
                     sort_field : SortField.LEVEL,

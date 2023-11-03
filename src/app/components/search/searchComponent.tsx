@@ -101,20 +101,22 @@ export default function SearchComponent({Search, sortFields = []} : Props) {
         }
     }, [currentSort])
 
+    const handleScroll = () => {
+        if(pageContainer !== null && pageContainer !== undefined) {
+            setScrollPosition(pageContainer?.scrollTop);
+            if (
+                pageContainer.scrollTop + pageContainer.clientHeight ===
+                pageContainer.scrollHeight
+                
+            ) {
+                setPage(prevPage => prevPage + 1);
+            }
+        }
+    }
+
     // Création de la fonction de scroll
     useEffect(() => {
         if(pageContainer !== null && pageContainer !== undefined) {
-
-            const handleScroll = () => {
-                setScrollPosition(pageContainer?.scrollTop);
-                if (
-                    pageContainer.scrollTop + pageContainer.clientHeight + 100 >=
-                    pageContainer.scrollHeight
-                    
-                ) {
-                    setPage(prevPage => prevPage + 1);
-                }
-            }
 
             pageContainer.addEventListener('scroll', handleScroll);
             return () => pageContainer.removeEventListener('scroll', handleScroll);

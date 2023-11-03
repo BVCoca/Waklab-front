@@ -33,17 +33,24 @@ html {
 body {
   margin: 0;
   width: 100%;
-  overflow-x: hidden;
+  overflow-y: hidden;
   margin-bottom: 20px;
 }
 
-#content {
+.contentContainer {
   width: 100%;
+  height: 100vh;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 40px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#content {
+  width: 95%;
 }
 
 a {
@@ -52,18 +59,21 @@ a {
 }
 
 #menuContainer {
-  height: 100%;
+  height: 70px;
+  width: 100%;
 }
 
 #pageContent {
   display: flex;
-  flex-direction: row;
-  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
   width: 100%;
+  overflow-y: hidden;
 }
 
 #centerContainer {
-  width: 70%;
+  width: 80%;
 }
 
 #tagForWakfu {
@@ -75,7 +85,7 @@ a {
   border-radius: 12px;
   position: fixed;
   bottom: 0;
-  left: 53%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 12px;
   background: rgba(36, 36, 36, 0.2);
@@ -103,12 +113,14 @@ a {
   right: 10px;
   width: 30px;
   height: 30px;
-  transition: all 0.15s ease-in;
+  transition: all 0.3s ease-in;
+  fill: var(--main-bg-light-color);
 }
 
 #info:hover {
   scale: 1.15;
   fill: var(--main-cyan-light-color);
+  cursor: pointer;
 }
 
 #modalContainer {

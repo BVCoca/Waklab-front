@@ -4,7 +4,7 @@ import SearchResources from "../components/search/searchResources";
 export default function Page() {
 
   return (
-    <div id="content">
+    <div>
       <Header small={false}/>
       <SearchResources />
     </div>

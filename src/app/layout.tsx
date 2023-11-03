@@ -55,12 +55,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className={roboto.className}> 
         <main id="pageContent">
-          <Info/>
           <div id="menuContainer">
             <Menu />
           </div>
-          <div id="content">
-            <div id="centerContainer">
+          <div className="contentContainer">
+            <div id="content">
               {children}
             </div>
           </div>

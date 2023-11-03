@@ -39,7 +39,7 @@ export default function SearchInput({valueInput, onChange} : Props) {
     return (
         <div id="searchbarContainer">
             <input type="text" placeholder={`Rechercher ${pathname}`} id="searchBar" name="searchBar" onChange={handleInputChange} value={valueInput}/>
-            <label htmlFor="searchBar">
+            <label className="labelSearchInput" htmlFor="searchBar">
                 <SearchIcon alt="search icon" id="searchIcon"/>
             </label>
         </div> 

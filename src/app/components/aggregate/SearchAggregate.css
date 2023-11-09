@@ -3,8 +3,18 @@
     color: var(--main-cyan-color);
 }
 
+.aggregateScrollable {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 55vh;
+}
+
 .levelFilter {
-    min-height: 100px;
+    min-height: 80px;
+}
+
+.levelFilter > h3 {
+    margin : 10px;
 }
 
 .aggregateValidate {

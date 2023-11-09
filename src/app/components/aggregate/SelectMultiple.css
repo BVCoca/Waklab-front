@@ -1,0 +1,25 @@
+.multipleContainer {
+    row-gap: 0px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+}
+
+.multipleChoice {
+    color: var(--main-primary-text);
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    user-select: none;
+}
+
+.multipleChoice:hover {
+    cursor: pointer;
+    background-color: var(--main-bg-color);
+}

@@ -3,3 +3,7 @@ export default interface Rarity {
     icon : string,
     value : number
 }
+
+export interface RarityAggregate extends Rarity {
+    count : number
+}

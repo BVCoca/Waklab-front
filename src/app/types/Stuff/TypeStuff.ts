@@ -5,3 +5,7 @@ export default interface TypeStuff extends Base {
     slug : string,
     icon : string
 }
+
+export interface TypeStuffAggregate extends TypeStuff {
+    count : number
+}

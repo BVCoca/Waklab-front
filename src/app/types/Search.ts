@@ -1,12 +1,12 @@
 import Dungeon from "./Dungeon/Dungeon";
 import Collection from "./Hydra/Collection";
-import Family from "./Mob/Family";
+import Family, { FamilyAggregate } from "./Mob/Family";
 import Mob from "./Mob/Mob";
-import Rarity from "./Rarity";
+import Rarity, { RarityAggregate } from "./Rarity";
 import Resource from "./Resource/Resource";
-import TypeResource from "./Resource/TypeResource";
+import TypeResource, { TypeResourceAggregate } from "./Resource/TypeResource";
 import Stuff from "./Stuff/Stuff";
-import TypeStuff from "./Stuff/TypeStuff";
+import TypeStuff, { TypeStuffAggregate } from "./Stuff/TypeStuff";
 
 export enum SortOrder {
     ASC = 'asc',
@@ -31,9 +31,9 @@ export interface Aggregate {
     maxLevel : {
         value : number
     },
-    family : Family[],
-    rarity : Rarity[],
-    type : TypeResource[] | TypeStuff[]
+    family : FamilyAggregate[],
+    rarity : RarityAggregate[],
+    type : TypeResourceAggregate[] | TypeStuffAggregate[]
 }
 
 export default interface Search extends Collection {

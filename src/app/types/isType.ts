@@ -1,11 +1,15 @@
 import Dungeon from "./Dungeon/Dungeon";
+import Family from "./Mob/Family";
 import Mob from "./Mob/Mob";
 import MobDrop from "./Mob/MobDrop";
+import Rarity, { RarityAggregate } from "./Rarity";
 import RecipeIngredientFromRecipe from "./Recipe/RecipeIngredientFromRecipe";
 import Resource from "./Resource/Resource";
 import ResourceDrop from "./Resource/ResourceDrop";
+import TypeResource from "./Resource/TypeResource";
 import Stuff from "./Stuff/Stuff";
 import StuffDrop from "./Stuff/StuffDrop";
+import TypeStuff from "./Stuff/TypeStuff";
 
 function isMob(item : any): item is Mob {
     return item["@type"] === "Mobs";
@@ -43,4 +47,16 @@ function isWeapon(item : Stuff): boolean {
     return ['armes-2-mains', 'armes-1-main', 'seconde-main'].includes(item.type.slug)
 }
 
-export {isMob, isResource, isStuff, isDungeon, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe, isWeapon}
+function isRarity(item : any) : item is Rarity {
+    return item["@type"] === "Rarity";
+}
+
+function isFamily(item : any) : item is Family {
+    return item["@type"] === "Family";
+}
+
+function isType(item : any) : item is TypeStuff|TypeResource {
+    return item["@type"] === "Type";
+}
+
+export {isMob, isResource, isStuff, isDungeon, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe, isWeapon, isRarity, isFamily, isType}

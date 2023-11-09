@@ -5,3 +5,7 @@ export default interface TypeResource extends Base {
     slug : string,
     icon : string
 }
+
+export interface TypeResourceAggregate extends TypeResource {
+    count : number
+}

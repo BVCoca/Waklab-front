@@ -1,9 +1,9 @@
-import Rarity from "@/app/types/Rarity";
+import Rarity, { RarityAggregate } from "@/app/types/Rarity";
 import Image from "next/image";
 import "./common.css";
 
 interface Props {
-  rarity: Rarity;
+  rarity: Rarity|RarityAggregate;
   isSmall?: boolean;
 }
 

@@ -17,6 +17,17 @@
     margin : 10px;
 }
 
+.aggregateHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.aggregateHeader > h2 {
+    width: 100%;
+}
+
 .aggregateValidate {
     all: unset;
     width: 100%;

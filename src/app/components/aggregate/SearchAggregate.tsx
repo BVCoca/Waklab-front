@@ -6,18 +6,21 @@ import Rarity, { RarityAggregate } from "@/app/types/Rarity";
 import SelectMultiple from "./SelectMultiple";
 import { TypeResourceAggregate } from "@/app/types/Resource/TypeResource";
 import { TypeStuffAggregate } from "@/app/types/Stuff/TypeStuff";
+import { FamilyAggregate } from "@/app/types/Mob/Family";
 
 interface Props {
-    aggregate : Aggregate
+    aggregate : Aggregate,
+    onUpdate : (filters : any) => void
 }
 
-export default function SearchAggregate({aggregate} : Props) {
+export default function SearchAggregate({aggregate, onUpdate} : Props) {
 
     const [levelMin, setLevelMin] = useState<number>(aggregate.minLevel.value)
     const [levelMax, setLevelMax] = useState<number>(aggregate.maxLevel.value)
 
-    const [rarities, setRarities] = useState<RarityAggregate[]>(aggregate.rarity)
-    const [types, setTypes] = useState<TypeResourceAggregate[] | TypeStuffAggregate[]>(aggregate.type)
+    const [rarities, setRarities] = useState<RarityAggregate[]>([])
+    const [types, setTypes] = useState<TypeResourceAggregate[] | TypeStuffAggregate[]>([])
+    const [families, setFamilies] = useState<FamilyAggregate[]>([])
 
     const handleLevelChange = (({min, max} : any) => {
         setLevelMin(min)
@@ -32,13 +35,31 @@ export default function SearchAggregate({aggregate} : Props) {
         setTypes(selected)
     }
 
-    const handleValidate = () => {
-
+    const handleFamilyChange = (selected : Array<any>) => {
+        setFamilies(selected)
     }
 
-    return (
+    const handleValidate = () => {
+        onUpdate({
+            rarity : rarities,
+            type : types,
+            family : families
+        })
+    }
+
+    const handleReset = () => {
+        setTypes([])
+        setRarities([])
+        setFamilies([])
+        handleValidate()
+    }
+
+    return aggregate.family.length + aggregate.rarity.length + aggregate.type.length > 0 && (
         <div className="aggregateContainer">
-            <h2>Filtre</h2>
+            <div className="aggregateHeader">
+                <h2>Filtre</h2>
+                <button className="aggregateValidate" onClick={handleReset}>Réintialiser les filtres</button>
+            </div>
             <div className="aggregateScrollable">
                 {/* {aggregate.minLevel && aggregate.maxLevel && (
                     <div className="levelFilter">
@@ -49,13 +70,19 @@ export default function SearchAggregate({aggregate} : Props) {
                 {aggregate.rarity.length > 0 && (
                     <div className="levelFilter">
                         <h3>Rareté</h3>
-                        <SelectMultiple choices={aggregate.rarity} onChange={handleRarityChange}/>
+                        <SelectMultiple choices={aggregate.rarity} onChange={handleRarityChange} selected={rarities}/>
                     </div>
                 )}
                 {aggregate.type.length > 0 && (
                     <div className="levelFilter">
                         <h3>Type</h3>
-                        <SelectMultiple choices={aggregate.type} onChange={handleTypeChange}/>
+                        <SelectMultiple choices={aggregate.type} onChange={handleTypeChange} selected={types}/>
+                    </div>
+                )}
+                {aggregate.family.length > 0 && (
+                    <div className="levelFilter">
+                        <h3>Familles</h3>
+                        <SelectMultiple choices={aggregate.family} onChange={handleFamilyChange} selected={families}/>
                     </div>
                 )}
             </div>

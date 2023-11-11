@@ -7,5 +7,6 @@ export default interface TypeResource extends Base {
 }
 
 export interface TypeResourceAggregate extends TypeResource {
-    count : number
+    count : number,
+    value: string
 }

@@ -20,7 +20,7 @@ import { fetchAggregate } from "@/app/services/common"
 import SearchAggregate from "../aggregate/SearchAggregate"
 
 interface Props {
-    Search: (page : number, value? : string, sort_field? : SortField, sort_order? : SortOrder) => Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search>,
+    Search: (page : number, value? : string, sort_field? : SortField, sort_order? : SortOrder, filters? : Aggregate) => Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search>,
     sortFields? : Array<SortOption>,
     model : string
 }
@@ -30,24 +30,28 @@ export default function SearchComponent({Search, sortFields = [], model = ""} : 
     // Paramètres de recherche
     const [query, setQuery] = useState('')
     const [currentSort, setCurrentSort] = useState<SortOption>(sortFields[0])
+    const [filters, setFilters] = useState<Aggregate>()
 
     // Aggrégation
     const [aggregate, setAggregate] = useState<Aggregate>()
+    const [isLoadingAggregate, setIsLoadingAggregate] = useState<boolean>(false)
 
     // Définition des requetes
     const fetchItems = async (data : any) : Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search> => {
-        return await Search(data.pageParam, query, currentSort?.sort_field, currentSort?.sort_order)
+        return await Search(data.pageParam, query, currentSort?.sort_field, currentSort?.sort_order, filters)
     }
 
     const fetchAggregation = async() => {
-        let data = await fetchAggregate(model, query)
+        setIsLoadingAggregate(true)
+        let data = await fetchAggregate(model, query, filters)
         setAggregate(data)
+        setIsLoadingAggregate(false)
     }
 
     // Hook de requete infini
     const { data, hasNextPage, isFetching, isFetchingNextPage, fetchNextPage } = useInfiniteQuery<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search, Error>(
         {
-            queryKey : [query, currentSort],
+            queryKey : [query, currentSort, filters],
             getNextPageParam : (lastPage) => {
                 const url = new URLSearchParams(lastPage["hydra:view"]["hydra:next"])
                 return url.get('page')
@@ -74,14 +78,20 @@ export default function SearchComponent({Search, sortFields = [], model = ""} : 
 
     // A la fin du scroll, fetch de la prochaine page
     const handleScrollEnd = () => {
-        if(hasNextPage && !isFetching) {
+        console.log("scrollEnd")
+       /*  if(hasNextPage && !isFetching) {
             fetchNextPage()
-        }
+        } */
     }
 
     // Changement du tri
     const handleSortChange = (sort : SortOption) => {
         setCurrentSort(sort)
+    }
+
+    // Changement des filtres
+    const handleUpdateFilters = (filters : any) => {
+        setFilters(filters)
     }
 
     useEffect(() => {
@@ -96,10 +106,11 @@ export default function SearchComponent({Search, sortFields = [], model = ""} : 
     return (
         <div id="searchContainer">
             <div className="filterContainer">
-                <div id="totalItems">{data?.pages[0]["hydra:totalItems"]} résultats</div>
+                <div id="totalItems">{data?.pages[0]["hydra:totalItems"] ?? 'X'} résultats</div>
                 <SearchInput valueInput={query} onChange={handleChangeQuery}/>
                 {currentSort && sortFields.length > 0 && <SearchOrder onChange={handleSortChange} sort_fields={sortFields} />}
-                {aggregate && <SearchAggregate aggregate={aggregate} />}
+                {!isLoadingAggregate && aggregate && <SearchAggregate aggregate={aggregate} onUpdate={handleUpdateFilters}/>}
+                {isLoadingAggregate && <div id="loaderWrapper"><span className="loader"></span></div>}
             </div>
             <div className="resultContainer">
                 {data && <SearchInfiniteScroll

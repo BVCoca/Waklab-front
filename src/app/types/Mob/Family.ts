@@ -6,5 +6,6 @@ export default interface Family extends Base {
 }
 
 export interface FamilyAggregate extends Family {
-    count : number
+    count : number,
+    value: string
 }

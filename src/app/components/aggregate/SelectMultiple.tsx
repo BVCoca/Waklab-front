@@ -5,38 +5,45 @@ import { TypeStuffAggregate } from "@/app/types/Stuff/TypeStuff";
 import { useState, useEffect } from "react";
 import "./SelectMultiple.css"
 import RarityView from "../common/RarityView";
-import { isRarity, isType } from "@/app/types/isType";
+import { isFamily, isRarity, isType } from "@/app/types/isType";
 import TypeView from "../common/TypeView";
+import FamilyView from "../common/FamilyView";
 
 interface Props {
     choices : TypeResourceAggregate[] | TypeStuffAggregate[] | RarityAggregate[] | FamilyAggregate[],
+    selected? : TypeResourceAggregate[] | TypeStuffAggregate[] | RarityAggregate[] | FamilyAggregate[],
     onChange : (selected : TypeResourceAggregate[] | TypeStuffAggregate[] | RarityAggregate[] | FamilyAggregate[]) => void
 }
 
-export default function SelectMultiple({choices, onChange} : Props) {
+export default function SelectMultiple({choices, onChange, selected = []} : Props) {
 
-    const [selected, setSelected] = useState<any>([])
+    const [selectedState, setSelected] = useState<TypeResourceAggregate[] | TypeStuffAggregate[] | RarityAggregate[] | FamilyAggregate[]>(selected)
 
-    const handleCheck = (key : any, checked : boolean) => {
+    const handleCheck = (value : any, checked : boolean) => {
         if(checked) {
-            setSelected([...selected, +key])
+            setSelected([...selectedState, value])
         } else {
-            setSelected((selected : any) => selected.filter((s : any) => s !== +key))
+            setSelected((selecteds : any) => selecteds.filter((s : RarityAggregate | FamilyAggregate | TypeResourceAggregate | TypeStuffAggregate) => s !== value))
         }
     }
 
     useEffect(() => {
-        console.log(selected)
+        setSelected(selected)
     }, [selected])
+
+    useEffect(() => {
+        onChange(selectedState)
+    }, [selectedState])
 
     return (
         <div className="multipleContainer">
             {choices.map((choice : RarityAggregate | FamilyAggregate | TypeResourceAggregate | TypeStuffAggregate, key) => (
-                <div key={key} className="multipleChoice" onClick={() => handleCheck(key, !selected.includes(key))}>
-                    <input style={{marginLeft : "10px"}} type="checkbox" value={key} checked={selected.includes(key)}/>
+                <div key={key} className="multipleChoice" onClick={() => handleCheck(choice, !selectedState.find(s => s.value === choice.value))}>
+                    <input style={{marginLeft : "10px"}} type="checkbox" value={choice.value} checked={selectedState.find(s => s.value === choice.value) !== undefined} readOnly/>
                     <span>
                         {isRarity(choice) && <RarityView rarity={choice} isSmall={true} />}
                         {isType(choice) && <TypeView type={choice} />}
+                        {isFamily(choice) && <FamilyView family={choice} />}
                     </span>
                     <span style={{width : "100%", textAlign : "right", paddingRight : "10px"}}>
                         ( {choice.count} )

@@ -1,6 +1,5 @@
 import "./styles/globals.css"
 import Header from "./components/header/header"
-import SearchAll from "./components/search/searchAll"
 import Count from "./components/header/count"
 import LogoMobs from "@/app/icons/homepageIcon/logoMobs.svg";
 import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg";
@@ -40,7 +39,6 @@ export default function Page() {
           <Count key={`stat-${index}`} label={stat.label} number={stat.number} icon={stat.icon} duration={1}/>
         ))}
       </div>
-      <SearchAll/>
     </div>
   )
 }

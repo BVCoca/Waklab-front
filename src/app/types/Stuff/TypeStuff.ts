@@ -7,5 +7,6 @@ export default interface TypeStuff extends Base {
 }
 
 export interface TypeStuffAggregate extends TypeStuff {
-    count : number
+    count : number,
+    value: string
 }

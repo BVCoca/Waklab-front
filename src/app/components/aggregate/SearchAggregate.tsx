@@ -29,7 +29,7 @@ export default function SearchAggregate({aggregate} : Props) {
     }
 
     const handleTypeChange = (selected : Array<any>) => {
-        setRarities(selected)
+        setTypes(selected)
     }
 
     const handleValidate = () => {
@@ -40,12 +40,12 @@ export default function SearchAggregate({aggregate} : Props) {
         <div className="aggregateContainer">
             <h2>Filtre</h2>
             <div className="aggregateScrollable">
-                {aggregate.minLevel && aggregate.maxLevel && (
+                {/* {aggregate.minLevel && aggregate.maxLevel && (
                     <div className="levelFilter">
                         <h3>Niveau</h3>
                         <MultiRangeSlider min={aggregate.minLevel.value} max={aggregate.maxLevel.value} onChange={handleLevelChange}/>
                     </div>
-                )}
+                )} */}
                 {aggregate.rarity.length > 0 && (
                     <div className="levelFilter">
                         <h3>Rareté</h3>

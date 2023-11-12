@@ -1,7 +1,7 @@
 import { SortField, SortOrder } from "../types/Search"
 import StuffSearch from "../types/Stuff/StuffSearch"
 import StuffSingle from "../types/Stuff/StuffSingle"
-import get from "./api"
+import get from "./zone"
 
 const getStuff = async (slug : string) : Promise<StuffSingle> => {
     return await get(`/stuffs/${slug}`)

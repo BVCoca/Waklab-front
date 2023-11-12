@@ -1,7 +1,7 @@
 import ResourceSearch from "../types/Resource/ResourceSearch"
 import ResourceSingle from "../types/Resource/ResourceSingle"
 import { SortField, SortOrder } from "../types/Search"
-import get from "./api"
+import get from "./zone"
 
 const getResource = async (slug : string) : Promise<ResourceSingle> => {
     return await get(`/resources/${slug}`)

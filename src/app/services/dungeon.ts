@@ -1,7 +1,7 @@
 import DungeonSearch from "../types/Dungeon/DungeonSearch"
 import DungeonSingle from "../types/Dungeon/DungeonSingle"
 import { SortField, SortOrder } from "../types/Search"
-import get from "./api"
+import get from "./zone"
 
 const getDungeon = async (slug : string) : Promise<DungeonSingle> => {
     return await get(`/dungeons/${slug}`)

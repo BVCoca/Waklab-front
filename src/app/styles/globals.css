@@ -20,7 +20,7 @@
 ::-webkit-scrollbar-thumb {
   border: 6px solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
-  border-radius: 9999px;
+  border-radius: 50px;
   background-color: var(--main-cyan-color);
 }
 

@@ -1,7 +1,7 @@
 import MobSearch from "../types/Mob/MobSearch"
 import MobSingle from "../types/Mob/MobSingle"
 import { SortField, SortOrder } from "../types/Search"
-import get from "./api"
+import get from "./zone"
 
 const getMob = async (slug : string) : Promise<MobSingle> => {
     return await get(`/mobs/${slug}`)

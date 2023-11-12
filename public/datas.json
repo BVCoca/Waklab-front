@@ -1,0 +1,2365 @@
+{
+"zones": [
+    {
+        "name": "Astrub",
+        "slug": "astrub",
+        "levelMin": "6",
+        "levelMax": "35",
+        "image": "/testHomepageAssets/astrub.png",
+        "subzones": [
+            {
+                "name": "Cité d'Astrub",
+                "slug": "cite-astrub",
+                "levelMin": "6",
+                "levelMax": "12",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Chachas"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Chez la Mère Michou"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Frêne",
+                            "level": "0" 
+                        },
+                        "2": {
+                            "name": "Noisetier",
+                            "level": "5" 
+                        },
+                        "3": {
+                            "name": "Poisson Pané",
+                            "level": "0" 
+                        }
+                    },
+                "image": "/testHomepageAssets/cite.png"
+            },
+            {
+                "name": "Égouts d'Astrub",
+                "slug": "egouts-astrub",
+                "levelMin": "6",
+                "levelMax": "20",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Larves"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Larventura"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Fer Primitif",
+                            "level": "0" 
+                        }
+                    },
+                "image": "/testHomepageAssets/egouts.png"
+            },
+            {
+                "name": "Champs d'Astrub",
+                "slug": "champs-astrub",
+                "levelMin": "6",
+                "levelMax": "20",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Tofus"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Le Tofulailler"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Frêne",
+                            "level": "0" 
+                        },
+                        "2": {
+                            "name": "Noisetier",
+                            "level": "5" 
+                        },
+                        "3": {
+                            "name": "Fleur de sel",
+                            "level": "5" 
+                        },
+                        "4": {
+                            "name": "Chardon Couronné",
+                            "level": "0" 
+                        },
+                        "5": {
+                            "name": "Blé",
+                            "level": "0" 
+                        },
+                        "6": {
+                            "name": "Topinambour",
+                            "level": "5" 
+                        },
+                        "7": {
+                            "name": "Tuberbulbe",
+                            "level": "10" 
+                        },
+                        "8": {
+                            "name": "Orge",
+                            "level": "15" 
+                        },
+                        "9": {
+                            "name": "Poisson Chacha",
+                            "level": "5" 
+                        }
+                    },
+                "image": "/testHomepageAssets/champs.png"
+            },
+            {
+                "name": "Plaines d'Astrub",
+                "slug": "plaines-astrub",
+                "levelMin": "6",
+                "levelMax": "20",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Bouftous"
+                    }
+                },
+                "dungeons": "",
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Frêne",
+                            "level": "0" 
+                        },
+                        "2": {
+                            "name": "Noisetier",
+                            "level": "5" 
+                        },
+                        "3": {
+                            "name": "Chardon Couronné",
+                            "level": "0" 
+                        },
+                        "4": {
+                            "name": "Irisse",
+                            "level": "5" 
+                        },
+                        "5": {
+                            "name": "Fer primitif",
+                            "level": "0" 
+                        },
+                        "6": {
+                            "name": "Poisson Chacha",
+                            "level": "5" 
+                        }
+                    },
+                "image": "/testHomepageAssets/plaines.png"
+            },
+            {
+                "name": "Forêt d'Astrub",
+                "slug": "foret-astrub",
+                "levelMin": "21",
+                "levelMax": "35",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Abraknes"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon des Abraknes"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Frêne",
+                            "level": "0" 
+                        },
+                        "2": {
+                            "name": "Châtaigner",
+                            "level": "10" 
+                        },
+                        "3": {
+                            "name": "Menthe Sauvage",
+                            "level": "15" 
+                        },
+                        "4": {
+                            "name": "Anchois Grogneur",
+                            "level": "15" 
+                        }
+                    },
+                "image": "/testHomepageAssets/foret.png"
+            },
+            {
+                "name": "Montagnes d'Astrub",
+                "slug": "montagnes-astrub",
+                "levelMin": "21",
+                "levelMax": "35",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Pious"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Piou Lahoupe"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Pommier",
+                            "level": "15" 
+                        },
+                        "2": {
+                            "name": "Charbon antique",
+                            "level": "10" 
+                        },
+                        "3": {
+                            "name": "Cuivre éclatant",
+                            "level": "15" 
+                        },
+                        "4": {
+                            "name": "Améthyste Sanguine",
+                            "level": "55" 
+                        },
+                        "5": {
+                            "name": "Plomb brumeux",
+                            "level": "70" 
+                        }
+                    },
+                "image": "/testHomepageAssets/montagnes.png"
+            },
+            {
+                "name": "Cimetière d'Astrub",
+                "slug": "cimetiere-astrub",
+                "levelMin": "21",
+                "levelMax": "35",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Squelettes"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Le Caveau Relevé"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Esturgeon",
+                            "level": "10" 
+                        }
+                    },
+                "image": "/testHomepageAssets/cimetiere.png"
+            },
+            {
+                "name": "Tainéla",
+                "slug": "tainela",
+                "levelMin": "12",
+                "levelMax": "20",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Bouftous"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Pâturages des Bouftous"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Frêne",
+                            "level": "0" 
+                        },
+                        "2": {
+                            "name": "Lin des Plaines",
+                            "level": "10" 
+                        },
+                        "3": {
+                            "name": "Esturgeon",
+                            "level": "10" 
+                        }
+                    },
+                "image": "/testHomepageAssets/tainela.png"
+            },
+            {
+                "name": "Hameau des pêcheurs",
+                "slug": "hameau-pecheurs",
+                "levelMin": "6",
+                "levelMax": "20",
+                "mobsFamily": "",
+                "dungeons": "",
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Frêne",
+                            "level": "0" 
+                        },
+                        "2": {
+                            "name": "Noisetier",
+                            "level": "5" 
+                        },
+                        "3": {
+                            "name": "Poisson Pané",
+                            "level": "0" 
+                        },
+                        "4": {
+                            "name": "Poisson Chacha",
+                            "level": "5" 
+                        }
+                    },
+                "image": "/testHomepageAssets/hameau.png"
+            }
+        ]     
+    },
+    {
+        "name": "Bonta",
+        "slug": "bonta",
+        "levelMin": "66",
+        "levelMax": "140",
+        "image": "/testHomepageAssets/bonta.png",
+        "subzones": [
+            {
+                "name": "Capitale de Bonta",
+                "slug": "cite-bonta",
+                "levelMin": "",
+                "levelMax": "",
+                "mobsFamily": "",
+                "dungeons": "",
+                "resourcesJobs": "",
+                "image": "/testHomepageAssets/bontaCite.png"
+            },
+            {
+                "name": "Kara",
+                "slug": "kara-bonta",
+                "levelMin": "66",
+                "levelMax": "80",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Truches"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Truchière Abandonnée"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Champignon Marbré",
+                            "level": "45" 
+                        }
+                    },
+                "image": "/testHomepageAssets/bontaKara.png"
+            },
+            {
+                "name": "Plaines de Cania",
+                "slug": "plaines-bonta",
+                "levelMin": "66",
+                "levelMax": "80",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Créatures de Cania"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Domaine du Petit Groin"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Champignon Marbré",
+                            "level": "45" 
+                        },
+                        "2": {
+                            "name": "Pouplier",
+                            "level": "45" 
+                        },
+                        "3": {
+                            "name": "Gargousier",
+                            "level": "40" 
+                        },
+                        "4": {
+                            "name": "Seigle",
+                            "level": "40" 
+                        },
+                        "5": {
+                            "name": "Perches",
+                            "level": "45" 
+                        },
+                        "6": {
+                            "name": "Mulou de Mer",
+                            "level": "105" 
+                        }
+                    },
+                "image": "/testHomepageAssets/bontaCania.png"
+            },
+            {
+                "name": "Fourré de Tonkult",
+                "slug": "tonkult-bonta",
+                "levelMin": "126",
+                "levelMax": "140",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Abraknydes Sombres"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon Abraknyde"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Pin Sylvestre",
+                            "level": "95" 
+                        },
+                        "2": {
+                            "name": "Cerisier",
+                            "level": "105" 
+                        },
+                        "3": {
+                            "name": "Pazinclou",
+                            "level": "85" 
+                        },
+                        "4": {
+                            "name": "Kamamille",
+                            "level": "90" 
+                        },
+                        "5": {
+                            "name": "Piranianias",
+                            "level": "85" 
+                        },
+                        "6": {
+                            "name": "Mulou de Mer",
+                            "level": "105" 
+                        }
+                    },
+                "image": "/testHomepageAssets/bontaTonkult.png"
+            },
+            {
+                "name": "Mine de Bonta - Galeries",
+                "slug": "galeries-bonta",
+                "levelMin": "66",
+                "levelMax": "80",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Booskitos"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Palais de Tsu"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Amanite",
+                            "level": "105" 
+                        },
+                        "2": {
+                            "name": "Bauxit Royal",
+                            "level": "50" 
+                        }
+                    },
+                "image": "/testHomepageAssets/bontaMine.png"
+            },
+            {
+                "name": "Mine de Bonta - Tréfonds",
+                "slug": "trefonds-bonta",
+                "levelMin": "156",
+                "levelMax": "170",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Encapuchonnés"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon Encapuchonné"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Amanite",
+                            "level": "105" 
+                        },
+                        "2": {
+                            "name": "Titan Souverain",
+                            "level": "95" 
+                        }
+                    },
+                "image": "/testHomepageAssets/bontaMine.png"
+            }
+        ]     
+    },
+    {
+        "name": "Brâkmar",
+        "slug": "brakmar",
+        "levelMin": "81",
+        "levelMax": "155",
+        "image": "/testHomepageAssets/brakmar.png",
+        "subzones": [
+            {
+                "name": "Capitale de Brâkmar",
+                "slug": "cite-brakmar",
+                "levelMin": "",
+                "levelMax": "",
+                "mobsFamily": "",
+                "dungeons": {
+                    "1": {
+                        "name": "Boufrog"
+                    }
+                },
+                "resourcesJobs": "",
+                "image": "/testHomepageAssets/brakmarCite.png"
+            },
+            {
+                "name": "Champs Pabong",
+                "slug": "pabong-brakmar",
+                "levelMin": "81",
+                "levelMax": "95",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Scaras"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Scarrière Abandonnée"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Charme",
+                            "level": "50" 
+                        },
+                        "2": {
+                            "name": "Riz-Légion",
+                            "level": "50" 
+                        },
+                        "3": {
+                            "name": "Dragocarpes",
+                            "level": "50" 
+                        },
+                        "4": {
+                            "name": "Mulou de Mer",
+                            "level": "105" 
+                        }
+                    },
+                "image": "/testHomepageAssets/brakmarPabong.png"
+            },
+            {
+                "name": "Landes de Sidimote",
+                "slug": "sidimote-brakmar",
+                "levelMin": "81",
+                "levelMax": "95",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Chafers"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Nécropoil de Morbax"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Pied de Boufton",
+                            "level": "55" 
+                        },
+                        "2": {
+                            "name": "Mulou de Mer",
+                            "level": "105" 
+                        }
+                    },
+                "image": "/testHomepageAssets/brakmarSidimote.png"
+            },
+            {
+                "name": "Macheville",
+                "slug": "macheville-brakmar",
+                "levelMin": "141",
+                "levelMax": "155",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Blops Musicaux"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Blopéra"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Sureau Sanguin",
+                            "level": "90" 
+                        },
+                        "2": {
+                            "name": "Citrouille",
+                            "level": "105" 
+                        },
+                        "3": {
+                            "name": "Truithons",
+                            "level": "90" 
+                        },
+                        "4": {
+                            "name": "Mulou de Mer",
+                            "level": "105" 
+                        },
+                        "5": {
+                            "name": "Pulastile",
+                            "level": "95"
+                        }
+                    },
+                "image": "/testHomepageAssets/brakmarMacheville.png"
+            },
+            {
+                "name": "Mine de Brâkmar - Galeries",
+                "slug": "galeries-brakmar",
+                "levelMin": "81",
+                "levelMax": "95",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Chafers de la Mine"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Nécropoil de Morbax"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Éclat de Silex",
+                            "level": "30" 
+                        }
+                    },
+                "image": "/testHomepageAssets/brakmarMine.png"
+            },
+            {
+                "name": "Mine de Brâkmar - Tréfonds",
+                "slug": "trefonds-brakmar",
+                "levelMin": "156",
+                "levelMax": "170",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Patapoutres"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "La Patapoutrerie"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Carbone obscur",
+                            "level": "105" 
+                        }
+                    },
+                "image": "/testHomepageAssets/brakmarMine.png"
+            }
+        ]     
+    },
+    {
+        "name": "Amakna",
+        "slug": "amakna",
+        "levelMin": "36",
+        "levelMax": "110",
+        "image": "/testHomepageAssets/amakna.png",
+        "subzones": [
+            {
+                "name": "Capitale d'Amakna",
+                "slug": "cite-amakna",
+                "levelMin": "",
+                "levelMax": "",
+                "mobsFamily": "",
+                "dungeons": "",
+                "resourcesJobs": "",
+                "image": "/testHomepageAssets/amaknaCite.png"
+            },
+            {
+                "name": "Champs qui Chantent",
+                "slug": "champs-amakna",
+                "levelMin": "36",
+                "levelMax": "50",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Moogrr"
+                    },
+                    "2": {
+                        "name": "Plantes des Champs"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Le Papaturage Royal"
+                    },
+                    "2": {
+                        "name": "Les Champs Pourchan"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                    "1": {
+                            "name": "Bouleau",
+                            "level": "20" 
+                        },
+                        "2": {
+                            "name": "Boabob",
+                            "level": "25" 
+                        },
+                        "3": {
+                            "name": "Cawotte",
+                            "level": "20" 
+                        },
+                        "4": {
+                            "name": "Salace",
+                            "level": "25" 
+                        },
+                        "5": {
+                            "name": "Tournesol",
+                            "level": "95" 
+                        },
+                        "6": {
+                            "name": "Greuvettes",
+                            "level": "20" 
+                        },
+                        "7": {
+                            "name": "Requin Marteau",
+                            "level": "95" 
+                        },
+                        "8": {
+                            "name": "Fraise",
+                            "level": "100" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/amaknaChamps.png"
+                },
+                {
+                    "name": "Forêt d'Emelka",
+                    "slug": "foret-amakna",
+                    "levelMin": "36",
+                    "levelMax": "50",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Craqueleurs"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "La Montagne Adezieu"
+                        },
+                        "2": {
+                            "name": "La Tour des MIss Moches"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Orchidée",
+                            "level": "25" 
+                        },
+                        "2": {
+                            "name": "Trèfle Parfumé",
+                            "level": "20" 
+                        },
+                        "3": {
+                            "name": "Saule Pleureur",
+                            "level": "30" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/amaknaEmelka.png"
+                },
+                {
+                    "name": "Plaines des Riktus",
+                    "slug": "plaines-amakna",
+                    "levelMin": "96",
+                    "levelMax": "110",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Riktus"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Repaire des Magik Riktus"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Croton",
+                                "level": "60" 
+                            },
+                            "2": {
+                                "name": "Edelweiss",
+                                "level": "65" 
+                            },
+                            "3": {
+                                "name": "Eqreuvisses",
+                                "level": "60" 
+                            },
+                            "4": {
+                                "name": "Requin Marteau",
+                                "level": "95" 
+                            },
+                            "5": {
+                                "name": "Fraise",
+                                "level": "100" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/amaknaRiktus.png"
+                },
+                {
+                    "name": "Mine d'Amakna - Galeries",
+                    "slug": "galeries-amakna",
+                    "levelMin": "36",
+                    "levelMax": "50",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Craqueleurs de la Mine"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "La Montagne Adezieu"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Eter",
+                            "level": "100" 
+                        },
+                        "2": {
+                            "name": "Pépite de Bronze",
+                            "level": "25" 
+                        }
+                    },
+                "image": "/testHomepageAssets/amaknaMine.png"
+            },
+            {
+                "name": "Mine d'Amakna - Tréfonds",
+                "slug": "trefonds-amakna",
+                "levelMin": "156",
+                "levelMax": "170",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Riktus Elite"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon Riktus Elite"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Eter",
+                            "level": "100" 
+                        },
+                        "2": {
+                            "name": "Minerai de Sryanur",
+                            "level": "100" 
+                        }
+                    },
+                "image": "/testHomepageAssets/amaknaMine.png"
+            }
+        ]     
+    },
+    {
+        "name": "Sufokia",
+        "slug": "sufokia",
+        "levelMin": "51",
+        "levelMax": "126",
+        "image": "/testHomepageAssets/sufokia.png",
+        "subzones": [
+            {
+                "name": "Capitale de Sufokia",
+                "slug": "cite-sufokia",
+                "levelMin": "",
+                "levelMax": "",
+                "mobsFamily": "",
+                "dungeons": "",
+                "resourcesJobs": "",
+                "image": "/testHomepageAssets/sufokiaCite.png"
+            },
+            {
+                "name": "Dune Kane",
+                "slug": "dune-sufokia",
+                "levelMin": "51",
+                "levelMax": "65",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Cwabes"
+                    },
+                    "2": {
+                        "name": "Kokokos"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Château des Cwabes"
+                    },
+                    "2": {
+                        "name": "Kokokolantha"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                    "1": {
+                            "name": "Raies Velues",
+                            "level": "30" 
+                        },
+                        "2": {
+                            "name": "Requin Marteau",
+                            "level": "95" 
+                        },
+                        "3": {
+                            "name": "Avoine",
+                            "level": "30" 
+                        },
+                        "4": {
+                            "name": "Melon",
+                            "level": "35" 
+                        },
+                        "5": {
+                            "name": "Fraise",
+                            "level": "100" 
+                        },
+                        "6": {
+                            "name": "Algue Narine",
+                            "level": "35" 
+                        },
+                        "7": {
+                            "name": "Bananagrumier",
+                            "level": "35" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/sufokiaDune.png"
+                },
+                {
+                    "name": "Montagne des Flaqueux",
+                    "slug": "montagne-sufokia",
+                    "levelMin": "111",
+                    "levelMax": "126",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Flaqueux"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Flaqueux"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Anguilles",
+                            "level": "70" 
+                        },
+                        "2": {
+                            "name": "Requin Marteau",
+                            "level": "95" 
+                        },
+                        "3": {
+                            "name": "Fraise",
+                            "level": "100" 
+                        },
+                        "4": {
+                            "name": "Pasteque",
+                            "level": "60" 
+                        },
+                        "5": {
+                            "name": "Croton",
+                            "level": "60" 
+                        },
+                        "6": {
+                            "name": "Pommier",
+                            "level": "15" 
+                        },
+                        "7": {
+                            "name": "Liane Grimpante",
+                            "level": "60" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/sufokiaMontagne.png"
+                },
+                {
+                    "name": "Mine de Sufokia - Galeries",
+                    "slug": "galeries-sufokia",
+                    "levelMin": "111",
+                    "levelMax": "125",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Pichons"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "La Pichine"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Vandame",
+                            "level": "100" 
+                        },
+                        "2": {
+                            "name": "Korail",
+                            "level": "60" 
+                        }
+                    },
+                "image": "/testHomepageAssets/sufokiaMine.png"
+            },
+            {
+                "name": "Mine de Sufokia - Tréfonds",
+                "slug": "trefonds-sufokia",
+                "levelMin": "156",
+                "levelMax": "170",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Roublards"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Roub'Bar"
+                    }
+                },
+                "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Vandame",
+                            "level": "100" 
+                        },
+                        "2": {
+                            "name": "Saphir Double-Éclat",
+                            "level": "90" 
+                        }
+                    },
+                "image": "/testHomepageAssets/sufokiaMine.png"
+            }
+        ]     
+    },
+    {
+        "name": "Ile Sberg",
+        "slug": "sberg",
+        "levelMin": "81",
+        "levelMax": "125",
+        "image": "/testHomepageAssets/sberg.png",
+        "subzones": [
+            {
+                "name": "La banquise de Sberg",
+                "slug": "banquise-sberg",
+                "levelMin": "81",
+                "levelMax": "125",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Glaglas"
+                    },
+                    "2": {
+                        "name": "Craqueleurs Polaires"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Le Pot d'Hagën Glass"
+                    },
+                    "2": {
+                        "name": "Le Glaglacier Cornu"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                    "1": {
+                            "name": "Bois Gelé",
+                            "level": "65" 
+                        },
+                        "2": {
+                            "name": "Taroudium",
+                            "level": "65" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/sberg.png"
+                },
+                {
+                    "name": "Village Enseveli Enseveli",
+                    "slug": "village-sberg",
+                    "levelMin": "111",
+                    "levelMax": "125",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Mulmouths"
+                        },
+                        "2": {
+                            "name": "Chafers du Nord"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Niche du Yech'Ti'Wawa"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Bois Gelé",
+                            "level": "65" 
+                        },
+                        "2": {
+                            "name": "Taroudium",
+                            "level": "65" 
+                        },
+                        "3": {
+                            "name": "Chou-Chou",
+                            "level": "90" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/sbergVillage.png"
+                },
+                {
+                    "name": "Château de Harebourg",
+                    "slug": "chateau-sberg",
+                    "levelMin": "111",
+                    "levelMax": "125",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Mékas"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "La Tour Gelée"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Bois Gelé",
+                                "level": "65" 
+                            },
+                            "2": {
+                                "name": "Taroudium",
+                                "level": "65" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/sbergHarebourg.png"
+                }
+        ]     
+    },
+    {
+        "name": "Royaume Sadida",
+        "slug": "sadida",
+        "levelMin": "1",
+        "levelMax": "230",
+        "image": "/testHomepageAssets/amakna.png",
+        "subzones": [
+            {
+                "name": "Village",
+                "slug": "village-sadida",
+                "levelMin": "1",
+                "levelMax": "230",
+                "mobsFamily": "",
+                "dungeons": "",
+                "resourcesJobs": "",
+                "image": "/testHomepageAssets/sadidaVillage.png"
+            },
+            {
+                "name": "Palais du Roi Sheran Sharm",
+                "slug": "palais-sadida",
+                "levelMin": "1",
+                "levelMax": "230",
+                "mobsFamily": "",
+                "dungeons": "",
+                "resourcesJobs": "",
+                "image": "/testHomepageAssets/sadidaPalais.png"
+            },
+            {
+                "name": "Colline entoilée",
+                "slug": "colline-sadida",
+                "levelMin": "66",
+                "levelMax": "80",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Araknes"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon Arakne"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                    "1": {
+                            "name": "Raies Velues",
+                            "level": "30" 
+                        },
+                        "2": {
+                            "name": "Orchidée",
+                            "level": "25" 
+                        },
+                        "3": {
+                            "name": "Sequoiu",
+                            "level": "40" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/sadidaColline.png"
+                },
+                {
+                    "name": "Clairière des Mulous",
+                    "slug": "clairiere-sadida",
+                    "levelMin": "66",
+                    "levelMax": "80",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Mulous"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Mulou"
+                        },
+                        "2": {
+                            "name": "Antre du Meulou"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Loutes",
+                            "level": "25" 
+                        },
+                        "2": {
+                            "name": "Ortie",
+                            "level": "110" 
+                        },
+                        "3": {
+                            "name": "Pin Sylvestre",
+                            "level": "95" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/sadidaForet.png"
+                },
+                {
+                    "name": "Galleries des Gerbouilles",
+                    "slug": "galleries-sadida",
+                    "levelMin": "171",
+                    "levelMax": "185",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Gerbouilles"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Gerbouille"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Champignon Marbré",
+                                "level": "45" 
+                            },
+                            "2": {
+                                "name": "Quartz détouré",
+                                "level": "35" 
+                            },
+                            "3": {
+                                "name": "Carbone obscur",
+                                "level": "105" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/sadidaGerbouille.png"
+                },
+                {
+                    "name": "Forêt Déforestée",
+                    "slug": "foret-sadida",
+                    "levelMin": "186",
+                    "levelMax": "200",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Hibourgs"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Usine Hibourg"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Vandame",
+                                "level": "100" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/sadidaForet.png"
+                }
+        ]     
+    },
+    {
+        "name": "Royaume Chuchoku",
+        "slug": "chuchoku",
+        "levelMin": "96",
+        "levelMax": "215",
+        "image": "/testHomepageAssets/amakna.png",
+        "subzones": [
+            {
+                "name": "Chuchoplaine",
+                "slug": "plaine-chuchoku",
+                "levelMin": "96",
+                "levelMax": "110",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Chuchoteurs"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Chuchobase"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Maïs",
+                            "level": "65" 
+                        },
+                        "2": {
+                            "name": "Pipocampes",
+                            "level": "65" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/chuchokuChuchoplaine.png"
+                },
+                {
+                    "name": "Intérieur de Grampar",
+                    "slug": "grampar-chuchoku",
+                    "levelMin": "201",
+                    "levelMax": "215",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Carapattes"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Carapattes"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Maïs",
+                            "level": "65" 
+                        },
+                        "2": {
+                            "name": "Pipocampes",
+                            "level": "65" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/chuchokuGrampar.png"
+                },
+                {
+                    "name": "Toundra",
+                    "slug": "toundra-chuchoku",
+                    "levelMin": "201",
+                    "levelMax": "215",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Plantigardes"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Plantigardes"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Maïs",
+                                "level": "65" 
+                            },
+                            "2": {
+                                "name": "Pipocampes",
+                                "level": "65" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/chuchokuToundra.png"
+                },
+                {
+                    "name": "Banquise des Mansots",
+                    "slug": "banquise-chuchoku",
+                    "levelMin": "201",
+                    "levelMax": "215",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Mansots"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Mansots"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Maïs",
+                                "level": "65" 
+                            },
+                            "2": {
+                                "name": "Pipocampes",
+                                "level": "65" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/chuchokuBanquise.png"
+                }
+        ]     
+    },
+    {
+        "name": "Kelba",
+        "slug": "kelba",
+        "levelMin": "66",
+        "levelMax": "80",
+        "image": "/testHomepageAssets/kelba.png",
+        "subzones": [
+            {
+                "name": "Landes de Kelba",
+                "slug": "landes-kelba",
+                "levelMin": "66",
+                "levelMax": "80",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Corbacs"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "La Corbeau-Cave"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Poissons Lune",
+                            "level": "40" 
+                        },
+                        "2": {
+                            "name": "Gargousier",
+                            "level": "40" 
+                        },
+                        "3": {
+                            "name": "Pouplier",
+                            "level": "45" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/kelbaLandes.png"
+                },
+                {
+                    "name": "Pics de Kelba",
+                    "slug": "pics-kelba",
+                    "levelMin": "66",
+                    "levelMax": "80",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Croapules"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Pic du Corbeau Noir"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Kroum Funeste",
+                            "level": "40" 
+                        },
+                        "2": {
+                            "name": "Gargousier",
+                            "level": "40" 
+                        },
+                        "3": {
+                            "name": "Pouplier",
+                            "level": "45" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/kelbaPics.png"
+                }
+        ]     
+    },
+    {
+        "name": "Vallée de la Pandalousie",
+        "slug": "pandalousie",
+        "levelMin": "1",
+        "levelMax": "230",
+        "image": "/testHomepageAssets/pandala.png",
+        "subzones": [
+            {
+                "name": "Port de Chendu",
+                "slug": "port-pandalousie",
+                "levelMin": "",
+                "levelMax": "",
+                "mobsFamily": "",
+                "dungeons": "",
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Maïs",
+                            "level": "65" 
+                        },
+                        "2": {
+                            "name": "Pipocampes",
+                            "level": "65" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/pandalaPort.png"
+                },
+                {
+                    "name": "Village des Pandissidans",
+                    "slug": "village-pandalousie",
+                    "levelMin": "171",
+                    "levelMax": "185",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Pandissidans"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Cité Interdite"
+                        }
+                    },
+                    "resourcesJobs": "",
+                    "image": "/testHomepageAssets/pandalaVillage.png"
+                },
+                {
+                    "name": "Marais Salé",
+                    "slug": "marais-pandalousie",
+                    "levelMin": "141",
+                    "levelMax": "155",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Plantalas"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Source du Mal"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Roseau",
+                                "level": "45" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/pandalaMarais.png"
+                },
+                {
+                    "name": "Cimetière",
+                    "slug": "cimetiere-pandalousie",
+                    "levelMin": "186",
+                    "levelMax": "200",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Fantômes de Pandala"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Tombeau de Pandala"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Moumousse",
+                                "level": "125" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/pandalaCimetiere.png"
+                },
+                {
+                    "name": "Forêt Calcinée",
+                    "slug": "foret-pandalousie",
+                    "levelMin": "186",
+                    "levelMax": "200",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Fléopards"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Canyon des Fléopards"
+                        }
+                    },
+                    "resourcesJobs": "",
+                    "image": "/testHomepageAssets/pandalaForet.png"
+                },
+                {
+                    "name": "Sommet des Mille Brumes",
+                    "slug": "sommet-pandalousie",
+                    "levelMin": "1",
+                    "levelMax": "230",
+                    "mobsFamily": "",
+                    "dungeons": "",
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Edelweiss",
+                                "level": "65" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/pandalaSommet.png"
+                },
+                {
+                    "name": "Mines de la Pandalousie",
+                    "slug": "mine-pandalousie",
+                    "levelMin": "1",
+                    "levelMax": "230",
+                    "mobsFamily": "",
+                    "dungeons": "",
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Quartz détouré",
+                                "level": "35" 
+                            },
+                            "2": {
+                                "name": "Zinc entier",
+                                "level": "45" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/pandalaMine.png"
+                }
+                
+        ]     
+    },
+    {
+        "name": "Saharach",
+        "slug": "saharach",
+        "levelMin": "111",
+        "levelMax": "140",
+        "image": "/testHomepageAssets/saharach.png",
+        "subzones": [
+            {
+                "name": "Désert de Saharach",
+                "slug": "desert-saharach",
+                "levelMin": "111",
+                "levelMax": "125",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Cacterres"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon Cacterre"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Cactus",
+                            "level": "75" 
+                        },
+                        "2": {
+                            "name": "Aloa Vero",
+                            "level": "75" 
+                        },
+                        "3": {
+                            "name": "Minerai des Sables",
+                            "level": "75" 
+                        },
+                        "4": {
+                            "name": "Truffe du Désert",
+                            "level": "75" 
+                        },
+                        "5": {
+                            "name": "Scincus",
+                            "level": "75" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/saharach.png"
+                },
+                {
+                    "name": "La Fungopée",
+                    "slug": "fungopee-saharach",
+                    "levelMin": "126",
+                    "levelMax": "140",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Fungus"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Noirespore"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Myscandelle",
+                            "level": "80" 
+                        },
+                        "2": {
+                            "name": "Dionée",
+                            "level": "80" 
+                        },
+                        "3": {
+                            "name": "Minerai d’Or noir",
+                            "level": "80" 
+                        },
+                        "4": {
+                            "name": "Champoule",
+                            "level": "80" 
+                        },
+                        "5": {
+                            "name": "Planctois",
+                            "level": "80" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/saharachFungopee.png"
+                }
+        ]     
+    },
+    {
+        "name": "Ile des Wabbits",
+        "slug": "wabbit",
+        "levelMin": "126",
+        "levelMax": "155",
+        "image": "/testHomepageAssets/wabbit.png",
+        "subzones": [
+            {
+                "name": "Glosse Calotte",
+                "slug": "calotte-wabbit",
+                "levelMin": "126",
+                "levelMax": "140",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Black Wabbits"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon des Black Wabbit"
+                    },
+                    "2": {
+                        "name": "Temple de l'Empeleul Lenald"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Cawotte Noiwe",
+                            "level": "85" 
+                        },
+                        "2": {
+                            "name": "Mythwil",
+                            "level": "85" 
+                        },
+                        "3": {
+                            "name": "Pazinclou",
+                            "level": "85" 
+                        },
+                        "4": {
+                            "name": "Belgamète",
+                            "level": "85" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/wabbitCalotte.png"
+                },
+                {
+                    "name": "Fowtewesse du Wa",
+                    "slug": "fowtewesse-wabbit",
+                    "levelMin": "141",
+                    "levelMax": "155",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Gawdes Wabbits"
+                        }
+                    },
+                    "dungeons": "",
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Cawotte Noiwe",
+                            "level": "85" 
+                        },
+                        "2": {
+                            "name": "Mythwil",
+                            "level": "85" 
+                        },
+                        "3": {
+                            "name": "Pazinclou",
+                            "level": "85" 
+                        },
+                        "4": {
+                            "name": "Belgamète",
+                            "level": "85" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/wabbitFowtewesse.png"
+                },
+                {
+                    "name": "Soutewwains Mowbides",
+                    "slug": "souterrains-wabbit",
+                    "levelMin": "126",
+                    "levelMax": "155",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Wabbits"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Wesewve de Cawottes Abandonnée"
+                        },
+                        "2": {
+                            "name": "Donjon Wabbit"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Mythwil",
+                                "level": "85" 
+                            },
+                            "2": {
+                                "name": "Pipocampes",
+                                "level": "65" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/wabbitSouterrains.png"
+                }
+        ]     
+    },
+    {
+        "name": "Moon",
+        "slug": "moon",
+        "levelMin": "171",
+        "levelMax": "185",
+        "image": "/testHomepageAssets/moon.png",
+        "subzones": [
+            {
+                "name": "Plage de Moon",
+                "slug": "plage-moon",
+                "levelMin": "171",
+                "levelMax": "185",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Tropikokos"
+                    },
+                    "2": {
+                        "name": "Crocodailles"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon des Crocodailles"
+                    },
+                    "2": {
+                        "name": "Donjon des Tropikes"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Divi Divi",
+                            "level": "110" 
+                        },
+                        "2": {
+                            "name": "Kokotier",
+                            "level": "115" 
+                        },
+                        "3": {
+                            "name": "Ambre",
+                            "level": "110" 
+                        },
+                        "4": {
+                            "name": "Mercure",
+                            "level": "115" 
+                        },
+                        "5": {
+                            "name": "Maniok",
+                            "level": "110" 
+                        },
+                        "6": {
+                            "name": "Canne à Palme",
+                            "level": "115" 
+                        },
+                        "7": {
+                            "name": "Namo",
+                            "level": "110" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/moon.png"
+                },
+                {
+                    "name": "Jungle de Moon",
+                    "slug": "jungle-moon",
+                    "levelMin": "171",
+                    "levelMax": "185",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Kannibouls"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon des Kannibouls"
+                        },
+                        "2": {
+                            "name": "Cime du Grand Totem"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Kokotier",
+                            "level": "115" 
+                        },
+                        "2": {
+                            "name": "Tahitiarée",
+                            "level": "110" 
+                        },
+                        "3": {
+                            "name": "Grâce",
+                            "level": "115" 
+                        },
+                        "4": {
+                            "name": "Ambre",
+                            "level": "110" 
+                        },
+                        "5": {
+                            "name": "Caïman",
+                            "level": "115" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/moon.png"
+                },
+                {
+                    "name": "Sous Terrains de l'Île de Moon",
+                    "slug": "sousterrains-moon",
+                    "levelMin": "171",
+                    "levelMax": "185",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Kannivores"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon des Kannivores"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Divi Divi",
+                                "level": "110" 
+                            },
+                            "2": {
+                                "name": "Mercure",
+                                "level": "115" 
+                            },
+                            "3": {
+                                "name": "Maniok",
+                                "level": "110" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/moonSousterrains.png"
+                }
+        ]     
+    },
+    {
+        "name": "Domaine de Sauvage",
+        "slug": "sauvage",
+        "levelMin": "51",
+        "levelMax": "65",
+        "image": "/testHomepageAssets/sauvage.png",
+        "subzones": [
+            {
+                "name": "Domaine de Sauvage",
+                "slug": "sub-sauvage",
+                "levelMin": "51",
+                "levelMax": "65",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Bouftous Sauvages"
+                    },
+                    "2": {
+                        "name": "Bworks"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Donjon Bwork"
+                    },
+                    "2": {
+                        "name": "Antre d'Excarnus"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Saule Pleureur",
+                            "level": "30" 
+                        },
+                        "2": {
+                            "name": "Fougère Duvet",
+                            "level": "30" 
+                        },
+                        "3": {
+                            "name": "Quartz détouré",
+                            "level": "35" 
+                        },
+                        "4": {
+                            "name": "Salamons",
+                            "level": "35" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/sauvage.png"
+                }
+        ]     
+    },
+    {
+        "name": "Katrepat",
+        "slug": "katrepat",
+        "levelMin": "81",
+        "levelMax": "95",
+        "image": "/testHomepageAssets/katrepat.png",
+        "subzones": [
+            {
+                "name": "Katrepat",
+                "slug": "sub-katrepat",
+                "levelMin": "81",
+                "levelMax": "95",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Goules"
+                    },
+                    "2": {
+                        "name": "Croques-Miteux"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Repaire des Super-Vilains"
+                    },
+                    "2": {
+                        "name": "Château de Wagnar"
+                    },
+                    "3": {
+                        "name": "Le Misolée"
+                    },
+                    "4": {
+                        "name": "Ombrage"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Têtard",
+                            "level": "55" 
+                        },
+                        "2": {
+                            "name": "Pied de Boufton",
+                            "level": "55" 
+                        },
+                        "3": {
+                            "name": "Améthyste Sanguine",
+                            "level": "55" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/katrepat.png"
+                }
+        ]     
+    },
+    {
+        "name": "Ereboria, l'Île Maudite",
+        "slug": "ereboria",
+        "levelMin": "36",
+        "levelMax": "230",
+        "image": "/testHomepageAssets/ereboria.png",
+        "subzones": [
+            {
+                "name": "Port d'Ereboria",
+                "slug": "port-ereboria",
+                "levelMin": "36",
+                "levelMax": "50",
+                "mobsFamily": "",
+                "dungeons": "",
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Bananagrumier",
+                            "level": "35" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/ereboriaPort.png"
+                },
+                {
+                    "name": "Plage des Pirates",
+                    "slug": "pirates-ereboria",
+                    "levelMin": "36",
+                    "levelMax": "50",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Equipage du Poulpe"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Equipage du Poulpe"
+                        }
+                    },
+                    "resourcesJobs": 
+                    {
+                        "1": {
+                            "name": "Bananagrumier",
+                            "level": "35" 
+                        },
+                        "2": {
+                            "name": "Loutes",
+                            "level": "25" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/ereboriaPirates.png"
+                },
+                {
+                    "name": "Plage Maudite",
+                    "slug": "maudite-ereboria",
+                    "levelMin": "36",
+                    "levelMax": "50",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Morts-Brûlés"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon des Morts-Brûlés"
+                        }
+                    },
+                    "resourcesJobs": 
+                        {
+                            "1": {
+                                "name": "Bananagrumier",
+                                "level": "35" 
+                            }
+                        },
+                    "image": "/testHomepageAssets/ereboriaMaudite.png"
+                },
+                {
+                    "name": "Caverne des Marteaux-Aigris",
+                    "slug": "caverne-ereboria",
+                    "levelMin": "51",
+                    "levelMax": "65",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Marteaux-Aigris"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Mateaux-Aigris"
+                        }
+                    },
+                    "resourcesJobs": "",
+                    "image": "/testHomepageAssets/ereboriaCaverne.png"
+                },
+                {
+                    "name": "Mine néo-Sufokienne",
+                    "slug": "mine-ereboria",
+                    "levelMin": "216",
+                    "levelMax": "230",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Steamers"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Steamers"
+                        }
+                    },
+                    "resourcesJobs": "",
+                    "image": "/testHomepageAssets/ereboriaMine.png"
+                },
+                {
+                    "name": "Prison Maritime",
+                    "slug": "prison-ereboria",
+                    "levelMin": "216",
+                    "levelMax": "230",
+                    "mobsFamily": {
+                        "1": {
+                            "name": "Poisseux Abyssaux"
+                        }
+                    },
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Poisseux Abyssaux"
+                        }
+                    },
+                    "resourcesJobs": "",
+                    "image": "/testHomepageAssets/ereboriaPrison.png"
+                }
+        ]     
+    },
+    {
+        "name": "Bilbyza",
+        "slug": "bilbyza",
+        "levelMin": "81",
+        "levelMax": "110",
+        "image": "/testHomepageAssets/bilbyza.png",
+        "subzones": [
+            {
+                "name": "Costa Del Gelax",
+                "slug": "costa-bilbyza",
+                "levelMin": "81",
+                "levelMax": "110",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Créatures de la Bilbyplage"
+                    },
+                    "2": {
+                        "name": "Gelées"
+                    },
+                    "3": {
+                        "name": "Bilbyboys"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Le Hammamamoule"
+                    },
+                    "2": {
+                        "name": "L'Arène Dansante"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Liane Grimpante",
+                            "level": "60" 
+                        },
+                        "2": {
+                            "name": "Makafé d’Or",
+                            "level": "55" 
+                        },
+                        "3": {
+                            "name": "Poissons Zobal",
+                            "level": "55" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/bilbyza.png"
+                },
+                {
+                    "name": "Antichambre de la Fête",
+                    "slug": "antichambre-bilbyza",
+                    "levelMin": "96",
+                    "levelMax": "110",
+                    "mobsFamily": "",
+                    "dungeons": {
+                        "1": {
+                            "name": "Donjon Gelée"
+                        }
+                    },
+                    "resourcesJobs": "",
+                    "image": "/testHomepageAssets/bilbyzaAntichambre.png"
+                    }
+        ]     
+    },
+    {
+        "name": "Ile aux Moines",
+        "slug": "moines",
+        "levelMin": "81",
+        "levelMax": "95",
+        "image": "/testHomepageAssets/moines.png",
+        "subzones": [
+            {
+                "name": "Ile aux Moines",
+                "slug": "sub-moines",
+                "levelMin": "81",
+                "levelMax": "95",
+                "mobsFamily": {
+                    "1": {
+                        "name": "Rats"
+                    },
+                    "2": {
+                        "name": "Moines"
+                    }
+                },
+                "dungeons": {
+                    "1": {
+                        "name": "Les Ratacombes"
+                    },
+                    "2": {
+                        "name": "Sliptorium"
+                    },
+                    "3": {
+                        "name": "Le Vignoble Ignoble"
+                    }
+                },
+                "resourcesJobs": 
+                {
+                        "1": {
+                            "name": "Pouplier",
+                            "level": "45" 
+                        },
+                        "2": {
+                            "name": "Kroum Funeste",
+                            "level": "40" 
+                        },
+                        "3": {
+                            "name": "Seigle",
+                            "level": "40" 
+                        },
+                        "4": {
+                            "name": "Poissons Lune",
+                            "level": "40" 
+                        }
+                    },
+                    "image": "/testHomepageAssets/moines.png"
+                }
+        ]     
+    }
+]
+}

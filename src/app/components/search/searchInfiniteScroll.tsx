@@ -35,9 +35,9 @@ export default function SearchInfiniteScroll({resultsScroll, onScrollEnd} : Prop
         <div id="cardList" ref={refDiv}>
             {resultsScroll && resultsScroll.map((result, index ) => {
                 if(resultsScroll.length >= 5 && resultsScroll.length - 5 === index) {
-                    return <Card key={index} item={result} forwardRef={ref}/>
+                    return <Card key={result["@id"]} item={result} forwardRef={ref}/>
                 }
-                return <Card key={index} item={result} />
+                return <Card key={result["@id"]} item={result} />
             })}
             {displayArrow && <ArrowTop onClick={handleClickTop} id="backToTheTop" alt="Bouton vers le haut de page"/>}
         </div>

@@ -1,0 +1,46 @@
+.aggregateContainer {
+    width: 100%;
+    color: var(--main-cyan-color);
+}
+
+.aggregateScrollable {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 55vh;
+}
+
+.levelFilter {
+    min-height: 80px;
+}
+
+.levelFilter > h3 {
+    margin : 10px;
+}
+
+.aggregateHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.aggregateHeader > h2 {
+    width: 100%;
+}
+
+.aggregateValidate {
+    all: unset;
+    width: 100%;
+    background-color: var(--main-cyan-color);
+    border-radius: 10px;
+    color: var(--main-primary-text);
+    font-weight: 600;
+    text-align: center;
+    transition: all 1s ease;
+    height: 30px;
+}
+
+.aggregateValidate:hover {
+    background-color: var(--main-cyan-light-color);
+    cursor: pointer;
+}

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import "./common.css"
 import TypeStuff from "@/app/types/Stuff/TypeStuff";
+import TypeResource, { TypeResourceAggregate } from "@/app/types/Resource/TypeResource";
 
 interface Props {
-    type : TypeStuff,
+    type : TypeStuff|TypeResource,
     isLong? : boolean
 }
 

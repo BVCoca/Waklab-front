@@ -13,9 +13,10 @@ import ImageWithFallback from "../common/ImageWithFallback";
 
 interface Props {
   item: Mob | Resource | Stuff | Dungeon;
+  forwardRef? : any
 }
 
-export default function Card({ item }: Props) {
+export default function Card({ item, forwardRef }: Props) {
 
   let imageUrlError = "/errorIcon/errorItem.png"
   
@@ -35,7 +36,7 @@ export default function Card({ item }: Props) {
   }
 
   return (
-    <Link href={item["@id"].slice(4)} className="cardContainer">
+    <Link href={item["@id"].slice(4)} className="cardContainer" ref={forwardRef}>
       <CardHeader level={level} rarity={rarity} />
       <ImageWithFallback
         className="cardImage"

@@ -124,6 +124,7 @@
 
 .selectedHeader:hover, .selectedOption:hover {
     background-color: var(--main-cyan-light-color);
+    cursor: pointer;
 }
 
 .selectedHeader > svg {

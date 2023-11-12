@@ -84,7 +84,7 @@ a {
   padding: 7px 8px 7px 8px;
   border-radius: 12px;
   position: fixed;
-  bottom: 0;
+  bottom: -10px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 12px;

@@ -78,10 +78,9 @@ export default function SearchComponent({Search, sortFields = [], model = ""} : 
 
     // A la fin du scroll, fetch de la prochaine page
     const handleScrollEnd = () => {
-        console.log("scrollEnd")
-       /*  if(hasNextPage && !isFetching) {
+        if(hasNextPage && !isFetching) {
             fetchNextPage()
-        } */
+        }
     }
 
     // Changement du tri
@@ -118,7 +117,7 @@ export default function SearchComponent({Search, sortFields = [], model = ""} : 
                     onScrollEnd={handleScrollEnd}
                 />}
                 {isFetching && <div id="loaderWrapper"><span className="loader"></span></div>}  
-                {data?.pages.reduce((acc : number, page) => acc + page["hydra:member"].length, 0) === 0 && <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu">MMORPG: © 2023 Ankama Studio. Tous droits réservés. &quot;WakLaboratory&quot; est un site non-officiel en aucun lien avec Ankama.</p></div>}
+                <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu">MMORPG: © 2023 Ankama Studio. Tous droits réservés. &quot;WakLaboratory&quot; est un site non-officiel en aucun lien avec Ankama.</p></div>
                 {data?.pages && !hasNextPage && <div id="endingMessage">Aucun résultat de plus pour cette recherche.</div>}      
             </div>
         </div>

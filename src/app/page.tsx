@@ -45,7 +45,7 @@ export default function Page() {
       </div>
       <div className="descriptionHome">
         <h2>Bienvenue sur Waklab,</h2>
-        <p>Le site est encore en cours de développement, nous nous excusons pour la gêne occasionnée. Vous pouvez commencer une recherche en cliquant sur une des icônes ci-dessus. Si vous voyez des erreurs ou des choses à améliorées, il y a un formulaire diponible en haut à droite de votre page. Voila ce que nous avons prévue d&apos;ajouter : </p>
+        <p>Le site est encore en cours de développement, nous nous excusons pour la gêne occasionnée. Vous pouvez commencer une recherche en cliquant sur une des icônes ci-dessus. Si vous voyez des erreurs ou des choses à améliorées, il y a un formulaire disponible en haut à droite de votre page. Voila ce que nous avons prévu d&apos;ajouter : </p>
         <ul>
           <li>Zones et sous zones du jeu</li>
           <li>Pages de métiers</li>

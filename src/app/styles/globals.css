@@ -215,7 +215,7 @@ a {
   align-self: center;
 }
 
-.descriptionHome > h2,h3 {
+.descriptionHome > h2, .descriptionHome > h3 {
   color: var(--main-cyan-color);
 }
 

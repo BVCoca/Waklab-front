@@ -1,4 +1,4 @@
-.Count {
+.count {
     padding: 2rem;
     margin: 1rem;
 
@@ -7,6 +7,12 @@
     align-items: center;
     justify-content: center;
     color: var(--main-cyan-color);
+    transition: all 0.5s ease-in-out;
+}
+
+.count:hover {
+    cursor: pointer;
+    color: var(--main-cyan-light-color);
 }
 
 .statsContainer {

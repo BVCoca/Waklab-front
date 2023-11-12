@@ -1,4 +1,4 @@
-import { SortField, SortOrder } from "../types/Search"
+import { Aggregate, SortField, SortOrder } from "../types/Search"
 import StuffSearch from "../types/Stuff/StuffSearch"
 import StuffSingle from "../types/Stuff/StuffSingle"
 import get from "./api"

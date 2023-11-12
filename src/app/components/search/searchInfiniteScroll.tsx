@@ -16,7 +16,7 @@ export default function SearchInfiniteScroll({resultsScroll, onScrollEnd} : Prop
 
     const { ref, inView } = useInView();
 
-    const refDiv = useRef(null);
+    const refDiv = useRef<null | HTMLDivElement>(null);
     const [displayArrow, setDisplayArrow] = useState(false)
 
     useEffect(() => {

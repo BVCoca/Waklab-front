@@ -59,7 +59,7 @@ a {
 }
 
 #menuContainer {
-  height: 70px;
+  height: 85px;
   width: 100%;
 }
 
@@ -198,5 +198,27 @@ a {
 }
 
 .customError h2 {
+  color: var(--main-primary-text);
+}
+
+.homepageContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptionHome {
+  background-color: var(--main-bg-color);
+  border-radius: 20px;
+  padding: 30px;
+  width: 80%;
+  align-self: center;
+}
+
+.descriptionHome > h2,h3 {
+  color: var(--main-cyan-color);
+}
+
+.descriptionHome > p,ul{
   color: var(--main-primary-text);
 }

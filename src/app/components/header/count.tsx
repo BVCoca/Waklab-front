@@ -2,15 +2,17 @@
 
 import { ReactNode, useEffect, useState } from 'react';
 import './count.css';
+import Link from 'next/link';
 
 interface Props {
     label : string,
     number : number,
     duration : number,
+    href : string,
     icon : ReactNode
 }
 
-export default function Count({label, number, duration, icon}: Props) {  
+export default function Count({label, number, duration, href, icon}: Props) {  
 
     const [count, setCount] = useState<string>("0");
 
@@ -35,10 +37,10 @@ export default function Count({label, number, duration, icon}: Props) {
       }, [number, duration]);
 
     return (
-      <div className="Count">
+      <Link href={href} className="count">
         <h3>{count}</h3>
         {icon}
         <h3>{label}</h3>
-      </div>
+      </Link>
     );
   }

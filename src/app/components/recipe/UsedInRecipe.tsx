@@ -144,7 +144,7 @@ export default function UsedInRecipe({recipeIngredients} : Props) {
                     ))}
                 </select> */}
                 <div className="selectSort">
-                    <Select selectedValue={selectedSort} onChange={handleSortSelected} options={sortOptions} />
+                    <Select onChange={handleSortSelected} options={sortOptions} />
                 </div>
             </div>
             <div className="tabContainer">

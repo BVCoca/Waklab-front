@@ -1,6 +1,5 @@
 import "@/app/styles/globals.css"
 import "./logo.css"
-import HomeIcon from "@/app/icons/homepageIcon/logo_home.svg"
 import Link from "next/link"
 import Image from "next/image";
 

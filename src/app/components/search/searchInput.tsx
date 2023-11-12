@@ -2,7 +2,7 @@
 
 import "@/app/styles/globals.css"
 import "./search.css"
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useState, useEffect } from 'react';
 import SearchIcon from "@/app/icons/homepageIcon/search-solid.svg"
 import { usePathname, useSearchParams } from 'next/navigation'
 
@@ -13,14 +13,21 @@ interface Props {
 
 export default function SearchInput({valueInput, onChange} : Props) {
 
+    const [value, setValue] = useState<string>(valueInput)
+
     function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
         const newValue = event.target.value;
-
-        // On update l'URL
-        window.history.replaceState(null, '', '?q=' + newValue)
         
-        onChange(newValue);
+        setValue(newValue)
     }
+
+    useEffect(() => {
+        const delayDebounceFn = setTimeout(() => {
+            onChange(value)
+          }, 500)
+      
+          return () => clearTimeout(delayDebounceFn)
+    }, [value])
 
     let pathname = usePathname();
 
@@ -38,8 +45,8 @@ export default function SearchInput({valueInput, onChange} : Props) {
 
     return (
         <div id="searchbarContainer">
-            <input type="text" placeholder={`Rechercher ${pathname}`} id="searchBar" name="searchBar" onChange={handleInputChange} value={valueInput}/>
-            <label htmlFor="searchBar">
+            <input type="text" placeholder={`Rechercher ${pathname}`} id="searchBar" name="searchBar" onChange={handleInputChange} value={value}/>
+            <label className="labelSearchInput" htmlFor="searchBar">
                 <SearchIcon alt="search icon" id="searchIcon"/>
             </label>
         </div> 

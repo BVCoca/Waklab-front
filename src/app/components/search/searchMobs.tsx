@@ -4,16 +4,36 @@ import "@/app/styles/globals.css"
 import SearchComponent from "./searchComponent"
 import { searchMobs } from "@/app/services/mob"
 import MobSearch from "@/app/types/Mob/MobSearch"
+import { Aggregate, SortField, SortOrder } from "@/app/types/Search"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
+const queryClient = new QueryClient()
 
 export default function SearchMobs() {
 
-    const onSearch = async (value : string, page : number) : Promise<MobSearch> => {
-        return await searchMobs(value, page) 
+    const onSearch = async (page : number, value? : string, sort_field? : SortField, sort_order? : SortOrder, filters? : Aggregate) : Promise<MobSearch> => {
+        return await searchMobs(page, value, sort_field, sort_order, filters) 
     }
 
     return (
         <div id="cardList" className="card-list">
-            <SearchComponent Search={onSearch}/>
+            <QueryClientProvider client={queryClient}>
+                <SearchComponent model="mob" Search={onSearch} sortFields={[
+                    {
+                        label : "Trier par pertinence"
+                    },
+                    {
+                        sort_field : SortField.LEVEL,
+                        sort_order : SortOrder.ASC,
+                        label : "Trier par niveau croissant"
+                    },
+                    {
+                        sort_field : SortField.LEVEL,
+                        sort_order : SortOrder.DESC,
+                        label : "Trier par niveau décroissant"
+                    }
+                ]}/>
+            </QueryClientProvider>
         </div> 
     )
 }

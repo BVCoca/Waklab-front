@@ -17,7 +17,7 @@
 }
 
 /*Safari and Chrome*/
-input[type="range"] {
+#stasisSlider {
     -webkit-appearance: none;
     appearance: none; 
     width: 20rem;
@@ -29,15 +29,15 @@ input[type="range"] {
     background: #cd2ad91e;
 }
 
-input[type="range"]::-webkit-slider-runnable-track,
-input[type="range"]::-moz-range-track {
+#stasisSlider::-webkit-slider-runnable-track,
+#stasisSlider::-moz-range-track {
     height: 2rem;
     background: #cd2ad91e;
     border-radius: 1rem;
 }
 
 /* Version Firefox */
-input[type="range"]::-moz-range-thumb {
+#stasisSlider::-moz-range-thumb {
     appearance: none; 
     height: 2rem;
     width: 2rem;
@@ -56,7 +56,7 @@ input[type="range"]::-moz-range-thumb {
 
 
 /* Version Chrome */
-input[type="range"]::-webkit-slider-thumb {
+#stasisSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     height: 2rem;

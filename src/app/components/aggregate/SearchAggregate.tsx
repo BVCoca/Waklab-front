@@ -2,7 +2,7 @@ import { Aggregate } from "@/app/types/Search";
 import MultiRangeSlider from "./MultiRangeSlider";
 import "./SearchAggregate.css"
 import { useState } from "react";
-import Rarity, { RarityAggregate } from "@/app/types/Rarity";
+import { RarityAggregate } from "@/app/types/Rarity";
 import SelectMultiple from "./SelectMultiple";
 import { TypeResourceAggregate } from "@/app/types/Resource/TypeResource";
 import { TypeStuffAggregate } from "@/app/types/Stuff/TypeStuff";

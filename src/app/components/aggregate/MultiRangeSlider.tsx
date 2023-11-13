@@ -6,7 +6,7 @@ import {
     useState,
     useRef
   } from "react";
-  import "./multiRangeSlider.css";
+  import "./MultiRangeSlider.css";
   
   interface MultiRangeSliderProps {
     min: number;

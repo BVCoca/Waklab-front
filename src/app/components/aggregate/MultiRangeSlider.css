@@ -2,16 +2,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 90%;
+    position: relative;
     padding-top: 10px;
     padding-left: 10px;
-    padding-right: 10px;
-  }
+}
   
   .slider {
     position: relative;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
   }
   
   .slider__track,
@@ -19,6 +18,7 @@
   .slider__left-value,
   .slider__right-value {
     position: absolute;
+    padding-left: 0px;
   }
   
   .slider__track,

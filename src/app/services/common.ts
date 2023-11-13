@@ -18,6 +18,14 @@ const getFiltersParams = (params: URLSearchParams, filters? : Aggregate) => {
     if(filters?.family && filters.family.length > 0) {
         params.set('family', filters.family.map(t => t && t.value).join('|'))
     }
+
+    if(filters?.minLevel && filters?.minLevel.value) {
+        params.set('levelMin', filters.minLevel.value.toString())
+    }
+
+    if(filters?.maxLevel && filters?.maxLevel.value) {
+        params.set('levelMax', filters.maxLevel.value.toString())
+    }
 }
 
 const search = async (model : string, page : number = 1, query : string|undefined, sort_field? : SortField, sort_order? : SortOrder, filters? : Aggregate) : Promise<any> => {

@@ -84,7 +84,7 @@ export default async function ResourceDetails({ params }: Props) {
         </div>
       )}
       <MobDropList drops={resource.resourceDrops} />
-      <Recipes recipes={resource.recipes} />
+      <Recipes recipes={resource.recipes} item={resource}/>
       { resource.recipeIngredients.length > 0 && <UsedInRecipe recipeIngredients={resource.recipeIngredients} />}
     </div>
   );

@@ -2,11 +2,11 @@
 
 import "@/app/styles/globals.css";
 import "./menu.css";
-import HomeIcon from "@/app/icons/homepageIcon/logo_home.svg"
 import LogoMobs from "@/app/icons/homepageIcon/logoMobs.svg";
 import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg";
 import LogoResources from "@/app/icons/homepageIcon/logoResources.svg";
 import LogoDungeons from "@/app/icons/homepageIcon/logoDungeon.svg";
+import LogoCraft from "@/app/icons/homepageIcon/logoHammer.svg"
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -46,6 +46,13 @@ export default function Menu() {
       href: `/resources`,
       label: "Ressources",
     },
+    {
+      src: <LogoCraft />,
+      srcOnPage: <LogoCraft style={{ color: `${isOnPageColor}`}} />,
+      alt: ``,
+      href: `/crafts`,
+      label: "Crafts",
+    }
     
   ];
 

@@ -40,16 +40,6 @@
     padding-right: 20px;
 }
 
-.craftButton {
-    padding-top: 80px;
-}
-
-.craftButton:hover>svg {
-    fill: var(--main-cyan-light-color);
-    transform: scale(1.15);
-    transition: all 0.3s ease;
-}
-
 .caracteristicTitle {
     color: var(--main-cyan-color);
     text-align: start;

@@ -222,3 +222,14 @@ a {
 .descriptionHome > p,ul{
   color: var(--main-primary-text);
 }
+
+/* ------------------Craft Hammer------------------ */
+
+.craftButton>svg {
+  transition: all 0.3s ease;
+}
+
+.craftButton:hover>svg {
+  fill: var(--main-cyan-light-color);
+  transform: scale(1.15);
+}

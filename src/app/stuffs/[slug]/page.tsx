@@ -11,6 +11,7 @@ import "./stuffDetails.css"
 import { isWeapon } from "@/app/types/isType";
 import stuffCaracteristic from "@/app/types/Stuff/StuffCaracteristic";
 import ImageWithFallback from "@/app/components/common/ImageWithFallback";
+import ButtonSaved from "../test";
 
 interface Props {
   params: {
@@ -45,6 +46,8 @@ export default async function StuffDetails({ params }: Props) {
     return <p>Stuff non trouvé</p>;
   }
 
+  
+
   return (
     <div className="detailsContent">
       <Header small={true} />
@@ -57,8 +60,9 @@ export default async function StuffDetails({ params }: Props) {
           <h1>{stuff.name}</h1>
           <p className="stuffDescription">{stuff.description}</p>
         </div>
-        <div className="levelContainer">
+        <div className="levelCraftContainer">
           <Level level={[stuff.level]} />
+          <ButtonSaved stuff={stuff}/>
         </div>
       </div>
       <h2 className="caracteristicTitle">Caractéristiques</h2>

@@ -11,8 +11,6 @@ interface Props {
 
 export default function CraftingButton({ item, recipeId }: Props) {
 
-  console.log('recipeId', recipeId)
-
     const saved = () => {
       let isItemsToCraft = localStorage.getItem("itemsToCraft");
       let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
@@ -21,8 +19,6 @@ export default function CraftingButton({ item, recipeId }: Props) {
       itemsToCraft.push(item);
   
       localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft))
-  
-      console.log(itemsToCraft);
     };
   
     return (

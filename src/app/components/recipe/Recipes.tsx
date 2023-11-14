@@ -1,7 +1,7 @@
 import Recipe from "@/app/types/Recipe/Recipe"
 import Image from "next/image"
 import DropsRecipesContainer from "../common/DropsRecipesContainer"
-import ButtonSaved from "../common/craftingButton"
+import ButtonSaved from "../common/addToCraft"
 import "./Recipes.css"
 import StuffSingle from "@/app/types/Stuff/StuffSingle"
 import ResourceSingle from "@/app/types/Resource/ResourceSingle"

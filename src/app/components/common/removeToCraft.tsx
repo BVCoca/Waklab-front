@@ -11,18 +11,16 @@ interface Props {
 
 export default function RemoveButton({ item, recipeId }: Props) {
 
-    const remove = () => {
-        let isItemsToCraft = localStorage.getItem("itemsToCraft");
-        let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
-  
-        item.recipes = item.recipes.filter((recipe) => recipe["@id"] === recipeId) 
+  const remove = () => {
+    let isItemsToCraft = localStorage.getItem("itemsToCraft");
+    let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
+    
+    itemsToCraft = itemsToCraft.filter((craftItem : StuffSingle | ResourceSingle) => craftItem.recipes[0]["@id"] !== recipeId);
 
-        if(itemsToCraft) {
-            itemsToCraft.removeItem(item);
-        }
+    localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft));
 
-        localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft))
-    };
+    window.location.reload()
+  };
   
     return (
       <button

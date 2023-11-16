@@ -5,21 +5,46 @@ import ResourceSingle from "@/app/types/Resource/ResourceSingle";
 import "./craft.css"
 import Image from "next/image";
 import RemoveButton from "../common/removeToCraft";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export default function CraftComponent() {
     let isItemsToCraft = localStorage.getItem("itemsToCraft")
     let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
 
-    const qtyInputRef = useRef<HTMLInputElement>(null);
-    const [qtyValue, setQtyValue] = useState(1);
+    const [colorQty, setColorQty] = useState(itemsToCraft.map(() => "white"));
 
-    const handleQtyChange = () => {
-        if (qtyInputRef.current) {
-            const newValue = parseInt(qtyInputRef.current.value, 10);
-            setQtyValue(newValue);
+    const qtyInputRefs = {};
+    const [qtyValues, setQtyValues] = useState(itemsToCraft.map(() => 1));
+
+    const handleQtyChange = (index: number) => {
+        if (qtyInputRefs[index]) {
+            const newValue = parseInt(qtyInputRefs[index].value, 10);
+            setQtyValues((prevValues) => {
+                const newValues = [...prevValues];
+                newValues[index] = newValue;
+                return newValues;
+            });
         }
-      };
+    };
+
+    const handleInputChange = (quantity, index) => (event) => {
+        const inputValue = parseInt(event.target.value, 10);
+        
+        const maxValue = quantity * qtyValues[index];
+        if (inputValue >= maxValue) {
+            setColorQty((prevValues) => {
+                const newValues = [...prevValues];
+                newValues[index] = "#1B8684";
+                return newValues;
+            });
+        } else {
+            setColorQty((prevValues) => {
+                const newValues = [...prevValues];
+                newValues[index] = "white";
+                return newValues;
+            });
+        }
+    };
 
     console.log(itemsToCraft);
     return (
@@ -37,20 +62,26 @@ export default function CraftComponent() {
                     <div className="inputWrapper">
                         <RemoveButton item={item} recipeId={item.recipes[0]["@id"]}/>
                         <p className="inputText">Quantité</p>
-                        <input ref={qtyInputRef} value={qtyValue} onChange={handleQtyChange} className="inputQty" type="number" min={1} max={20}/>
+                        <input ref={(input) => (qtyInputRefs[i] = input)}
+                                value={qtyValues[i]}
+                                onChange={() => handleQtyChange(i)} className="inputQty" type="number" min={1} max={20}/>
                     </div>
                 </div>
                 <div className="resources">
-                    {item.recipes[0].recipeIngredients.map((recipeIngredient, i : number) => (
-                        <div key={i} className="ingredient">
+                    {item.recipes[0].recipeIngredients.map((recipeIngredient, j : number) => (
+                        recipeIngredient.resource?.name &&
+                        <div key={j} className="ingredient">
                             <div className="ingredientImg">
                                 <Image width={70} height={70} src={recipeIngredient.resource?.imageUrl} alt=""/>
                             </div>
                             <div className="ingredientName">
                                 {recipeIngredient.resource?.name}
                             </div>
-                            <div className="ingredientQty">
-                                {recipeIngredient.quantity * qtyValue}
+                            <div className="ingredientQtyCheck">
+                                <input onChange={handleInputChange(recipeIngredient.quantity, i)} className="inputQty" type="number" min={1} max={recipeIngredient.quantity * qtyValues[i]}/>
+                                    <div style={{ color: colorQty[i] }} className="ingredientQty">
+                                        {recipeIngredient.quantity * qtyValues[i]}
+                                    </div>
                             </div>
                         </div>
                     ))}

@@ -3,6 +3,8 @@
 import StuffSingle from "@/app/types/Stuff/StuffSingle";
 import Hammer from "/public/hammer.svg"
 import ResourceSingle from "@/app/types/Resource/ResourceSingle";
+import { useState } from "react";
+import { toast } from "react-toastify"
 
 interface Props {
   item: StuffSingle | ResourceSingle
@@ -11,12 +13,27 @@ interface Props {
 
 export default function CraftingButton({ item, recipeId }: Props) {
 
+    const [isInStorage, setIsInStorage] = useState<Boolean>()
+
     const saved = () => {
       let isItemsToCraft = localStorage.getItem("itemsToCraft");
       let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
 
-      item.recipes = item.recipes.filter((recipe) => recipe["@id"] === recipeId) 
-      itemsToCraft.push(item);
+      if (item.recipes = item.recipes.filter((recipe) => recipe["@id"] === recipeId)) {
+        setIsInStorage(true)
+        if (!isInStorage) {
+          itemsToCraft.push(item);
+          toast(`${item.name} a été ajouté aux Crafts !`, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            pauseOnHover: false,
+            progress: undefined,
+            theme: "dark",
+            type: "success"
+            });
+        }
+      }
   
       localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft))
     };

@@ -1,11 +1,13 @@
 import Dungeon from "../Dungeon/Dungeon";
 import Base from "../Hydra/Base";
+import FamilySubzone from "./FamilySubzone";
 import MobWithDrops from "./MobWithDrops";
 
 /**
  * Utiliser uniquement sur la page de l'item
  */
 export default interface MobSingle extends MobWithDrops, Base {
+    family : FamilySubzone,
     isCapturable: boolean,
     actionPoints: number,
     movementPoints: number,
@@ -24,5 +26,5 @@ export default interface MobSingle extends MobWithDrops, Base {
     resFire: number,
     hp : number,
     dungeons : Dungeon[],
-    boss? : Dungeon
+    boss? : Dungeon,
 }

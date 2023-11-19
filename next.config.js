@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+  staticPageGenerationTimeout : 180,
   images: {
     domains: [
       "static.ankama.com",

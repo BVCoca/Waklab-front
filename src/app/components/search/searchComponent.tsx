@@ -19,6 +19,7 @@ import Dungeon from "@/app/types/Dungeon/Dungeon"
 import { fetchAggregate } from "@/app/services/common"
 import SearchAggregate from "../aggregate/SearchAggregate"
 import SubzoneSearch from "@/app/types/Zone/SubzoneSearch"
+import Subzone from "@/app/types/Zone/Subzone"
 
 interface Props {
     Search: (page : number, value? : string, sort_field? : SortField, sort_order? : SortOrder, filters? : Aggregate) => Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | SubzoneSearch |Search>,
@@ -114,7 +115,7 @@ export default function SearchComponent({Search, sortFields = [], model = ""} : 
             </div>
             <div className="resultContainer">
                 {data && <SearchInfiniteScroll
-                    resultsScroll={data.pages.reduce((acc : Array<Mob | Resource | Stuff | Dungeon>, page) =>  acc.concat(page["hydra:member"]), [])}
+                    resultsScroll={data.pages.reduce((acc : Array<Mob | Resource | Stuff | Dungeon | Subzone>, page) =>  acc.concat(page["hydra:member"]), [])}
                     onScrollEnd={handleScrollEnd}
                 />}
                 {isFetching && <div id="loaderWrapper"><span className="loader"></span></div>}  

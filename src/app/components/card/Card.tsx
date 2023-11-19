@@ -4,26 +4,25 @@ import Stuff from "@/app/types/Stuff/Stuff";
 import Link from "next/link";
 import "./Card.css";
 import CardHeader from "./CardHeader";
-import { isDungeon, isMob, isResource, isStuff } from "@/app/types/isType";
+import { isDungeon, isMob, isResource, isStuff, isSubzone } from "@/app/types/isType";
 import FamilyView from "../common/FamilyView";
 import TypeView from "../common/TypeView";
 import Dungeon from "@/app/types/Dungeon/Dungeon";
 import DungeonLabel from "../common/DungeonLabel";
 import ImageWithFallback from "../common/ImageWithFallback";
+import Subzone from "@/app/types/Zone/Subzone";
 
 interface Props {
-  item: Mob | Resource | Stuff | Dungeon;
+  item: Mob | Resource | Stuff | Dungeon | Subzone;
   forwardRef? : any
 }
 
 export default function Card({ item, forwardRef }: Props) {
-
-  let imageUrlError = "/errorIcon/errorItem.png"
   
   // Extraction des niveaux
   let level = [];
 
-  if (isMob(item)) {
+  if (isMob(item) || isSubzone(item)) {
     level = [item.levelMin, item.levelMax];
   } else {
     level = [item.level];
@@ -39,7 +38,7 @@ export default function Card({ item, forwardRef }: Props) {
     <Link href={item["@id"].slice(4)} className="cardContainer" ref={forwardRef}>
       <CardHeader level={level} rarity={rarity} />
       <ImageWithFallback
-        className="cardImage"
+        className={isSubzone(item) ? "cardImage zone" : "cardImage"}
         src={item.imageUrl}
         alt=""
         width={100}
@@ -48,6 +47,7 @@ export default function Card({ item, forwardRef }: Props) {
       <h3 className="cardName">{item.name}</h3>
       {isMob(item) && <FamilyView family={item.family} />}
       {(isStuff(item) || isResource(item)) && <TypeView type={item.type} />}
+      {isSubzone(item) && <TypeView type={item.Zone} />}
       {isDungeon(item) && <DungeonLabel />}
     </Link>
   );

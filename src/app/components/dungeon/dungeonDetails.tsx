@@ -10,6 +10,7 @@ import StuffDrop from "@/app/types/Stuff/StuffDrop";
 import "@/app/components/common/common.css";
 import ResourceDrop from "@/app/types/Resource/ResourceDrop";
 import ImageWithFallback from "../common/ImageWithFallback";
+import Card from "../card/Card";
 
 interface Props {
   dungeon: DungeonSingle;
@@ -53,8 +54,11 @@ export default function DungeonDetails({ dungeon }: Props) {
     <div className="detailsContent">
       <div className="headerDetails">
         <ImageWithFallback className="imageContainer" src={dungeon.imageUrl} width={150} height={150} alt="" />
-        <div className="blockCenter">
+        <div className="nameZone">
           <h1>{dungeon.name}</h1>
+          { dungeon.subzone && <Card item={dungeon.subzone} />}
+        </div>
+        <div className="blockCenter">
           <div className="dungeonMaxPlayer">
             <p className="dungeonMaxPlayerText">Nombre de joueurs max : </p>
             <p className="dungeonMaxPlayerNumber">{dungeon.max_player}</p>

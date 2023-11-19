@@ -10,6 +10,8 @@ import TypeResource from "./Resource/TypeResource";
 import Stuff from "./Stuff/Stuff";
 import StuffDrop from "./Stuff/StuffDrop";
 import TypeStuff from "./Stuff/TypeStuff";
+import Subzone from "./Zone/Subzone";
+import Zone from "./Zone/Zone";
 
 function isMob(item : any): item is Mob {
     return item["@type"] === "Mobs";
@@ -59,4 +61,12 @@ function isType(item : any) : item is TypeStuff|TypeResource {
     return item["@type"] === "Type";
 }
 
-export {isMob, isResource, isStuff, isDungeon, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe, isWeapon, isRarity, isFamily, isType}
+function isSubzone(item : any) : item is Subzone {
+    return item['@type'] === "Subzone"
+}
+
+function isZone(item : any) : item is Zone {
+    return item['@type'] === "Zone"
+}
+
+export {isMob, isResource, isStuff, isDungeon, isResourceDrop, isMobDrop, isStuffDrop, isRecipeIngredientFromRecipe, isWeapon, isRarity, isFamily, isType, isSubzone, isZone}

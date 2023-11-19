@@ -10,6 +10,7 @@ import { Metadata } from "next";
 import Recipes from "@/app/components/recipe/Recipes";
 import React from "react";
 import ImageWithFallback from "@/app/components/common/ImageWithFallback";
+import Subzones from "@/app/components/zone/Subzones";
 
 interface Props {
   params: {
@@ -84,6 +85,7 @@ export default async function ResourceDetails({ params }: Props) {
         </div>
       )}
       <MobDropList drops={resource.resourceDrops} />
+      <Subzones subzones={resource.subzones} />
       <Recipes recipes={resource.recipes} />
       { resource.recipeIngredients.length > 0 && <UsedInRecipe recipeIngredients={resource.recipeIngredients} />}
     </div>

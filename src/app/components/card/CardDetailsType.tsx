@@ -69,7 +69,7 @@ export default function CardDetailsType({ item, theme = '' }: Props) {
             height={80}
           />
           {(isResourceDrop(item) || isStuffDrop(item)) && (
-            <p className="valueDrops">{item.value} %</p>
+            <p className="valueDrops">{+item.value.toFixed(3)} %</p>
           )}
           {isRecipeIngredientFromRecipe(item) && (
             <p className="valueDrops">{item.quantity} X</p>

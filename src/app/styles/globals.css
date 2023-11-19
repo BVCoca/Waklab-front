@@ -222,3 +222,7 @@ a {
 .descriptionHome > p,ul{
   color: var(--main-primary-text);
 }
+
+.dropMobContainer {
+  width: 100%;
+}

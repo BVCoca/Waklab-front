@@ -1,12 +1,13 @@
 import Dungeon from "./Dungeon/Dungeon";
 import Collection from "./Hydra/Collection";
-import Family, { FamilyAggregate } from "./Mob/Family";
+import { FamilyAggregate } from "./Mob/Family";
 import Mob from "./Mob/Mob";
-import Rarity, { RarityAggregate } from "./Rarity";
+import { RarityAggregate } from "./Rarity";
 import Resource from "./Resource/Resource";
-import TypeResource, { TypeResourceAggregate } from "./Resource/TypeResource";
+import { TypeResourceAggregate } from "./Resource/TypeResource";
 import Stuff from "./Stuff/Stuff";
-import TypeStuff, { TypeStuffAggregate } from "./Stuff/TypeStuff";
+import { TypeStuffAggregate } from "./Stuff/TypeStuff";
+import Subzone from "./Zone/Subzone";
 
 export enum SortOrder {
     ASC = 'asc',
@@ -37,5 +38,5 @@ export interface Aggregate {
 }
 
 export default interface Search extends Collection {
-    "hydra:member": Array<Mob|Stuff|Resource|Dungeon>
+    "hydra:member": Array<Mob|Stuff|Resource|Dungeon|Subzone>
 }

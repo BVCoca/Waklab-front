@@ -2,6 +2,7 @@ import Base from "../Hydra/Base";
 import MobDrop from "../Mob/MobDrop";
 import Recipe from "../Recipe/Recipe";
 import RecipeIngredient from "../Recipe/RecipeIngredient";
+import Subzone from "../Zone/Subzone";
 import Resource from "./Resource";
 import Sublimation from "./Sublimation";
 
@@ -13,5 +14,6 @@ export default interface ResourceSingle extends Resource, Base {
     recipes : Recipe[],
     recipeIngredients : RecipeIngredient[],
     description : string,
-    sublimation? : Sublimation
+    sublimation? : Sublimation,
+    subzones : Subzone[]
 }

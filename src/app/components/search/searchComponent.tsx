@@ -18,9 +18,10 @@ import Stuff from "@/app/types/Stuff/Stuff"
 import Dungeon from "@/app/types/Dungeon/Dungeon"
 import { fetchAggregate } from "@/app/services/common"
 import SearchAggregate from "../aggregate/SearchAggregate"
+import SubzoneSearch from "@/app/types/Zone/SubzoneSearch"
 
 interface Props {
-    Search: (page : number, value? : string, sort_field? : SortField, sort_order? : SortOrder, filters? : Aggregate) => Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search>,
+    Search: (page : number, value? : string, sort_field? : SortField, sort_order? : SortOrder, filters? : Aggregate) => Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | SubzoneSearch |Search>,
     sortFields? : Array<SortOption>,
     model : string
 }
@@ -37,7 +38,7 @@ export default function SearchComponent({Search, sortFields = [], model = ""} : 
     const [isLoadingAggregate, setIsLoadingAggregate] = useState<boolean>(false)
 
     // Définition des requetes
-    const fetchItems = async (data : any) : Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search> => {
+    const fetchItems = async (data : any) : Promise<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | SubzoneSearch | Search> => {
         return await Search(data.pageParam, query, currentSort?.sort_field, currentSort?.sort_order, filters)
     }
 
@@ -49,7 +50,7 @@ export default function SearchComponent({Search, sortFields = [], model = ""} : 
     }
 
     // Hook de requete infini
-    const { data, hasNextPage, isFetching, isFetchingNextPage, fetchNextPage } = useInfiniteQuery<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | Search, Error>(
+    const { data, hasNextPage, isFetching, isFetchingNextPage, fetchNextPage } = useInfiniteQuery<MobSearch | ResourceSearch | StuffSearch | DungeonSearch | SubzoneSearch | Search, Error>(
         {
             queryKey : [query, currentSort, filters],
             getNextPageParam : (lastPage) => {

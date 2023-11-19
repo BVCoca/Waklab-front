@@ -14,6 +14,7 @@ import ResourceDrop from "@/app/types/Resource/ResourceDrop";
 import Dungeon from "@/app/types/Dungeon/Dungeon";
 import Card from "../../card/Card";
 import ImageWithFallback from "@/app/components/common/ImageWithFallback";
+import Subzones from "../../zone/Subzones";
 
 interface Props {
   mob: MobSingle;
@@ -300,6 +301,9 @@ export default function MobDetails({ mob }: Props) {
           </div>
         </div>
       </div>
+      {mob.family.subzones.length > 0 && (
+        <Subzones subzones={mob.family.subzones} />
+      )}
       {mob.family ? (
         <div className="containerDropMobDetails">
           <div className="titleDropMob titleDropMobDetails">

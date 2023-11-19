@@ -6,9 +6,10 @@ import Dungeon from "@/app/types/Dungeon/Dungeon"
 import { useInView } from "react-intersection-observer"
 import { useEffect, useState, useRef } from "react"
 import ArrowTop from "@/app/icons/homepageIcon/arrow_top.svg"
+import Subzone from "@/app/types/Zone/Subzone"
 
 interface Props {
-    resultsScroll : Array<Mob|Stuff|Resource|Dungeon>,
+    resultsScroll : Array<Mob|Stuff|Resource|Dungeon|Subzone>,
     onScrollEnd : () => void
 }
 

@@ -31,7 +31,7 @@ export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
         },
     ]
 
-    const TYPES : string[] = ['mobs','stuffs','resources','dungeons']
+    const TYPES : string[] = ['mobs','stuffs','resources','dungeons', 'subzones']
 
     TYPES.map((type : string) => {
         urls.push({
@@ -71,6 +71,13 @@ export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
         };
     })
 
+    const subzone_slugs = await collectDataWithPagination('subzone');
 
-    return [...urls, ...mobs, ...resources, ...stuffs, ...dungeons];
+    const subzones = subzone_slugs.map((slug : Slug) => {
+        return {
+            url: `${BASE_URL}/subzones/${slug.slug}`,
+        };
+    })
+
+    return [...urls, ...mobs, ...resources, ...stuffs, ...dungeons, ...subzones];
 }

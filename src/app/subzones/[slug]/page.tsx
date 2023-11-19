@@ -50,7 +50,7 @@ export default async function SubzonePage({ params }: Props) {
         </div>
         { subzone.resources.length > 0 && (
             <div className="dropMobContainer">
-                <h2 className="titleDropMob">Ressources</h2>
+                <h2 className="titleDropMob">Ressources de métiers</h2>
                 <div className="cardDropContainer">
                     {subzone.resources.map((resource : Resource) => (
                         <Card key={`resource-${resource.slug}`} item={resource} />

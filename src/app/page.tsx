@@ -5,6 +5,7 @@ import LogoMobs from "@/app/icons/homepageIcon/logoMobs.svg";
 import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg";
 import LogoResources from "@/app/icons/homepageIcon/logoResources.svg";
 import LogoDungeons from "@/app/icons/homepageIcon/logoDungeon.svg";
+import LogoZones from "@/app/icons/homepageIcon/logoBoussole.svg";
 
 export default function Page() {
 
@@ -32,6 +33,12 @@ export default function Page() {
       'label' : 'Ressources',
       'number' : 1895,
       'href' : '/resources'
+    },
+    {
+      'icon' : <LogoZones width={60} height={60} />,
+      'label' : 'Zones',
+      'number' : 73,
+      'href' : '/subzones'
     }
   ]
 

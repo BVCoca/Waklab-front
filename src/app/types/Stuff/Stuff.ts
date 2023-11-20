@@ -1,5 +1,6 @@
 import Base from "../Hydra/Base";
 import Rarity from "../Rarity";
+import stuffCaracteristic from "./StuffCaracteristic";
 import TypeStuff from "./TypeStuff";
 
 export default interface Stuff extends Base {
@@ -8,5 +9,6 @@ export default interface Stuff extends Base {
     level : number,
     imageUrl : string,
     rarity : Rarity,
-    type : TypeStuff
+    type : TypeStuff,
+    stuffCaracteristics : stuffCaracteristic[]
 }

@@ -9,7 +9,6 @@ import stuffCaracteristic from "./StuffCaracteristic";
  * Utiliser uniquement sur la page de l'item
  */
 export default interface StuffSingle extends Stuff, Base {
-    stuffCaracteristics : stuffCaracteristic[],
     stuffDrops : MobDrop[]
     recipes : Recipe[],
     recipeIngredients : RecipeIngredient[],

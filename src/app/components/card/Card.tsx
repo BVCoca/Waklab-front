@@ -11,6 +11,8 @@ import Dungeon from "@/app/types/Dungeon/Dungeon";
 import DungeonLabel from "../common/DungeonLabel";
 import ImageWithFallback from "../common/ImageWithFallback";
 import Subzone from "@/app/types/Zone/Subzone";
+import stuffCaracteristic from "@/app/types/Stuff/StuffCaracteristic";
+import Image from "next/image";
 
 interface Props {
   item: Mob | Resource | Stuff | Dungeon | Subzone;
@@ -49,6 +51,16 @@ export default function Card({ item, forwardRef }: Props) {
       {(isStuff(item) || isResource(item)) && <TypeView type={item.type} />}
       {isSubzone(item) && <TypeView type={item.Zone} />}
       {isDungeon(item) && <DungeonLabel />}
+      {isStuff(item) && item.stuffCaracteristics && item.stuffCaracteristics.length > 0 && (
+        <div className="stuffCaracContainerCard">
+          {item.stuffCaracteristics.map((stuffCarac : stuffCaracteristic) => (
+            <div className="caracContainerCard" key={stuffCarac["@id"]}>
+              <ImageWithFallback className="caracImgCard" alt="" src={stuffCarac.caracteristic.icon} width={20} height={20} />
+              <p className="caracLabelCard"><span>{stuffCarac.value}</span> {stuffCarac.caracteristic.name}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </Link>
   );
 }

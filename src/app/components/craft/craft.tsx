@@ -20,8 +20,9 @@ export default function CraftComponent() {
     let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
 
     const qtyInputRefs: any = {};
-    const qtyInputIngredientRefs: any = {};
+    // const qtyInputIngredientRefs: any = {};
     const [qtyValues, setQtyValues] = useState(itemsToCraft.map((item: any) => item.quantity || 1));
+    // const [qtyIngredientsValues, setQtyIngredientsValues] = useState(itemsToCraft.map((item: any) => item.quantity || 1));
 
     const handleQtyChange = (index: number) => {
         if (qtyInputRefs[index]) {
@@ -90,7 +91,7 @@ export default function CraftComponent() {
                                 <input 
                                     className="inputQty" 
                                     // onChange={() => handleIngredientsQtyChange(j)} 
-                                    // defaultValue={recipeIngredient.quantity || 0}
+                                    defaultValue={0}
                                     type="number" 
                                     min={1} 
                                     max={recipeIngredient.quantity * qtyValues[i]}

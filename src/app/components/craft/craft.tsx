@@ -6,45 +6,48 @@ import "./craft.css"
 import Image from "next/image";
 import RemoveButton from "../common/removeToCraft";
 import { useState } from "react";
+import RecipeIngredientFromRecipeQty from "@/app/types/Recipe/RecipeIngredientFromRecipeQty";
+import RecipeQty from "@/app/types/Recipe/RecipeQty";
+
+interface Props {
+    item: StuffSingle | ResourceSingle
+    recipes: RecipeQty[]
+    recipesIngredient: RecipeIngredientFromRecipeQty[]
+  }
 
 export default function CraftComponent() {
     let isItemsToCraft = localStorage.getItem("itemsToCraft")
     let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
 
-    const [colorQty, setColorQty] = useState(itemsToCraft.map(() => "white"));
-
-    const qtyInputRefs = {};
-    const [qtyValues, setQtyValues] = useState(itemsToCraft.map(() => 1));
+    const qtyInputRefs: any = {};
+    const qtyInputIngredientRefs: any = {};
+    const [qtyValues, setQtyValues] = useState(itemsToCraft.map((item: any) => item.quantity || 1));
 
     const handleQtyChange = (index: number) => {
         if (qtyInputRefs[index]) {
             const newValue = parseInt(qtyInputRefs[index].value, 10);
-            setQtyValues((prevValues) => {
+            setQtyValues((prevValues: any) => {
                 const newValues = [...prevValues];
                 newValues[index] = newValue;
                 return newValues;
-            });
+            })
+            itemsToCraft[index].quantity = newValue;
+            localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft));
         }
     };
 
-    const handleInputChange = (quantity, index) => (event) => {
-        const inputValue = parseInt(event.target.value, 10);
-        
-        const maxValue = quantity * qtyValues[index];
-        if (inputValue >= maxValue) {
-            setColorQty((prevValues) => {
-                const newValues = [...prevValues];
-                newValues[index] = "#1B8684";
-                return newValues;
-            });
-        } else {
-            setColorQty((prevValues) => {
-                const newValues = [...prevValues];
-                newValues[index] = "white";
-                return newValues;
-            });
-        }
-    };
+    // const handleIngredientsQtyChange = (index: number) => {
+    //     if (qtyInputIngredientRefs[index]) {
+    //         const newValue = parseInt(qtyInputIngredientRefs[index].value, 10);
+    //         setQtyValues((prevValues: any) => {
+    //             const newValues = [...prevValues];
+    //             newValues[index] = newValue;
+    //             return newValues;
+    //         })
+    //         itemsToCraft[index].recipe.recipeIngredients.quantityToCraft = newValue;
+    //         localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft));
+    //     }
+    // }
 
     console.log(itemsToCraft);
     return (
@@ -62,9 +65,15 @@ export default function CraftComponent() {
                     <div className="inputWrapper">
                         <RemoveButton item={item} recipeId={item.recipes[0]["@id"]}/>
                         <p className="inputText">Quantité</p>
-                        <input ref={(input) => (qtyInputRefs[i] = input)}
-                                value={qtyValues[i]}
-                                onChange={() => handleQtyChange(i)} className="inputQty" type="number" min={1} max={20}/>
+                        <input 
+                            ref={(input) => (qtyInputRefs[i] = input)}
+                            value={qtyValues[i]}
+                            onChange={() => handleQtyChange(i)} 
+                            className="inputQty" 
+                            type="number" 
+                            min={1} 
+                            max={20}
+                        />
                     </div>
                 </div>
                 <div className="resources">
@@ -78,10 +87,17 @@ export default function CraftComponent() {
                                 {recipeIngredient.resource?.name}
                             </div>
                             <div className="ingredientQtyCheck">
-                                <input onChange={handleInputChange(recipeIngredient.quantity, i)} className="inputQty" type="number" min={1} max={recipeIngredient.quantity * qtyValues[i]}/>
-                                    <div style={{ color: colorQty[i] }} className="ingredientQty">
-                                        {recipeIngredient.quantity * qtyValues[i]}
-                                    </div>
+                                <input 
+                                    className="inputQty" 
+                                    // onChange={() => handleIngredientsQtyChange(j)} 
+                                    // defaultValue={recipeIngredient.quantity || 0}
+                                    type="number" 
+                                    min={1} 
+                                    max={recipeIngredient.quantity * qtyValues[i]}
+                                />
+                                <div style={{width: "15px"}} className="ingredientQty">
+                                    {recipeIngredient.quantity * qtyValues[i]}
+                                </div>
                             </div>
                         </div>
                     ))}

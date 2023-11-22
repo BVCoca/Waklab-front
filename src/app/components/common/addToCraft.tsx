@@ -3,7 +3,7 @@
 import StuffSingle from "@/app/types/Stuff/StuffSingle";
 import Hammer from "/public/hammer.svg"
 import ResourceSingle from "@/app/types/Resource/ResourceSingle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import RecipeQty from "@/app/types/Recipe/RecipeQty";
@@ -18,16 +18,26 @@ interface Props {
 
 export default function CraftingButton({ item, recipeId }: Props) {
 
-    const [isInStorage, setIsInStorage] = useState<boolean>()
+    const [itemsToCraft, setItemsToCraft] = useState<any[]>([]);
+    const [verifyingToast, setVerifyingToast] = useState<boolean>(false)
+
+    useEffect(() => {
+      const storedItems = localStorage.getItem("itemsToCraft");
+      if (storedItems) {
+        setItemsToCraft(JSON.parse(storedItems));
+      }
+    }, []);
 
     const saved = () => {
-      let isItemsToCraft = localStorage.getItem("itemsToCraft");
-      let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
+      const isItemInStorage = itemsToCraft.some((craftItem) => craftItem.id === item["@id"] && craftItem.recipeId === recipeId);
 
-      if (item.recipes = item.recipes.filter((recipe) => recipe["@id"] === recipeId,)) {
-        setIsInStorage(true)
-        if (!isInStorage) {
-          itemsToCraft.push({...item, quantity: 1});
+      if (!isItemInStorage) {
+        const updatedItemsToCraft = [...itemsToCraft, { ...item, quantity: 1, recipeId }];
+        setItemsToCraft(updatedItemsToCraft)
+        setVerifyingToast(true)
+        localStorage.setItem("itemsToCraft", JSON.stringify(updatedItemsToCraft));
+        
+        if (verifyingToast) {
           toast(`${item.name} a été ajouté aux Crafts !`, {
             position: "top-right",
             autoClose: 3000,
@@ -35,7 +45,7 @@ export default function CraftingButton({ item, recipeId }: Props) {
             pauseOnHover: false,
             theme: "dark",
             type: "success"
-        });
+          })
         } else {
           toast(`${item.name} est déjà présent dans les crafts !`, {
             position: "top-right",
@@ -44,13 +54,10 @@ export default function CraftingButton({ item, recipeId }: Props) {
             pauseOnHover: false,
             theme: "dark",
             type: "error"
-          });
-          return
+          })
         }
       }
-  
-      localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft))
-    };
+    }
   
     return (
       <button

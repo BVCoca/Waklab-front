@@ -20,9 +20,7 @@ export default function CraftComponent() {
     let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
 
     const qtyInputRefs: any = {};
-    // const qtyInputIngredientRefs: any = {};
     const [qtyValues, setQtyValues] = useState(itemsToCraft.map((item: any) => item.quantity || 1));
-    // const [qtyIngredientsValues, setQtyIngredientsValues] = useState(itemsToCraft.map((item: any) => item.quantity || 1));
 
     const handleQtyChange = (index: number) => {
         if (qtyInputRefs[index]) {
@@ -36,19 +34,6 @@ export default function CraftComponent() {
             localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft));
         }
     };
-
-    // const handleIngredientsQtyChange = (index: number) => {
-    //     if (qtyInputIngredientRefs[index]) {
-    //         const newValue = parseInt(qtyInputIngredientRefs[index].value, 10);
-    //         setQtyValues((prevValues: any) => {
-    //             const newValues = [...prevValues];
-    //             newValues[index] = newValue;
-    //             return newValues;
-    //         })
-    //         itemsToCraft[index].recipe.recipeIngredients.quantityToCraft = newValue;
-    //         localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft));
-    //     }
-    // }
 
     console.log(itemsToCraft);
     return (

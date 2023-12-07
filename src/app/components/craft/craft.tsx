@@ -1,13 +1,16 @@
 "use client"
 
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
 import StuffSingle from "@/app/types/Stuff/StuffSingle";
 import ResourceSingle from "@/app/types/Resource/ResourceSingle";
-import "./craft.css"
-import Image from "next/image";
-import RemoveButton from "../common/removeToCraft";
-import { useState } from "react";
 import RecipeIngredientFromRecipeQty from "@/app/types/Recipe/RecipeIngredientFromRecipeQty";
-import Link from "next/link";
+import RemoveButton from "../common/removeToCraft";
+
+import checked from "/public/checked.png"
+import "./craft.css"
 
 export default function CraftComponent() {
     let isItemsToCraft = localStorage.getItem("itemsToCraft")
@@ -66,15 +69,15 @@ export default function CraftComponent() {
     console.log(itemsToCraft);
     return (
         <div className="tabs">
-            {itemsToCraft ? itemsToCraft.map((item :StuffSingle | ResourceSingle, i : number) => (
+            {itemsToCraft.length > 0 ? itemsToCraft.map((item :StuffSingle | ResourceSingle, i : number) => (
             <div key={i} className="craft">
                 <div className="item">
                     <div className="itemImgNameLevel">
                         <div className="itemImgName">
                             <Image width={80} height={80} src={item.imageUrl} alt="" />
-                            <p className="name">{item.name}</p>
+                            <p className="itemName">{item.name}</p>
                         </div>
-                        <p className="level">Niv. {item.level}</p>
+                        <p className="itemLevel">Niv. {item.level}</p>
                     </div>
                     <div className="inputWrapper">
                         <RemoveButton item={item} recipeId={item.recipes[0]["@id"]}/>
@@ -108,12 +111,18 @@ export default function CraftComponent() {
                                      onChange={() => handleQtyIngredients(i, j)}
                                      className="inputQty"
                                      type="number"
-                                     min={1}
+                                     min={0}
                                      max={recipeIngredient.quantity* qtyValues[i]}
-                                     maxLength={4}
+                                     style={{
+                                        backgroundColor: '#242424',
+                                        color: '#34D6D3',
+                                    }}
                                 />
                                 <div style={{width: "15px"}} className={`inputQty ${qtyIngredientValues[i][j] === recipeIngredient.quantity * qtyValues[i] ? 'green' : ''}`}>
                                     {recipeIngredient.quantity * qtyValues[i]}
+                                    {qtyIngredientValues[i][j] === recipeIngredient.quantity * qtyValues[i] && (
+                                        <Image src={checked} alt="Validation ingredient quantity logo"/>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -121,7 +130,7 @@ export default function CraftComponent() {
                 </div>
             </div>
             )) : 
-            <div>Les Equipements ou Ressources &quot;Fabriquables&quot; que vous choisirez grâce au marteau bleu à coté des recettes se trouveront ici !</div>
+            <div className="emptyCraft">Les Equipements ou Ressources &quot;Fabriquables&quot; que vous choisirez grâce au marteau bleu à coté des recettes, se trouveront ici !</div>
             }
         </div>
     )

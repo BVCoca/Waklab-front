@@ -29,7 +29,7 @@ export default function CraftingButton({ item, recipeId }: Props) {
 
     const saved = () => {
       const isItemInStorage = itemsToCraft.some((craftItem) => {    
-        return craftItem["@id"] === item["@id"] && craftItem.recipeId === recipeId;
+        return craftItem["@id"] === item["@id"] || craftItem.recipeId === recipeId;
       });
     
       if (!isItemInStorage) {

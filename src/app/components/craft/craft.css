@@ -1,8 +1,4 @@
 .green {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: large;
     color: rgb(95, 220, 95);
     text-decoration: line-through;
     transition: all 0.3s ease-in-out;
@@ -11,7 +7,7 @@
 .tabs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .craft {
@@ -80,7 +76,7 @@
 }
 
 .ingredientImg:hover {
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-in-out;
     filter: brightness(150%);
     scale: 1.15;
     cursor: pointer;
@@ -97,11 +93,9 @@
 }
 
 .inputQtyGoal {
-    display: flex;
     align-items: center;
     font-size: large;
-    width: 50px;
-    margin-right: 25px;
+    margin-right: 33px;
 }
 
 .inputText {

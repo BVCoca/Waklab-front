@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,6 +13,7 @@ import checked from "/public/checked.png"
 import "./craft.css"
 
 export default function CraftComponent() {
+    
     let isItemsToCraft = localStorage.getItem("itemsToCraft")
     let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
 
@@ -66,7 +67,6 @@ export default function CraftComponent() {
         }
     }
 
-    console.log(itemsToCraft);
     return (
         <div className="tabs">
             {itemsToCraft.length > 0 ? itemsToCraft.map((item :StuffSingle | ResourceSingle, i : number) => (
@@ -74,7 +74,9 @@ export default function CraftComponent() {
                 <div className="item">
                     <div className="itemImgNameLevel">
                         <div className="itemImgName">
-                            <Image width={80} height={80} src={item.imageUrl} alt="" />
+                            <Link className="ingredientImg" href={item["@id"].slice(4)} target="_blank">
+                                <Image width={80} height={80} src={item.imageUrl} alt=""/>
+                            </Link>
                             <p className="itemName">{item.name}</p>
                         </div>
                         <p className="itemLevel">Niv. {item.level}</p>
@@ -90,6 +92,12 @@ export default function CraftComponent() {
                             type="number" 
                             min={1} 
                             max={20}
+                            style={{
+                                backgroundColor: '#333333',
+                                color: '#34D6D3',
+                                border: "none",
+                                borderRadius: "3px"
+                            }}
                         />
                     </div>
                 </div>
@@ -97,7 +105,7 @@ export default function CraftComponent() {
                     {item.recipes[0].recipeIngredients.map((recipeIngredient, j : number) => (
                         recipeIngredient.resource?.name &&
                         <div key={j} className="ingredient">
-                            <Link className="ingredientImg" href={recipeIngredient.resource["@id"].slice(4)}>
+                            <Link className="ingredientImg" href={recipeIngredient.resource["@id"].slice(4)} target="_blank">
                                 <Image width={70} height={70} src={recipeIngredient.resource?.imageUrl} alt=""/>
                             </Link>
                             <div className="ingredientName">
@@ -116,11 +124,13 @@ export default function CraftComponent() {
                                      style={{
                                         backgroundColor: '#242424',
                                         color: '#34D6D3',
+                                        border: "none",
+                                        borderRadius: "3px"
                                     }}
                                 />
-                                <div style={{width: "15px"}} className={`inputQtyGoal ${qtyIngredientValues[i][j] === recipeIngredient.quantity * qtyValues[i] ? 'green' : ''}`}>
+                                <div style={{display: "flex", width: "15px"}} className={`inputQtyGoal ${qtyIngredientValues[i][j] >= recipeIngredient.quantity * qtyValues[i] ? 'green' : ''}`}>
                                     {recipeIngredient.quantity * qtyValues[i]}
-                                    {qtyIngredientValues[i][j] === recipeIngredient.quantity * qtyValues[i] && (
+                                    {qtyIngredientValues[i][j] >= recipeIngredient.quantity * qtyValues[i] && (
                                         <Image className="imgCheckedIngredientQty" src={checked} alt="Validation ingredient quantity logo"/>
                                     )}
                                 </div>

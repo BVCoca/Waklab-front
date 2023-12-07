@@ -235,11 +235,11 @@ a {
 }
 
 .deleteButton>svg {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .deleteButton:hover>svg {
-  fill: var(--main-cyan-light-color);
+  fill: rgb(255, 50, 50);
   transform: scale(1.15);
   transform: rotateZ(90deg);
 }

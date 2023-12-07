@@ -1,3 +1,9 @@
+.green {
+    color: rgb(95, 220, 95);
+    text-decoration: line-through;
+    transition: all 0.3s ease-in-out;
+}
+
 .tabs {
     display: flex;
     flex-wrap: wrap;
@@ -62,6 +68,13 @@
     padding: 5px 20px;
     color: white;
     font-size: 16px;
+}
+
+.ingredientImg:hover {
+    transition: all 0.2s ease-out;
+    filter: brightness(150%);
+    scale: 1.15;
+    cursor: pointer;
 }
 
 .ingredientQtyCheck {

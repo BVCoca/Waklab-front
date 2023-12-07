@@ -7,6 +7,7 @@ import Image from "next/image";
 import RemoveButton from "../common/removeToCraft";
 import { useState } from "react";
 import RecipeIngredientFromRecipeQty from "@/app/types/Recipe/RecipeIngredientFromRecipeQty";
+import Link from "next/link";
 
 export default function CraftComponent() {
     let isItemsToCraft = localStorage.getItem("itemsToCraft")
@@ -68,7 +69,7 @@ export default function CraftComponent() {
             {itemsToCraft ? itemsToCraft.map((item :StuffSingle | ResourceSingle, i : number) => (
             <div key={i} className="craft">
                 <div className="item">
-                    <div  className="itemImgNameLevel">
+                    <div className="itemImgNameLevel">
                         <div className="itemImgName">
                             <Image width={80} height={80} src={item.imageUrl} alt="" />
                             <p className="name">{item.name}</p>
@@ -93,9 +94,9 @@ export default function CraftComponent() {
                     {item.recipes[0].recipeIngredients.map((recipeIngredient, j : number) => (
                         recipeIngredient.resource?.name &&
                         <div key={j} className="ingredient">
-                            <div className="ingredientImg">
+                            <Link className="ingredientImg" href={recipeIngredient.resource["@id"].slice(4)}>
                                 <Image width={70} height={70} src={recipeIngredient.resource?.imageUrl} alt=""/>
-                            </div>
+                            </Link>
                             <div className="ingredientName">
                                 {recipeIngredient.resource?.name}
                             </div>
@@ -109,8 +110,9 @@ export default function CraftComponent() {
                                      type="number"
                                      min={1}
                                      max={recipeIngredient.quantity* qtyValues[i]}
+                                     maxLength={4}
                                 />
-                                <div style={{width: "15px"}} className="ingredientQty">
+                                <div style={{width: "15px"}} className={`inputQty ${qtyIngredientValues[i][j] === recipeIngredient.quantity * qtyValues[i] ? 'green' : ''}`}>
                                     {recipeIngredient.quantity * qtyValues[i]}
                                 </div>
                             </div>

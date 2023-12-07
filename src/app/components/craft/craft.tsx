@@ -7,13 +7,6 @@ import Image from "next/image";
 import RemoveButton from "../common/removeToCraft";
 import { useState } from "react";
 import RecipeIngredientFromRecipeQty from "@/app/types/Recipe/RecipeIngredientFromRecipeQty";
-import RecipeQty from "@/app/types/Recipe/RecipeQty";
-
-interface Props {
-    item: StuffSingle | ResourceSingle
-    recipes: RecipeQty[]
-    recipesIngredient: RecipeIngredientFromRecipeQty[]
-  }
 
 export default function CraftComponent() {
     let isItemsToCraft = localStorage.getItem("itemsToCraft")
@@ -21,6 +14,8 @@ export default function CraftComponent() {
 
     const qtyInputRefs: any = {};
     const [qtyValues, setQtyValues] = useState(itemsToCraft.map((item: any) => item.quantity || 1));
+
+    // Sauvegarde à chaque changement la nouvelle quantité d'item que l'on veut faire
 
     const handleQtyChange = (index: number) => {
         if (qtyInputRefs[index]) {
@@ -34,6 +29,38 @@ export default function CraftComponent() {
             localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft));
         }
     };
+
+    const qtyIngredientInputRefs: any = {};
+    const [qtyIngredientValues, setQtyIngredientValues] = useState<number[][]>(
+        itemsToCraft.map((item: any) => 
+            item.recipes[0].recipeIngredients.map((recipeIngredient: RecipeIngredientFromRecipeQty) => recipeIngredient.quantityToCraft ? recipeIngredient.quantityToCraft : 0)
+        )
+    );
+
+    // Sauvegarde à chaque changement la nouvelle quantité de chaque ingrédient qu'on possède sur la recette que l'on veut faire
+    
+    const handleQtyIngredients = (indexItem: number, indexIngredient: number) => {
+
+        const newValue = parseInt(qtyIngredientInputRefs[indexItem]?.[indexIngredient]?.value, 10);
+    
+        if (!isNaN(newValue)) {
+
+            setQtyIngredientValues((prevValues: any) => {
+                const newValues = [...prevValues];
+                newValues[indexItem] = [...newValues[indexItem]];
+                newValues[indexItem][indexIngredient] = newValue;
+                return newValues;
+            });
+
+            const updatedItemsToCraft = [...itemsToCraft];
+            const selectedRecipe = updatedItemsToCraft[indexItem].recipes[0];
+            const selectedIngredient = selectedRecipe.recipeIngredients[indexIngredient];
+
+            selectedIngredient.quantityToCraft = newValue;
+
+            localStorage.setItem("itemsToCraft", JSON.stringify(updatedItemsToCraft));
+        }
+    }
 
     console.log(itemsToCraft);
     return (
@@ -74,12 +101,14 @@ export default function CraftComponent() {
                             </div>
                             <div className="ingredientQtyCheck">
                                 <input 
-                                    className="inputQty" 
-                                    // onChange={() => handleIngredientsQtyChange(j)} 
-                                    defaultValue={0}
-                                    type="number" 
-                                    min={1} 
-                                    max={recipeIngredient.quantity * qtyValues[i]}
+                                     ref={(input) => (qtyIngredientInputRefs[i] = qtyIngredientInputRefs[i] || {})[j] = input}
+                                     defaultValue={0}
+                                     value={qtyIngredientValues[i][j]}
+                                     onChange={() => handleQtyIngredients(i, j)}
+                                     className="inputQty"
+                                     type="number"
+                                     min={1}
+                                     max={recipeIngredient.quantity* qtyValues[i]}
                                 />
                                 <div style={{width: "15px"}} className="ingredientQty">
                                     {recipeIngredient.quantity * qtyValues[i]}

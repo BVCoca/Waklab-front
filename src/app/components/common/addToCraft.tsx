@@ -19,7 +19,6 @@ interface Props {
 export default function CraftingButton({ item, recipeId }: Props) {
 
     const [itemsToCraft, setItemsToCraft] = useState<any[]>([]);
-    const [verifyingToast, setVerifyingToast] = useState<boolean>(false)
 
     useEffect(() => {
       const storedItems = localStorage.getItem("itemsToCraft");
@@ -29,33 +28,32 @@ export default function CraftingButton({ item, recipeId }: Props) {
     }, []);
 
     const saved = () => {
-      const isItemInStorage = itemsToCraft.some((craftItem) => craftItem.id === item["@id"] && craftItem.recipeId === recipeId);
-
+      const isItemInStorage = itemsToCraft.some((craftItem) => {    
+        return craftItem["@id"] === item["@id"] && craftItem.recipeId === recipeId;
+      });
+    
       if (!isItemInStorage) {
         const updatedItemsToCraft = [...itemsToCraft, { ...item, quantity: 1, recipeId }];
-        setItemsToCraft(updatedItemsToCraft)
-        setVerifyingToast(true)
+        setItemsToCraft(updatedItemsToCraft);
         localStorage.setItem("itemsToCraft", JSON.stringify(updatedItemsToCraft));
-        
-        if (verifyingToast) {
-          toast(`${item.name} a été ajouté aux Crafts !`, {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            pauseOnHover: false,
-            theme: "dark",
-            type: "success"
-          })
-        } else {
-          toast(`${item.name} est déjà présent dans les crafts !`, {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            pauseOnHover: false,
-            theme: "dark",
-            type: "error"
-          })
-        }
+    
+        toast(`${item.name} a été ajouté aux Crafts !`, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          pauseOnHover: false,
+          theme: "dark",
+          type: "success"
+        });
+      } else {
+        toast(`${item.name} est déjà présent dans les crafts !`, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          pauseOnHover: false,
+          theme: "dark",
+          type: "error"
+        });
       }
     }
   

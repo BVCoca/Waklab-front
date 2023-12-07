@@ -6,5 +6,5 @@ import RecipeIngredientFromRecipeQty from "./RecipeIngredientFromRecipeQty";
 export default interface Recipe extends Base {
     job : Job,
     job_level : number,
-    recipeIngredients : RecipeIngredientFromRecipe[] | RecipeIngredientFromRecipeQty[]
+    recipeIngredients : RecipeIngredientFromRecipeQty[] | RecipeIngredientFromRecipe[]
 }

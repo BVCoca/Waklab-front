@@ -118,10 +118,10 @@ export default function CraftComponent() {
                                         color: '#34D6D3',
                                     }}
                                 />
-                                <div style={{width: "15px"}} className={`inputQty ${qtyIngredientValues[i][j] === recipeIngredient.quantity * qtyValues[i] ? 'green' : ''}`}>
+                                <div style={{width: "15px"}} className={`inputQtyGoal ${qtyIngredientValues[i][j] === recipeIngredient.quantity * qtyValues[i] ? 'green' : ''}`}>
                                     {recipeIngredient.quantity * qtyValues[i]}
                                     {qtyIngredientValues[i][j] === recipeIngredient.quantity * qtyValues[i] && (
-                                        <Image src={checked} alt="Validation ingredient quantity logo"/>
+                                        <Image className="imgCheckedIngredientQty" src={checked} alt="Validation ingredient quantity logo"/>
                                     )}
                                 </div>
                             </div>

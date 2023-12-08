@@ -1,4 +1,4 @@
-import CraftComponent from "../components/craft/craft"
+import CraftComponent from "../components/craft/craftComponent"
 
 export default function Craft() {
 

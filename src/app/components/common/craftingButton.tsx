@@ -4,15 +4,11 @@ import StuffSingle from "@/app/types/Stuff/StuffSingle";
 import Hammer from "/public/hammer.svg"
 import ResourceSingle from "@/app/types/Resource/ResourceSingle";
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify"
+import { TypeOptions, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
-import RecipeQty from "@/app/types/Recipe/RecipeQty";
-import RecipeIngredientFromRecipeQty from "@/app/types/Recipe/RecipeIngredientFromRecipeQty";
 
 interface Props {
   item: StuffSingle | ResourceSingle
-  recipes: RecipeQty[]
-  recipesIngredients: RecipeIngredientFromRecipeQty[]
   recipeId : string
 }
 
@@ -27,6 +23,18 @@ export default function CraftingButton({ item, recipeId }: Props) {
       }
     }, []);
 
+    const newToast = (message: string, type: string) => {
+      return (
+        toast(`${item.name} ${message}`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        pauseOnHover: false,
+        theme: "dark",
+        type: type as TypeOptions
+      }))
+    }
+
     const saved = () => {
       const isItemInStorage = itemsToCraft.some((craftItem) => {    
         return craftItem["@id"] === item["@id"] || craftItem.recipeId === recipeId;
@@ -36,24 +44,10 @@ export default function CraftingButton({ item, recipeId }: Props) {
         const updatedItemsToCraft = [...itemsToCraft, { ...item, quantity: 1, recipeId }];
         setItemsToCraft(updatedItemsToCraft);
         localStorage.setItem("itemsToCraft", JSON.stringify(updatedItemsToCraft));
-    
-        toast(`${item.name} a été ajouté aux Crafts !`, {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          pauseOnHover: false,
-          theme: "dark",
-          type: "success"
-        });
+        
+        newToast('a été ajouté aux Crafts !', 'success')
       } else {
-        toast(`${item.name} est déjà présent dans les crafts !`, {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          pauseOnHover: false,
-          theme: "dark",
-          type: "error"
-        });
+        newToast('est déjà présent dans les crafts !', 'error')
       }
     }
   

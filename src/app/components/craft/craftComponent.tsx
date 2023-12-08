@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ import RecipeIngredientFromRecipeQty from "@/app/types/Recipe/RecipeIngredientFr
 import RemoveButton from "../common/removeToCraft";
 
 import checked from "/public/checked.png"
-import "./craft.css"
+import "./craftComponent.css"
 
 export default function CraftComponent() {
     

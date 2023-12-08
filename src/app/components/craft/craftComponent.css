@@ -88,12 +88,14 @@
 
 .inputQty {
     display: flex;
+    height: 20px;
     width: 50px;
     margin-right: 25px;
 }
 
 .inputQtyGoal {
     align-items: center;
+    height: 20px;
     font-size: large;
     margin-right: 33px;
 }

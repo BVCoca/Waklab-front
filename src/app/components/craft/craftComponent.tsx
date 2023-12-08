@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,9 +13,13 @@ import checked from "/public/checked.png"
 import "./craftComponent.css"
 
 export default function CraftComponent() {
-    
-    let isItemsToCraft = localStorage.getItem("itemsToCraft")
-    let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
+
+    const [itemsToCraft, setItemsToCraft] = useState<any[]>([]);
+
+    useEffect(() => {
+        const isItemsToCraft = localStorage.getItem("itemsToCraft");
+        setItemsToCraft(isItemsToCraft ? JSON.parse(isItemsToCraft) : []);
+    }, [])
 
     const qtyInputRefs: any = {};
     const [qtyValues, setQtyValues] = useState(itemsToCraft.map((item: any) => item.quantity || 1));

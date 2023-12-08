@@ -1,0 +1,116 @@
+.green {
+    color: rgb(95, 220, 95);
+    text-decoration: line-through;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.craft {
+    width: 500px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-bg-color);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.resources {
+    border: solid 5px var(--main-bg-color);
+    margin-bottom: 25px;
+}
+
+.itemImgNameLevel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.itemImgName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.itemName {
+    font-size: 30px;
+    color: white;
+}
+
+.itemLevel {
+    font-size: 23px;
+    color: white;
+    margin-left: 25px;
+}
+
+.ingredient {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 16px;
+    padding: 0px 15px;
+    box-shadow: 
+        rgba(0, 0, 0, 0.09) 
+        0px 2px 1px, rgba(0, 0, 0, 0.09) 
+        0px 4px 2px, rgba(0, 0, 0, 0.09) 
+        0px 8px 4px, rgba(0, 0, 0, 0.09) 
+        0px 16px 8px, rgba(0, 0, 0, 0.09) 
+        0px 32px 16px;}
+
+.ingredientTab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 0px 15px;
+    color: white;
+    font-size: 16px;
+}
+
+.ingredientImg:hover {
+    transition: all 0.2s ease-in-out;
+    filter: brightness(150%);
+    scale: 1.15;
+    cursor: pointer;
+}
+
+.ingredientQtyCheck {
+    display: flex;
+}
+
+.inputQty {
+    display: flex;
+    height: 20px;
+    width: 50px;
+    margin-right: 25px;
+}
+
+.inputQtyGoal {
+    align-items: center;
+    height: 20px;
+    font-size: large;
+    margin-right: 33px;
+}
+
+.inputText {
+    color: white;
+}
+
+.emptyCraft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--main-cyan-color);
+}

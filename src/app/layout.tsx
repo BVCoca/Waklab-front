@@ -1,6 +1,7 @@
 import "./styles/globals.css";
 import "./components/menu/menu.css";
 import Menu from "./components/menu/menu";
+import { ToastContainer } from 'react-toastify';
 
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -63,6 +64,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </main>
+        <ToastContainer/>
       </body>
     </html>
   );

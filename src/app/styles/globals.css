@@ -223,6 +223,27 @@ a {
   color: var(--main-primary-text);
 }
 
+/* ------------------Craft Hammer------------------ */
+
+.craftButton>svg {
+  transition: all 0.3s ease;
+}
+
+.craftButton:hover>svg {
+  fill: var(--main-cyan-light-color);
+  transform: scale(1.15);
+}
+
+.deleteButton>svg {
+  transition: all 0.3s ease-in-out;
+}
+
+.deleteButton:hover>svg {
+  fill: rgb(255, 50, 50);
+  transform: scale(1.15);
+  transform: rotateZ(90deg);
+}
+
 .dropMobContainer {
   width: 100%;
 }

@@ -7,6 +7,7 @@ import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg";
 import LogoResources from "@/app/icons/homepageIcon/logoResources.svg";
 import LogoDungeons from "@/app/icons/homepageIcon/logoDungeon.svg";
 import LogoBoussole from "@/app/icons/homepageIcon/logoBoussole.svg";
+import LogoCraft from "@/app/icons/homepageIcon/logoHammer.svg"
 import Link from "next/link";
 import Image from "next/image";
 import Coffee from "@/app/components/coffee/coffee";
@@ -54,6 +55,14 @@ export default function Menu() {
       href: `/subzones`,
       label: "Zones",
     },
+    {
+      src: <LogoCraft />,
+      srcOnPage: <LogoCraft style={{ color: `${isOnPageColor}`}} />,
+      alt: ``,
+      href: `/crafts`,
+      label: "Crafts",
+    }
+    
   ];
 
   return (

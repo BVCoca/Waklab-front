@@ -2,6 +2,7 @@ import Base from "../Hydra/Base";
 import MobDrop from "../Mob/MobDrop";
 import Recipe from "../Recipe/Recipe";
 import RecipeIngredient from "../Recipe/RecipeIngredient";
+import RecipeQty from "../Recipe/RecipeQty";
 import Stuff from "./Stuff";
 import stuffCaracteristic from "./StuffCaracteristic";
 
@@ -10,7 +11,7 @@ import stuffCaracteristic from "./StuffCaracteristic";
  */
 export default interface StuffSingle extends Stuff, Base {
     stuffDrops : MobDrop[]
-    recipes : Recipe[],
+    recipes : Recipe[] | RecipeQty[],
     recipeIngredients : RecipeIngredient[],
     description : string,
     costPa : number,

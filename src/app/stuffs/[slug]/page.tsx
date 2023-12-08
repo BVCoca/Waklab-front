@@ -45,6 +45,8 @@ export default async function StuffDetails({ params }: Props) {
     return <p>Stuff non trouvé</p>;
   }
 
+  
+
   return (
     <div className="detailsContent">
       <Header small={true} />
@@ -57,7 +59,7 @@ export default async function StuffDetails({ params }: Props) {
           <h1>{stuff.name}</h1>
           <p className="stuffDescription">{stuff.description}</p>
         </div>
-        <div className="levelContainer">
+        <div className="levelCraftContainer">
           <Level level={[stuff.level]} />
         </div>
       </div>
@@ -101,7 +103,7 @@ export default async function StuffDetails({ params }: Props) {
         </div>
       </div>
       <MobDropList drops={stuff.stuffDrops} />
-      <Recipes recipes={stuff.recipes} />
+      <Recipes recipes={stuff.recipes} item={stuff}/>
       { stuff.recipeIngredients.length > 0 && <UsedInRecipe recipeIngredients={stuff.recipeIngredients} />}
     </div>
   );

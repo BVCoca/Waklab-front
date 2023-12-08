@@ -28,7 +28,7 @@ export default function ModalInfo({setOpenModalInfo, setOpenModalReport} : Props
                 </p>
             </div>
             <div id="linkModalContainer">
-                <button onClick={openModalReport} className="linkModal">Un remarque ?</button>
+                <button onClick={openModalReport} className="linkModal">Une remarque ?</button>
                 <Link href={"/notices"} onClick={closeModal} className="linkModal">Contact</Link>
             </div>
         </div>

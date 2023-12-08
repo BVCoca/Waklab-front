@@ -6,6 +6,7 @@ import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg";
 import LogoResources from "@/app/icons/homepageIcon/logoResources.svg";
 import LogoDungeons from "@/app/icons/homepageIcon/logoDungeon.svg";
 import LogoZones from "@/app/icons/homepageIcon/logoBoussole.svg";
+import Twitter from "@/app/icons/homepageIcon/twitter.svg"
 
 export default function Page() {
   const stats = [
@@ -66,12 +67,18 @@ export default function Page() {
           page. Voila ce que nous avons prévu d&apos;ajouter :
         </p>
         <ul>
-          <li>Zones et sous zones du jeu</li>
-          <li>Pages de métiers</li>
+          <li>Zones et sous zones du jeu (Dimensions, Shushardes et Mont Zinit)</li>
+          <li>Outil d'aide aux crafts</li>
           <li>Fonctionnalité de stasis sur les donjons</li>
           <li>Ergonomie mobile</li>
         </ul>
         <h3>Merci pour votre visite et bon jeu =)</h3>
+      </div>
+      <div>
+        <div className="box">
+          <a href="https://twitter.com/WakLaboratory"><Twitter className="twitterLink" style={{width: "50px"}}/></a>
+        </div>
+        <div id="tagForWakfu"><a href="https://www.wakfu.com/fr/mmorpg" target="_blank" id="linkWakfu">Wakfu</a><p id="textWakfu">MMORPG: © 2023 Ankama Studio. Tous droits réservés. &quot;WakLaboratory&quot; est un site non-officiel en aucun lien avec Ankama.</p></div>
       </div>
     </div>
   );

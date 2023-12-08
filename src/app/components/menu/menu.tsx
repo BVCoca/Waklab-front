@@ -2,7 +2,6 @@
 
 import "@/app/styles/globals.css";
 import "./menu.css";
-import HomeIcon from "@/app/icons/homepageIcon/logo_home.svg"
 import LogoMobs from "@/app/icons/homepageIcon/logoMobs.svg";
 import LogoStuffs from "@/app/icons/homepageIcon/logoStuffs.svg";
 import LogoResources from "@/app/icons/homepageIcon/logoResources.svg";
@@ -10,6 +9,7 @@ import LogoDungeons from "@/app/icons/homepageIcon/logoDungeon.svg";
 import LogoBoussole from "@/app/icons/homepageIcon/logoBoussole.svg";
 import Link from "next/link";
 import Image from "next/image";
+import Coffee from "@/app/components/coffee/coffee";
 import { usePathname } from "next/navigation";
 import Info from "../modal/Info";
 
@@ -81,6 +81,7 @@ export default function Menu() {
             </Link>
           );
         })}
+      <Coffee/>
       <Info />
     </div>
   );

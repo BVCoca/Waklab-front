@@ -1,5 +1,4 @@
 import "./header.css";
-import Logo from "./logo/logo";
 import RedirectArrow from "./redirectArrow/redirectArrow";
 
 interface Props {

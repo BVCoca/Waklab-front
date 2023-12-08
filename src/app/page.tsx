@@ -68,7 +68,7 @@ export default function Page() {
         </p>
         <ul>
           <li>Zones et sous zones du jeu (Dimensions, Shushardes et Mont Zinit)</li>
-          <li>Outil d'aide aux crafts</li>
+          <li>Outil d&apos;aide aux crafts</li>
           <li>Fonctionnalité de stasis sur les donjons</li>
           <li>Ergonomie mobile</li>
         </ul>

@@ -13,16 +13,17 @@ import checked from "/public/checked.png"
 import "./craftComponent.css"
 
 export default function CraftComponent() {
-
-    const [itemsToCraft, setItemsToCraft] = useState<any[]>([]);
+    
+    const qtyInputRefs: any = {};
+    const [qtyValues, setQtyValues] = useState<any>();
+    const [itemsToCraft, setItemsToCraft] = useState<any>([]);
 
     useEffect(() => {
-        const isItemsToCraft = localStorage.getItem("itemsToCraft");
-        setItemsToCraft(isItemsToCraft ? JSON.parse(isItemsToCraft) : []);
+        let isItemsToCraft = localStorage.getItem("itemsToCraft")
+        let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
+        setItemsToCraft(itemsToCraft)
+        setQtyValues(itemsToCraft.map((item: any) => item.quantity || 1))
     }, [])
-
-    const qtyInputRefs: any = {};
-    const [qtyValues, setQtyValues] = useState(itemsToCraft.map((item: any) => item.quantity || 1));
 
     // Sauvegarde à chaque changement la nouvelle quantité d'item que l'on veut faire
 

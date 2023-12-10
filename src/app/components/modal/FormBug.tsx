@@ -87,7 +87,7 @@ export default function FormBug({setOpenModalReport} : Props) {
                 </>
               ) : formData.categorie === 'Problème visuel' ? (
                 <>
-                  <option value="ProbVisu1">Problème d'affichage</option>
+                  <option value="ProbVisu1">Problème d`&apos;affichage</option>
                   <option value="ProbVisu2">Image manquante</option>
                   <option value="ProbVisu3">Autre</option>
                 </>

@@ -75,8 +75,14 @@
     font-size: 16px;
 }
 
-.ingredientImg:hover {
+.ingredientImg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     transition: all 0.2s ease-in-out;
+}
+
+.ingredientImg:hover {
     filter: brightness(150%);
     scale: 1.15;
     cursor: pointer;

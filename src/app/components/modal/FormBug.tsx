@@ -50,7 +50,7 @@ export default function FormBug({setOpenModalReport} : Props) {
     <div id="modalFormContainer">
       <div id="modalFormBug" ref={ref}>
         <Logo width={120} height={40}/>
-        <h2>Report un bug !</h2>
+        <h2>Dis nous en plus !</h2>
         <form id="formBug" onSubmit={sendEmail}>
           <div className="formDiv">
             <label htmlFor="categorie">Catégorie</label><br/>
@@ -62,8 +62,10 @@ export default function FormBug({setOpenModalReport} : Props) {
               required
             >
               <option disabled value="">Sélectionnez une option</option>
-              <option value="Anomalie">Anomalie</option>
-              <option value="Proposition d'évolution">Proposition d&apos;évolution</option>
+              <option value="Problème technique">Problème technique</option>
+              <option value="Problème visuel">Problème visuel</option>
+              <option value="Amélioration possible">Amélioration possible</option>
+              <option value="Question générale">Question générale</option>
             </select><br/><br/>
           </div>
           <div className="formDiv">
@@ -76,9 +78,33 @@ export default function FormBug({setOpenModalReport} : Props) {
               required
             >
               <option disabled value="">Sélectionnez une option</option>
-              <option value="Style">Style</option>
-              <option value="Informations affichées">Informations affichées</option>
-              <option value="Fonctionnalité">Fonctionnalité</option>
+              {formData.categorie === 'Problème technique' ? (
+                <>
+                  <option value="ProbTech1">Chargement infini</option>
+                  <option value="ProbTech2">Problème sur une fonctionnalité</option>
+                  <option value="ProbTech3">Page non trouvée</option>
+                  <option value="ProbTech4">Autre</option>
+                </>
+              ) : formData.categorie === 'Problème visuel' ? (
+                <>
+                  <option value="ProbVisu1">Problème d'affichage</option>
+                  <option value="ProbVisu2">Image manquante</option>
+                  <option value="ProbVisu3">Autre</option>
+                </>
+              ) : formData.categorie === 'Amélioration possible' ? (
+                <>
+                  <option value="UpPoss1">Amélioration fonctionnelle</option>
+                  <option value="UpPoss2">Amélioration visuelle</option>
+                  <option value="UpPoss3">Idée à implémenter</option>
+                  <option value="UpPoss4">Autre</option>
+                </>
+              ) : formData.categorie === 'Question générale' ? (
+                <>
+                  <option value="QuestGen1">Précisez dans les remarques</option>
+                </>
+              ) : (
+                null
+              )}
             </select>
           </div>
           <div className="formDiv">
@@ -95,11 +121,21 @@ export default function FormBug({setOpenModalReport} : Props) {
               required
             >
               <option disabled value="">Sélectionnez une option</option>
+              <option value="Safari">Safari</option>
               <option value="Chrome">Chrome</option>
               <option value="Mozilla">Mozilla</option>
-              <option value="Edge">Edge</option>
-              <option value="Safari">Safari</option>
+              <option value="Sidekick">Sidekick</option>
               <option value="Opéra">Opéra</option>
+              <option value="UR Browzer">UR Browzer</option>
+              <option value="Waterfox">Waterfox</option>
+              <option value="Avast">Avast</option>
+              <option value="Edge">Edge</option>
+              <option value="Arc">Arc</option>
+              <option value="Polypane">Polypane</option>
+              <option value="Brave">Brave</option>
+              <option value="Tor">Tor</option>
+              <option value="Maxthon">Maxthon</option>
+              <option value="Vivaldi">Vivaldi</option>
             </select><br/><br/>
           </div>
           <div className="formDiv">
@@ -112,7 +148,7 @@ export default function FormBug({setOpenModalReport} : Props) {
               required
             /><br/><br/>
           </div>
-          <button id="submitFormBug" type="submit">Envoyer le report</button>
+          <button id="submitFormBug" type="submit">Envoyer</button>
         </form>
       </div>
     </div>

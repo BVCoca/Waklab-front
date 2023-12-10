@@ -7,6 +7,7 @@ import Link from "next/link";
 import StuffSingle from "@/app/types/Stuff/StuffSingle";
 import ResourceSingle from "@/app/types/Resource/ResourceSingle";
 import RemoveButton from "../common/removeToCraft";
+import CraftingButton from "../common/craftingButton";
 import checked from "/public/checked.png"
 import "./craftComponent.css"
 import RecipeIngredientFromRecipe from "@/app/types/Recipe/RecipeIngredientFromRecipe";
@@ -54,6 +55,8 @@ export default function CraftComponent() {
         }))
     }
 
+    console.log('item', itemsToCraft)
+
     return (
         <div className="tabs">
             {itemsToCraft.length > 0 ? itemsToCraft.map((item :StuffSingle | ResourceSingle, i : number) => (
@@ -61,6 +64,7 @@ export default function CraftComponent() {
                 <div className="item">
                     <div className="itemImgNameLevel">
                         <div className="itemImgName">
+                            <Image className="ingredientRarity" src={`${item.rarity.icon}`} alt="rarity icon" width={16} height={26}/>
                             <Link className="ingredientImg" href={item["@id"].slice(4)} target="_blank">
                                 <Image width={80} height={80} src={item.imageUrl} alt=""/>
                             </Link>
@@ -91,20 +95,26 @@ export default function CraftComponent() {
                     {item.recipes[0].recipeIngredients.map((recipeIngredient : RecipeIngredientFromRecipe, j : number) => 
                         <div key={j} className="ingredient">
                             {recipeIngredient.resource && (
-                                <Link className="ingredientImg" href={recipeIngredient.resource["@id"].slice(4)} target="_blank">
-                                    <Image width={70} height={70} src={recipeIngredient.resource.imageUrl} alt=""/>
-                                    <div className="ingredientName">
-                                        {recipeIngredient.resource.name}
-                                    </div>
-                                </Link>
+                                <div className="ingredientWrapper">
+                                    <Image className="ingredientRarity" src={`${recipeIngredient.resource?.rarity.icon}`} alt="rarity icon" width={13} height={20}/>
+                                    <Link className="ingredientImg" href={recipeIngredient.resource["@id"].slice(4)} target="_blank">
+                                        <Image width={70} height={70} src={recipeIngredient.resource.imageUrl} alt=""/>
+                                        <div className="ingredientName">
+                                            {recipeIngredient.resource.name}
+                                        </div>
+                                    </Link>
+                                </div>
                             )}
                             {recipeIngredient.stuff && (
-                                <Link className="ingredientImg" href={recipeIngredient.stuff["@id"].slice(4)} target="_blank">
-                                    <Image width={70} height={70} src={recipeIngredient.stuff.imageUrl} alt=""/>
-                                    <div className="ingredientName">
-                                        {recipeIngredient.stuff.name}
-                                    </div>
-                                </Link>
+                                <div className="ingredientWrapper">
+                                    <Image className="ingredientRarity" src={`${recipeIngredient.stuff?.rarity.icon}`} alt="rarity icon" width={13} height={20}/>
+                                    <Link className="ingredientImg" href={recipeIngredient.stuff["@id"].slice(4)} target="_blank">
+                                        <Image width={70} height={70} src={recipeIngredient.stuff.imageUrl} alt=""/>
+                                        <div className="ingredientName">
+                                            {recipeIngredient.stuff.name}
+                                        </div>
+                                    </Link>
+                                </div>
                             )}
                             <div className="ingredientQtyCheck">
                                 <input 

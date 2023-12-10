@@ -6,70 +6,52 @@ import Link from "next/link";
 
 import StuffSingle from "@/app/types/Stuff/StuffSingle";
 import ResourceSingle from "@/app/types/Resource/ResourceSingle";
-import RecipeIngredientFromRecipeQty from "@/app/types/Recipe/RecipeIngredientFromRecipeQty";
 import RemoveButton from "../common/removeToCraft";
-
 import checked from "/public/checked.png"
 import "./craftComponent.css"
+import RecipeIngredientFromRecipe from "@/app/types/Recipe/RecipeIngredientFromRecipe";
 
 export default function CraftComponent() {
     
-    const qtyInputRefs: any = {};
-    const [qtyValues, setQtyValues] = useState<any>();
-    const [itemsToCraft, setItemsToCraft] = useState<any>([]);
+    const [itemsToCraft, setItemsToCraft] = useState<Array<StuffSingle | ResourceSingle>>([]);
 
     useEffect(() => {
         let isItemsToCraft = localStorage.getItem("itemsToCraft")
         let itemsToCraft = isItemsToCraft ? JSON.parse(isItemsToCraft) : [];
         setItemsToCraft(itemsToCraft)
-        setQtyValues(itemsToCraft.map((item: any) => item.quantity || 1))
     }, [])
 
-    // Sauvegarde à chaque changement la nouvelle quantité d'item que l'on veut faire
+    useEffect(() => {
+        if(itemsToCraft.length > 0)
+            localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft))
+    }, [itemsToCraft])
 
-    const handleQtyChange = (index: number) => {
-        if (qtyInputRefs[index]) {
-            const newValue = parseInt(qtyInputRefs[index].value, 10);
-            setQtyValues((prevValues: any) => {
-                const newValues = [...prevValues];
-                newValues[index] = newValue;
-                return newValues;
-            })
-            itemsToCraft[index].quantity = newValue;
-            localStorage.setItem("itemsToCraft", JSON.stringify(itemsToCraft));
-        }
+    // Sauvegarde à chaque changement la nouvelle quantité d'item que l'on veut faire
+    const handleQtyChange = (e : any, item: StuffSingle | ResourceSingle) => {
+        setItemsToCraft(itemsToCraft.map((itemToCraft : StuffSingle | ResourceSingle) => {
+
+            if(itemToCraft["@id"] === item["@id"] && itemToCraft.recipes[0]["@id"] === item.recipes[0]["@id"]) {
+                itemToCraft.quantityToCraft = e.target.value
+            }
+
+            return itemToCraft;
+        }))
     };
 
-    const qtyIngredientInputRefs: any = {};
-    const [qtyIngredientValues, setQtyIngredientValues] = useState<number[][]>(
-        itemsToCraft.map((item: any) => 
-            item.recipes[0].recipeIngredients.map((recipeIngredient: RecipeIngredientFromRecipeQty) => recipeIngredient.quantityToCraft ? recipeIngredient.quantityToCraft : 0)
-        )
-    );
-
-    // Sauvegarde à chaque changement la nouvelle quantité de chaque ingrédient qu'on possède sur la recette que l'on veut faire
-    
-    const handleQtyIngredients = (indexItem: number, indexIngredient: number) => {
-
-        const newValue = parseInt(qtyIngredientInputRefs[indexItem]?.[indexIngredient]?.value, 10);
-    
-        if (!isNaN(newValue)) {
-
-            setQtyIngredientValues((prevValues: any) => {
-                const newValues = [...prevValues];
-                newValues[indexItem] = [...newValues[indexItem]];
-                newValues[indexItem][indexIngredient] = newValue;
-                return newValues;
-            });
-
-            const updatedItemsToCraft = [...itemsToCraft];
-            const selectedRecipe = updatedItemsToCraft[indexItem].recipes[0];
-            const selectedIngredient = selectedRecipe.recipeIngredients[indexIngredient];
-
-            selectedIngredient.quantityToCraft = newValue;
-
-            localStorage.setItem("itemsToCraft", JSON.stringify(updatedItemsToCraft));
-        }
+    // Sauvegarde à chaque changement de ressource
+    const handleQtyIngredients = (e : any, item : StuffSingle | ResourceSingle, ingredient : RecipeIngredientFromRecipe) => {
+        setItemsToCraft(itemsToCraft.map((itemToCraft : StuffSingle | ResourceSingle) => {
+            
+            if(itemToCraft["@id"] === item["@id"] && itemToCraft.recipes[0]["@id"] === item.recipes[0]["@id"]) {
+                itemToCraft.recipes[0].recipeIngredients.map((recipeIngredient : RecipeIngredientFromRecipe) => {
+                    if(recipeIngredient["@id"] === ingredient["@id"]) {
+                        recipeIngredient.quantityStocked = e.target.value
+                    }
+                })
+            }
+            
+            return itemToCraft
+        }))
     }
 
     return (
@@ -90,9 +72,8 @@ export default function CraftComponent() {
                         <RemoveButton item={item} recipeId={item.recipes[0]["@id"]}/>
                         <p className="inputText">Quantité</p>
                         <input 
-                            ref={(input) => (qtyInputRefs[i] = input)}
-                            value={qtyValues[i]}
-                            onChange={() => handleQtyChange(i)} 
+                            value={item.quantityToCraft}
+                            onChange={(e) => handleQtyChange(e, item)} 
                             className="inputQty" 
                             type="number" 
                             min={1} 
@@ -107,45 +88,52 @@ export default function CraftComponent() {
                     </div>
                 </div>
                 <div className="resources">
-                    {item.recipes[0].recipeIngredients.map((recipeIngredient, j : number) => (
-                        recipeIngredient.resource?.name &&
+                    {item.recipes[0].recipeIngredients.map((recipeIngredient : RecipeIngredientFromRecipe, j : number) => 
                         <div key={j} className="ingredient">
-                            <Link className="ingredientImg" href={recipeIngredient.resource["@id"].slice(4)} target="_blank">
-                                <Image width={70} height={70} src={recipeIngredient.resource?.imageUrl} alt=""/>
-                            </Link>
-                            <div className="ingredientName">
-                                {recipeIngredient.resource?.name}
-                            </div>
+                            {recipeIngredient.resource && (
+                                <Link className="ingredientImg" href={recipeIngredient.resource["@id"].slice(4)} target="_blank">
+                                    <Image width={70} height={70} src={recipeIngredient.resource.imageUrl} alt=""/>
+                                    <div className="ingredientName">
+                                        {recipeIngredient.resource.name}
+                                    </div>
+                                </Link>
+                            )}
+                            {recipeIngredient.stuff && (
+                                <Link className="ingredientImg" href={recipeIngredient.stuff["@id"].slice(4)} target="_blank">
+                                    <Image width={70} height={70} src={recipeIngredient.stuff.imageUrl} alt=""/>
+                                    <div className="ingredientName">
+                                        {recipeIngredient.stuff.name}
+                                    </div>
+                                </Link>
+                            )}
                             <div className="ingredientQtyCheck">
                                 <input 
-                                     ref={(input) => (qtyIngredientInputRefs[i] = qtyIngredientInputRefs[i] || {})[j] = input}
-                                     defaultValue={0}
-                                     value={qtyIngredientValues[i][j]}
-                                     onChange={() => handleQtyIngredients(i, j)}
-                                     className="inputQty"
-                                     type="number"
-                                     min={0}
-                                     max={recipeIngredient.quantity* qtyValues[i]}
-                                     style={{
+                                    value={recipeIngredient.quantityStocked ?? 0}
+                                    onChange={(e) => handleQtyIngredients(e, item, recipeIngredient)}
+                                    className="inputQty"
+                                    type="number"
+                                    min={0}
+                                    max={recipeIngredient.quantity * item.quantityToCraft}
+                                    style={{
                                         backgroundColor: '#242424',
                                         color: '#34D6D3',
                                         border: "none",
                                         borderRadius: "3px"
                                     }}
                                 />
-                                <div style={{display: "flex", width: "15px"}} className={`inputQtyGoal ${qtyIngredientValues[i][j] >= recipeIngredient.quantity * qtyValues[i] ? 'green' : ''}`}>
-                                    {recipeIngredient.quantity * qtyValues[i]}
-                                    {qtyIngredientValues[i][j] >= recipeIngredient.quantity * qtyValues[i] && (
+                                <div style={{display: "flex", width: "15px"}} className={`inputQtyGoal ${recipeIngredient.quantityStocked >= recipeIngredient.quantity * item.quantityToCraft ? 'green' : ''}`}>
+                                    {recipeIngredient.quantity * item.quantityToCraft}
+                                    {recipeIngredient.quantityStocked >= recipeIngredient.quantity * item.quantityToCraft && (
                                         <Image className="imgCheckedIngredientQty" src={checked} alt="Validation ingredient quantity logo"/>
                                     )}
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    )}
                 </div>
             </div>
             )) : 
-            <div className="emptyCraft">Les Equipements ou Ressources &quot;Fabriquables&quot; que vous choisirez grâce au marteau bleu à coté des recettes, se trouveront ici !</div>
+                <div className="emptyCraft">Les Equipements ou Ressources &quot;Fabriquables&quot; que vous choisirez grâce au marteau bleu à coté des recettes, se trouveront ici !</div>
             }
         </div>
     )

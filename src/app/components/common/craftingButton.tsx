@@ -41,7 +41,7 @@ export default function CraftingButton({ item, recipeId }: Props) {
       });
     
       if (!isItemInStorage) {
-        const updatedItemsToCraft = [...itemsToCraft, { ...item, quantity: 1, recipeId }];
+        const updatedItemsToCraft = [...itemsToCraft, { ...item, quantityToCraft: 1, recipeId }];
         setItemsToCraft(updatedItemsToCraft);
         localStorage.setItem("itemsToCraft", JSON.stringify(updatedItemsToCraft));
         
